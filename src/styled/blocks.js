@@ -5,10 +5,10 @@ export const Burger = styled.div`
   cursor: pointer;
   background: repeating-linear-gradient(
     0,
-    #ff3333,
-    #ff3333 8px,
-    #ffcccc 8px,
-    #ffcccc 12px
+    ${props => props.theme.primary.main},
+    ${props => props.theme.primary.main} 8px,
+    ${props => props.theme.primary.light} 8px,
+    ${props => props.theme.primary.light} 12px
   );
   height: 40px;
   width: 40px;
@@ -23,17 +23,17 @@ export const Cross = styled.div`
   background: linear-gradient(
       to bottom,
       transparent 45%,
-      #ffcccc 45%,
-      #ffcccc 55%,
+      ${props => props.theme.primary.light} 45%,
+      ${props => props.theme.primary.light} 55%,
       transparent 55%
     ),
     linear-gradient(
       to right,
       transparent 45%,
-      #ffcccc 45%,
-      #ffcccc 55%,
+      ${props => props.theme.primary.light} 45%,
+      ${props => props.theme.primary.light} 55%,
       transparent 55%
     );
   transform: rotate(45deg);
-  background-color: #ff3333;
+  background-color: ${props => props.theme.primary.main};
 `;
