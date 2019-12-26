@@ -101,9 +101,9 @@ const SymbolOfSpring = () => {
       {gridAreas.map(area => {
         return <GridBlock gridArea={area} />;
       })}
-      <div style={{ gridArea: "20 / 7 / 22 / 21" }}>
+      {/* <div style={{ gridArea: "20 / 7 / 22 / 21" }}>
         Symbol of spring and youth
-      </div>
+      </div> */}
     </GridContainer>
   );
 };
