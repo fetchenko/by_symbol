@@ -73,7 +73,6 @@ const SymbolOfWealth = () => {
       {gridAreas.map(area => {
         return <GridBlock gridArea={area} />;
       })}
-      <div style={{ gridArea: "20 / 6 / 21 / 16" }}>Symbol of wealth</div>
     </GridContainer>
   );
 };

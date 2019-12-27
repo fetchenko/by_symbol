@@ -1,33 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-
-const mockMenuOptions = [
-  {
-    label: "Symbol of spring and youth",
-    path: "symbol-of-spring",
-    title: "spring and youth",
-    img: "/assets/img/symbol-of-spring.png"
-  },
-  {
-    label: "Symbol of wealth",
-    path: "symbol-of-wealth",
-    title: "wealth",
-    img: "/assets/img/symbol-of-wealth.png"
-  },
-  {
-    label: "Union of the sun and the earth. Symbol of harvest",
-    path: "symbol-of-harvest",
-    title: "harvest",
-    img: "/assets/img/symbol-of-harvest.png"
-  }
-];
+import { SYMBOL_OPTIONS } from "../../constants";
 
 const BlockMenuItem = styled.li`
   width: 90px;
   height: 60px;
-  border: solid 1px ${props => props.theme.primary.light};
+  border: solid 2px
+    ${props =>
+      props.active ? props.theme.primary.main : props.theme.primary.light};
   list-style-type: none;
   margin: 0 ${props => props.theme.unit}px;
+  cursor: pointer;
 `;
 
 const BlockMenu = styled.ul`
@@ -36,13 +19,27 @@ const BlockMenu = styled.ul`
 `;
 
 const BlocksMenu = props => {
+  const { value } = props;
+
+  const handleClick = value => () => {
+    props.onChange(value);
+  };
+
   return (
     <BlockMenu>
-      {mockMenuOptions.map(option => {
+      {SYMBOL_OPTIONS.map(option => {
         return (
-          <BlockMenuItem>
+          <BlockMenuItem
+            active={value === option.path}
+            onClick={handleClick(option.path)}
+          >
             {option.img ? (
-              <img src={option.img} style={{ width: "100%", height: "100%" }} />
+              <img
+                key={option.path}
+                src={option.img}
+                alt={option.label}
+                style={{ width: "100%", height: "100%" }}
+              />
             ) : (
               option.title
             )}

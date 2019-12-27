@@ -4,6 +4,7 @@ import SymbolOfWealth from "../symbols/symbolOfWealth";
 import SymbolOfHarvest from "../symbols/symbolOfHarvest";
 import BlocksMenu from "../menu/blocksMenu";
 import styled from "styled-components";
+import { SYMBOL_OPTIONS } from "../../constants";
 
 const Carousel = styled.div`
   width: 100%;
@@ -43,18 +44,39 @@ const CarouselContent = styled.div`
   justify-content: center;
 `;
 
-const Symbols = props => {
-  const [symbol, setSymbol] = useState("symbol-of-spring");
+export const Title = styled.h4`
+  font-size: 1.3rem;
+  color: ${props => props.theme.primary.main};
+  text-align: center;
+`;
 
+const Symbols = props => {
+  const [symbolKey, setSymbolKey] = useState("symbol-of-spring");
+  const [symbol, setSymbol] = useState(SYMBOL_OPTIONS[0]);
+
+  // console.log({ symbol });
   return (
     <div>
-      <BlocksMenu />
+      <BlocksMenu
+        value={symbol}
+        onChange={value => {
+          setSymbolKey(value);
+          const selectedOption = SYMBOL_OPTIONS.find(
+            option => option.path === value
+          );
+
+          if (selectedOption) {
+            setSymbol(selectedOption);
+          }
+        }}
+      />
+      {symbol && <Title>{symbol.label}</Title>}
       <Carousel>
         <PrevButton>&#8249;</PrevButton>
         <CarouselContent>
-          {symbol === "symbol-of-spring" && <SymbolOfSpring />}
-          {symbol === "symbol-of-wealth" && <SymbolOfWealth />}
-          {symbol === "symbol-of-harvest" && <SymbolOfHarvest />}
+          {symbolKey === "symbol-of-spring" && <SymbolOfSpring />}
+          {symbolKey === "symbol-of-wealth" && <SymbolOfWealth />}
+          {symbolKey === "symbol-of-harvest" && <SymbolOfHarvest />}
         </CarouselContent>
         <NextButton>&#8250;</NextButton>
       </Carousel>

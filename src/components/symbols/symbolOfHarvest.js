@@ -19,7 +19,6 @@ const gridAreas = [
   "8 / 22 / 9 / 25",
   "9 / 9 / 10 / 14",
   "9 / 17 / 10 / 18",
-  "9 / 17 / 10 / 18",
   "9 / 21 / 10 / 26",
   "10 / 8 / 11 / 11",
   "10 / 12 / 11 / 15",
@@ -101,7 +100,6 @@ const gridAreas = [
   "24 / 24 / 25 / 27",
   "25 / 9 / 26 / 14",
   "25 / 17 / 26 / 18",
-  "25 / 17 / 26 / 18",
   "25 / 21 / 26 / 26",
   "26 / 10 / 27 / 13",
   "26 / 16 / 27 / 19",
@@ -124,11 +122,8 @@ const SymbolOfHarvest = () => {
   return (
     <GridContainer rows="15px" columns="15px">
       {gridAreas.map(area => {
-        return <GridBlock gridArea={area} />;
+        return <GridBlock key={area} gridArea={area} />;
       })}
-      <div style={{ gridArea: "36 / 5 / 38 / 35" }}>
-        Union of the sun and the earth. Symbol of harvest
-      </div>
     </GridContainer>
   );
 };
