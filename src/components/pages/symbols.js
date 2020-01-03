@@ -72,13 +72,13 @@ const Symbols = props => {
       />
       {symbol && <Title>{symbol.label}</Title>}
       <Carousel>
-        <PrevButton>&#8249;</PrevButton>
+        {/* <PrevButton>&#8249;</PrevButton> */}
         <CarouselContent>
           {symbolKey === "symbol-of-spring" && <SymbolOfSpring />}
           {symbolKey === "symbol-of-wealth" && <SymbolOfWealth />}
           {symbolKey === "symbol-of-harvest" && <SymbolOfHarvest />}
         </CarouselContent>
-        <NextButton>&#8250;</NextButton>
+        {/* <NextButton>&#8250;</NextButton> */}
       </Carousel>
     </div>
   );

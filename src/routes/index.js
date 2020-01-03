@@ -8,6 +8,7 @@ const Navigation = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route exact path="/:view" component={Home} />
       <Route path="/symbols" component={Symbols} />
       <Route path="/menu" component={Menu} />
     </Switch>
