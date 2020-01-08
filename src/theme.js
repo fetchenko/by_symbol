@@ -17,6 +17,9 @@ const theme = {
     primary: {
       main: "#fff"
     }
+  },
+  fonts: {
+    secondary: "Teko"
   }
 };
 
