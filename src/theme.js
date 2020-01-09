@@ -19,7 +19,7 @@ const theme = {
     }
   },
   fonts: {
-    secondary: "Teko"
+    teko: "Teko"
   }
 };
 

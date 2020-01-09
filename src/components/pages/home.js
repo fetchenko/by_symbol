@@ -26,7 +26,7 @@ const Home = props => {
 
   return (
     <div>
-      <SymbolsMenu />
+      {/* <SymbolsMenu /> */}
       {block.theme === "symbols" && <Symbols />}
       {block.theme === "compositions" && <SymbolComposition />}
     </div>

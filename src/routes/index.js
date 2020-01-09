@@ -2,15 +2,14 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "../components/pages/home";
 import Symbols from "../components/pages/symbols";
-import Menu from "../components/pages/menu";
+import Compositions from "../components/pages/compositions";
 
 const Navigation = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/:view" component={Home} />
+      <Route exact path="/" component={Symbols} />
+      <Route exact path="/compositions" component={Compositions} />
       <Route path="/symbols" component={Symbols} />
-      <Route path="/menu" component={Menu} />
     </Switch>
   );
 };
