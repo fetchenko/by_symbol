@@ -27,6 +27,7 @@ const BlocksMenu = props => {
 
   return (
     <BlockMenu>
+      {/* <PrevButton>&#8249;</PrevButton> */}
       {SYMBOL_OPTIONS.map(option => {
         return (
           <BlockMenuItem
@@ -46,6 +47,7 @@ const BlocksMenu = props => {
           </BlockMenuItem>
         );
       })}
+      {/* <NextButton>&#8250;</NextButton> */}
     </BlockMenu>
   );
 };

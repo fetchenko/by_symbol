@@ -14,32 +14,8 @@ const Carousel = styled.div`
   margin: ${props => props.theme.unit * 10}px 0;
 `;
 
-const PrevButton = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  border: solid ${props => props.theme.primary.light};
-  background-color: ${props => props.theme.primary.light};
-  color: ${props => props.theme.primary.main};
-  font-size: 3rem;
-  cursor: pointer;
-`;
-
-const NextButton = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  border: solid ${props => props.theme.primary.light};
-  background-color: ${props => props.theme.primary.light};
-  color: ${props => props.theme.primary.main};
-  font-size: 3rem;
-  cursor: pointer;
-`;
-
 const CarouselContent = styled.div`
-  width: calc(100% - 80px);
+  width: 100%;
   display: flex;
   justify-content: center;
 `;
@@ -51,16 +27,13 @@ export const Title = styled.h4`
 `;
 
 const Symbols = props => {
-  const [symbolKey, setSymbolKey] = useState("symbol-of-spring");
   const [symbol, setSymbol] = useState(SYMBOL_OPTIONS[0]);
 
-  // console.log({ symbol });
   return (
     <div>
       <BlocksMenu
         value={symbol}
         onChange={value => {
-          setSymbolKey(value);
           const selectedOption = SYMBOL_OPTIONS.find(
             option => option.path === value
           );
@@ -72,13 +45,11 @@ const Symbols = props => {
       />
       {symbol && <Title>{symbol.label}</Title>}
       <Carousel>
-        {/* <PrevButton>&#8249;</PrevButton> */}
         <CarouselContent>
-          {symbolKey === "symbol-of-spring" && <SymbolOfSpring />}
-          {symbolKey === "symbol-of-wealth" && <SymbolOfWealth />}
-          {symbolKey === "symbol-of-harvest" && <SymbolOfHarvest />}
+          {symbol.path === "symbol-of-spring" && <SymbolOfSpring />}
+          {symbol.path === "symbol-of-wealth" && <SymbolOfWealth />}
+          {symbol.path === "symbol-of-harvest" && <SymbolOfHarvest />}
         </CarouselContent>
-        {/* <NextButton>&#8250;</NextButton> */}
       </Carousel>
     </div>
   );
