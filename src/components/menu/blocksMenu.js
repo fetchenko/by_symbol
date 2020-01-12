@@ -1,53 +1,53 @@
 import React from "react";
-import styled from "styled-components";
-import { SYMBOL_OPTIONS } from "../../constants";
-
-const BlockMenuItem = styled.li`
-  width: 90px;
-  height: 60px;
-  border: solid 2px
-    ${props =>
-      props.active ? props.theme.primary.main : props.theme.primary.light};
-  list-style-type: none;
-  margin: 0 ${props => props.theme.unit}px;
-  cursor: pointer;
-`;
-
-const BlockMenu = styled.ul`
-  display: flex;
-  flex-direction: row;
-`;
+import {
+  BlockMenuItem,
+  BlockMenu,
+  PrevButton,
+  NextButton
+} from "../../styled/menu";
+import { Img } from "../../styled/image";
 
 const BlocksMenu = props => {
-  const { value } = props;
+  const { value, options, onSelect } = props;
 
   const handleClick = value => () => {
-    props.onChange(value);
+    const selectedValue = options.find(item => item.path === value);
+
+    onSelect(selectedValue);
+  };
+
+  const handleNextButton = () => {
+    const currentIndex = options.findIndex(item => item.path === value.path);
+
+    if (options[currentIndex + 1]) {
+      onSelect(options[currentIndex + 1]);
+    }
+  };
+
+  const handlePrevButton = () => {
+    const currentIndex = options.findIndex(item => item.path === value.path);
+
+    if (options[currentIndex - 1]) {
+      onSelect(options[currentIndex - 1]);
+    }
   };
 
   return (
     <BlockMenu>
-      {/* <PrevButton>&#8249;</PrevButton> */}
-      {SYMBOL_OPTIONS.map(option => {
+      <PrevButton onClick={handlePrevButton}>&#8249;</PrevButton>
+      {options.map(option => {
         return (
           <BlockMenuItem
-            active={value === option.path}
+            active={value.path === option.path}
             onClick={handleClick(option.path)}
           >
-            {option.img ? (
-              <img
-                key={option.path}
-                src={option.img}
-                alt={option.label}
-                style={{ width: "100%", height: "100%" }}
-              />
-            ) : (
-              option.title
+            {option.img && (
+              <Img key={option.path} src={option.img} alt={option.label} />
             )}
           </BlockMenuItem>
         );
       })}
-      {/* <NextButton>&#8250;</NextButton> */}
+      <NextButton onClick={handleNextButton}>&#8250;</NextButton>
     </BlockMenu>
   );
 };

@@ -18,3 +18,44 @@ export const MenuItem = styled.li`
   font-size: 1.3rem;
   margin: 5px 10px;
 `;
+
+export const BlockMenuItem = styled.li`
+  width: 90px;
+  height: 60px;
+  border: solid 2px
+    ${props =>
+      props.active ? props.theme.primary.main : props.theme.primary.light};
+  list-style-type: none;
+  margin: 0 ${props => props.theme.unit}px;
+  cursor: pointer;
+`;
+
+export const BlockMenu = styled.ul`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: ${props => 2 * props.theme.unit}px ${props => 8 * props.theme.unit}px;
+  background-color: ${props => props.theme.primary.light}33;
+`;
+
+export const MenuButton = styled.button`
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  border: none;
+  background-color: ${props => props.theme.primary.light};
+  color: ${props => props.theme.primary.main};
+  font-size: 3rem;
+  padding: 0 ${props => 1.2 * props.theme.unit}px
+    ${props => 2 * props.theme.unit}px ${props => 1.2 * props.theme.unit}px;
+`;
+
+export const PrevButton = styled(MenuButton)`
+  left: 0;
+`;
+
+export const NextButton = styled(MenuButton)`
+  right: 0;
+`;

@@ -71,7 +71,7 @@ const SymbolOfWealth = () => {
   return (
     <GridContainer>
       {gridAreas.map(area => {
-        return <GridBlock gridArea={area} />;
+        return <GridBlock key={area} gridArea={area} />;
       })}
     </GridContainer>
   );

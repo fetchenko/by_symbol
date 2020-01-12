@@ -29,19 +29,16 @@ export const Title = styled.h4`
 const Symbols = props => {
   const [symbol, setSymbol] = useState(SYMBOL_OPTIONS[0]);
 
+  const handleSelect = value => {
+    setSymbol(value);
+  };
+
   return (
     <div>
       <BlocksMenu
+        options={SYMBOL_OPTIONS}
         value={symbol}
-        onChange={value => {
-          const selectedOption = SYMBOL_OPTIONS.find(
-            option => option.path === value
-          );
-
-          if (selectedOption) {
-            setSymbol(selectedOption);
-          }
-        }}
+        onSelect={handleSelect}
       />
       {symbol && <Title>{symbol.label}</Title>}
       <Carousel>
