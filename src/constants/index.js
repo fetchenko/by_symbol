@@ -18,3 +18,12 @@ export const SYMBOL_OPTIONS = [
     img: "/assets/img/symbol-of-harvest.png"
   }
 ];
+
+export const COMPOSITIONS = [
+  {
+    label: "Symbol of love",
+    path: "symbol-of-love",
+    title: "symbol of love",
+    img: "/assets/img/symbol-of-love.png"
+  }
+];
