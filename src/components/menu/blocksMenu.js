@@ -5,7 +5,8 @@ import {
   PrevButton,
   NextButton
 } from "../../styled/menu";
-import { Img } from "../../styled/image";
+import GridLoading from "../blocks/gridLoading";
+import ImageWithLoader from "../blocks/imageWithLoader";
 
 const BlocksMenu = props => {
   const { value, options, onSelect } = props;
@@ -32,6 +33,10 @@ const BlocksMenu = props => {
     }
   };
 
+  const renderLoaderComponent = () => {
+    return <GridLoading containerProps={{ rows: 4, columns: 7 }} />;
+  };
+
   return (
     <BlockMenu>
       <PrevButton onClick={handlePrevButton}>&#8249;</PrevButton>
@@ -42,7 +47,12 @@ const BlocksMenu = props => {
             onClick={handleClick(option.path)}
           >
             {option.img && (
-              <Img key={option.path} src={option.img} alt={option.label} />
+              <ImageWithLoader
+                key={option.path}
+                src={option.img}
+                alt={option.label}
+                loaderComponent={renderLoaderComponent}
+              />
             )}
           </BlockMenuItem>
         );

@@ -5,7 +5,9 @@ export const GridContainer = styled.div`
   display: grid;
   grid-auto-rows: ${props => props.rows || "25px"};
   grid-auto-columns: ${props => props.columns || "25px"};
-  padding: 10px;
+  padding: ${props => props.padding || "10px"};
+  grid-row-gap: ${props => props.rowGap};
+  grid-column-gap: ${props => props.columnGap};
 `;
 
 export const GridBlock = styled.div`
