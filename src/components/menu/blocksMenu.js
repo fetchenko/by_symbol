@@ -2,6 +2,7 @@ import React from "react";
 import {
   BlockMenuItem,
   BlockMenu,
+  BlockMenuContent,
   PrevButton,
   NextButton
 } from "../../styled/menu";
@@ -34,30 +35,33 @@ const BlocksMenu = props => {
   };
 
   const renderLoaderComponent = () => {
-    return <GridLoading containerProps={{ rows: 4, columns: 7 }} />;
+    return <GridLoading containerProps={{ rows: 5, columns: 8 }} />;
   };
 
   return (
     <BlockMenu>
-      <PrevButton onClick={handlePrevButton}>&#8249;</PrevButton>
-      {options.map(option => {
-        return (
-          <BlockMenuItem
-            active={value.path === option.path}
-            onClick={handleClick(option.path)}
-          >
-            {option.img && (
-              <ImageWithLoader
-                key={option.path}
-                src={option.img}
-                alt={option.label}
-                loaderComponent={renderLoaderComponent}
-              />
-            )}
-          </BlockMenuItem>
-        );
-      })}
-      <NextButton onClick={handleNextButton}>&#8250;</NextButton>
+      <BlockMenuContent>
+        <PrevButton onClick={handlePrevButton}>&#8249;</PrevButton>
+
+        {options.map(option => {
+          return (
+            <BlockMenuItem
+              active={value.path === option.path}
+              onClick={handleClick(option.path)}
+            >
+              {option.img && (
+                <ImageWithLoader
+                  key={option.path}
+                  src={option.img}
+                  alt={option.label}
+                  loaderComponent={renderLoaderComponent}
+                />
+              )}
+            </BlockMenuItem>
+          );
+        })}
+        <NextButton onClick={handleNextButton}>&#8250;</NextButton>
+      </BlockMenuContent>
     </BlockMenu>
   );
 };

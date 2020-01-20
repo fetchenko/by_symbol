@@ -16,6 +16,12 @@ export const SYMBOL_OPTIONS = [
     path: "symbol-of-harvest",
     title: "harvest",
     img: "/assets/img/symbol-of-harvest.png"
+  },
+  {
+    label: "Symbol of ancestors",
+    path: "symbol-of-ancestors",
+    title: "ancestors",
+    img: "/assets/img/symbol-of-ancestors.png"
   }
 ];
 

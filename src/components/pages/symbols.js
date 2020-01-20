@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SymbolOfSpring from "../symbols/symbolOfSpring";
 import SymbolOfWealth from "../symbols/symbolOfWealth";
 import SymbolOfHarvest from "../symbols/symbolOfHarvest";
+import SymbolOfAncestors from "../symbols/symbolOfAncestors";
 import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
@@ -27,6 +28,7 @@ const Symbols = props => {
           {symbol.path === "symbol-of-spring" && <SymbolOfSpring />}
           {symbol.path === "symbol-of-wealth" && <SymbolOfWealth />}
           {symbol.path === "symbol-of-harvest" && <SymbolOfHarvest />}
+          {symbol.path === "symbol-of-ancestors" && <SymbolOfAncestors />}
         </CarouselContent>
       </Carousel>
     </div>

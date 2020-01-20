@@ -3,11 +3,16 @@ import styled from "styled-components";
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-auto-rows: ${props => props.rows || "25px"};
-  grid-auto-columns: ${props => props.columns || "25px"};
-  padding: ${props => props.padding || "10px"};
+  grid-auto-rows: ${props => props.rows || "10px"};
+  grid-auto-columns: ${props => props.columns || "10px"};
+  padding: ${props => props.padding};
   grid-row-gap: ${props => props.rowGap};
   grid-column-gap: ${props => props.columnGap};
+
+  ${props => props.theme.mediaQueries.sm} {
+    grid-auto-rows: ${props => props.rows || "15px"};
+    grid-auto-columns: ${props => props.columns || "15px"};
+  }
 `;
 
 export const GridBlock = styled.div`

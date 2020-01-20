@@ -30,7 +30,7 @@ function GridLoading(props) {
     >
       {rowsArr.map(col =>
         colsArr.map(row => {
-          if (col === columns - 1 && row === rows - 1) return null;
+          // if (col === columns - 1 && row === rows - 1) return null;
 
           return (
             <Cell

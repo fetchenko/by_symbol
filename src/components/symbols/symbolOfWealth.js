@@ -69,7 +69,7 @@ const gridAreas = [
 
 const SymbolOfWealth = () => {
   return (
-    <GridContainer>
+    <GridContainer rows="15px" columns="15px">
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;
       })}

@@ -120,7 +120,7 @@ const gridAreas = [
 
 const SymbolOfHarvest = () => {
   return (
-    <GridContainer rows="15px" columns="15px">
+    <GridContainer rows="8px" columns="8px">
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;
       })}

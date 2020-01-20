@@ -97,9 +97,9 @@ const gridAreas = [
 
 const SymbolOfSpring = () => {
   return (
-    <GridContainer>
+    <GridContainer rows="12px" columns="12px">
       {gridAreas.map(area => {
-        return <GridBlock gridArea={area} />;
+        return <GridBlock key={area} gridArea={area} />;
       })}
     </GridContainer>
   );

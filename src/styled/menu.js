@@ -32,12 +32,17 @@ export const BlockMenuItem = styled.li`
 
 export const BlockMenu = styled.ul`
   position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   margin: 0;
   padding: ${props => 2 * props.theme.unit}px ${props => 8 * props.theme.unit}px;
   background-color: ${props => props.theme.primary.light}33;
+`;
+
+export const BlockMenuContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
 `;
 
 export const MenuButton = styled.button`
