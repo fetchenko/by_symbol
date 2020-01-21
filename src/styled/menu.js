@@ -42,7 +42,7 @@ export const BlockMenuContent = styled.div`
   flex-direction: row;
   align-items: center;
   width: 100%;
-  overflow-x: auto;
+  overflow: auto hidden;
 `;
 
 export const MenuButton = styled.button`
