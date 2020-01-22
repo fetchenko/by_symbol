@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as RouteLink } from "react-router-dom";
+import { Link as RouteLink, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 const CapitalLetter = styled.h4`
@@ -7,9 +7,14 @@ const CapitalLetter = styled.h4`
   color: ${props => props.theme.primary.light};
   text-decoration: none;
   font-family: ${props => props.theme.fonts.teko};
-  font-size: 2rem;
-  margin: ${props => props.theme.unit * 2}px;
+  font-size: 1.4rem;
+  margin: 0 10px 0 0;
   font-weight: normal;
+  text-align: end;
+
+  ${props => props.theme.mediaQueries.sm} {
+    font-size: 2rem;
+  }
 `;
 
 const Link = styled(RouteLink)`
@@ -18,9 +23,16 @@ const Link = styled(RouteLink)`
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
+
+  ${props => props.theme.mediaQueries.sm} {
+    flex-direction: row;
+  }
 `;
 
-const SymbolsMenu = () => {
+const SymbolsMenu = props => {
+  const { match } = props;
+  console.log({ match });
   return (
     <Container>
       <Link to="/">
@@ -33,4 +45,4 @@ const SymbolsMenu = () => {
   );
 };
 
-export default SymbolsMenu;
+export default withRouter(SymbolsMenu);
