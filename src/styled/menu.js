@@ -33,7 +33,7 @@ export const BlockMenuItem = styled.li`
 export const BlockMenu = styled.ul`
   position: relative;
   margin: 0;
-  padding: ${props => 2 * props.theme.unit}px ${props => 8 * props.theme.unit}px;
+  padding: ${props => 2 * props.theme.unit}px ${props => 9 * props.theme.unit}px;
   background-color: ${props => props.theme.primary.light}33;
 `;
 
@@ -53,8 +53,8 @@ export const MenuButton = styled.button`
   background-color: ${props => props.theme.primary.light};
   color: ${props => props.theme.primary.main};
   font-size: 3rem;
-  padding: 0 ${props => 1.2 * props.theme.unit}px
-    ${props => 2 * props.theme.unit}px ${props => 1.2 * props.theme.unit}px;
+  padding: 0 ${props => 2 * props.theme.unit}px
+    ${props => 2 * props.theme.unit}px ${props => 2 * props.theme.unit}px;
 `;
 
 export const PrevButton = styled(MenuButton)`

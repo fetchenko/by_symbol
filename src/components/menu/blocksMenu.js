@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   BlockMenuItem,
   BlockMenu,
@@ -9,16 +9,44 @@ import {
 import GridLoading from "../blocks/gridLoading";
 import ImageWithLoader from "../blocks/imageWithLoader";
 
-const BlocksMenu = props => {
-  const { value, options, onSelect } = props;
+class BlocksMenu extends Component {
+  constructor(props) {
+    super(props);
 
-  const handleClick = value => () => {
-    const selectedValue = options.find(item => item.path === value);
+    this.activeItemRef = React.createRef();
+  }
 
-    onSelect(selectedValue);
+  componentDidUpdate(prevProps, prevState) {
+    // only scroll into view if the active item changed last render
+    if (this.props.value !== prevProps.value) {
+      this.ensureActiveItemVisible();
+    }
+
+    // if (this.state.activeIndex !== prevState.activeIndex) {
+    //   this.ensureActiveItemVisible();
+    // }
+  }
+
+  ensureActiveItemVisible() {
+    const itemComponent = this.activeItemRef;
+
+    if (itemComponent) {
+      itemComponent.current.scrollIntoView({
+        behavior: "smooth",
+        inline: "center"
+      });
+    }
+  }
+
+  handleClick = value => () => {
+    const selectedValue = this.props.options.find(item => item.path === value);
+
+    this.props.onSelect(selectedValue);
   };
 
-  const handleNextButton = () => {
+  handleNextButton = () => {
+    const { options, onSelect, value } = this.props;
+
     const currentIndex = options.findIndex(item => item.path === value.path);
 
     if (options[currentIndex + 1]) {
@@ -26,7 +54,9 @@ const BlocksMenu = props => {
     }
   };
 
-  const handlePrevButton = () => {
+  handlePrevButton = () => {
+    const { options, onSelect, value } = this.props;
+
     const currentIndex = options.findIndex(item => item.path === value.path);
 
     if (options[currentIndex - 1]) {
@@ -34,36 +64,54 @@ const BlocksMenu = props => {
     }
   };
 
-  const renderLoaderComponent = () => {
+  renderLoaderComponent = () => {
     return <GridLoading containerProps={{ rows: 5, columns: 8 }} />;
   };
 
-  return (
-    <BlockMenu>
-      <BlockMenuContent>
-        <PrevButton onClick={handlePrevButton}>&#8249;</PrevButton>
+  renderMenuItem = item => {
+    const { value, options, onSelect } = this.props;
 
-        {options.map(option => {
-          return (
-            <BlockMenuItem
-              active={value.path === option.path}
-              onClick={handleClick(option.path)}
-            >
-              {option.img && (
-                <ImageWithLoader
-                  key={option.path}
-                  src={option.img}
-                  alt={option.label}
-                  loaderComponent={renderLoaderComponent}
-                />
-              )}
-            </BlockMenuItem>
-          );
-        })}
-        <NextButton onClick={handleNextButton}>&#8250;</NextButton>
-      </BlockMenuContent>
-    </BlockMenu>
-  );
-};
+    const active = value.path === item.path;
+
+    const props = active
+      ? {
+          active,
+          ref: this.activeItemRef
+        }
+      : {};
+
+    if (active) {
+      props.ref = this.activeItemRef;
+    }
+
+    return (
+      <BlockMenuItem {...props} onClick={this.handleClick(item.path)}>
+        {item.img && (
+          <ImageWithLoader
+            key={item.path}
+            src={item.img}
+            alt={item.label}
+            loaderComponent={this.renderLoaderComponent}
+          />
+        )}
+      </BlockMenuItem>
+    );
+  };
+
+  render() {
+    const { value, options, onSelect } = this.props;
+
+    return (
+      <BlockMenu>
+        <BlockMenuContent>
+          <PrevButton onClick={this.handlePrevButton}>&#8249;</PrevButton>
+
+          {options.map(this.renderMenuItem)}
+          <NextButton onClick={this.handleNextButton}>&#8250;</NextButton>
+        </BlockMenuContent>
+      </BlockMenu>
+    );
+  }
+}
 
 export default BlocksMenu;
