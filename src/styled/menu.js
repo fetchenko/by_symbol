@@ -28,6 +28,7 @@ export const BlockMenuItem = styled.li`
   list-style-type: none;
   margin: 0 ${props => props.theme.unit}px;
   cursor: pointer;
+  transition: 0.5s;
 `;
 
 export const BlockMenu = styled.ul`

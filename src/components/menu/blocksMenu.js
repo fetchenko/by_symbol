@@ -17,14 +17,9 @@ class BlocksMenu extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // only scroll into view if the active item changed last render
     if (this.props.value !== prevProps.value) {
       this.ensureActiveItemVisible();
     }
-
-    // if (this.state.activeIndex !== prevState.activeIndex) {
-    //   this.ensureActiveItemVisible();
-    // }
   }
 
   ensureActiveItemVisible() {
@@ -69,7 +64,7 @@ class BlocksMenu extends Component {
   };
 
   renderMenuItem = item => {
-    const { value, options, onSelect } = this.props;
+    const { value } = this.props;
 
     const active = value.path === item.path;
 
@@ -99,13 +94,12 @@ class BlocksMenu extends Component {
   };
 
   render() {
-    const { value, options, onSelect } = this.props;
+    const { options } = this.props;
 
     return (
       <BlockMenu>
         <BlockMenuContent>
           <PrevButton onClick={this.handlePrevButton}>&#8249;</PrevButton>
-
           {options.map(this.renderMenuItem)}
           <NextButton onClick={this.handleNextButton}>&#8250;</NextButton>
         </BlockMenuContent>
