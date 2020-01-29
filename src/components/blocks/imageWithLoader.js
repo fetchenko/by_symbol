@@ -10,17 +10,9 @@ const Container = styled.div`
 
 const LoaderContainer = styled.div`
   position: absolute;
-  top: 0;
+  top: 3px;
   left: 0;
   visibility: ${props => (props.hide ? "hidden" : "")};
-`;
-
-const Image = styled.div`
-  background-image: url(${props => props.src});
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
 `;
 
 const ImageWithLoader = props => {
@@ -29,7 +21,6 @@ const ImageWithLoader = props => {
 
   return (
     <Container width="90px" height="60px">
-      {/* <Image src={src} /> */}
       <Img
         hide={!loaded}
         src={src}
