@@ -22,7 +22,7 @@ const Symbols = props => {
         value={symbol}
         onSelect={handleSelect}
       />
-      {symbol && <Title>{symbol.label}</Title>}
+      {symbol && <Title>- {symbol.label} -</Title>}
       <Carousel>
         <CarouselContent>
           {symbol.path === "symbol-of-spring" && <SymbolOfSpring />}
