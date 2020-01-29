@@ -15,9 +15,12 @@ export const GridContainer = styled.div`
   }
 `;
 
-export const GridBlock = styled.div`
+export const GridBlock = styled.div.attrs(props => ({
+  style: {
+    backgroundColor: props.theme.primary.main,
+    gridArea: props.gridArea
+  }
+}))`
   width: 100%;
   height: 100%;
-  background-color: ${props => props.theme.primary.main};
-  grid-area: ${props => props.gridArea};
 `;
