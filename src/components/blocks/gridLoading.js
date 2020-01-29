@@ -18,8 +18,8 @@ function GridLoading(props) {
   const { rows = 5, columns = 5, rowGap = 5, columnGap = 5 } = containerProps;
   const { width, height } = cellProps;
 
-  const colsArr = createArray(columns);
-  const rowsArr = createArray(rows);
+  const colsArr = createArray(columns, 1);
+  const rowsArr = createArray(rows, 1);
 
   return (
     <GridContainer
@@ -30,8 +30,6 @@ function GridLoading(props) {
     >
       {rowsArr.map(col =>
         colsArr.map(row => {
-          // if (col === columns - 1 && row === rows - 1) return null;
-
           return (
             <Cell
               key={`${col} / ${row} / ${col} / ${row}`}
