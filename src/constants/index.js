@@ -1,7 +1,7 @@
 const imgDir =
   process.env.NODE_ENV === "development"
-    ? "/assets/img/"
-    : "/belorussian-symbols/assets/img/";
+    ? "/assets/images/"
+    : "/belorussian-symbols/assets/images/";
 
 export const SYMBOL_OPTIONS = [
   {
