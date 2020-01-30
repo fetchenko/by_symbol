@@ -251,7 +251,14 @@ const gridAreas = [
 
 const SymbolOfLove = () => {
   return (
-    <GridContainer rows="5px" columns="5px">
+    <GridContainer
+      rows="5px"
+      columns="5px"
+      rowsSm="8px"
+      columnsSm="8px"
+      rowsMd="11px"
+      columnsMd="11px"
+    >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;
       })}
