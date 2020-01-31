@@ -27,6 +27,12 @@ export const SYMBOL_OPTIONS = [
     path: "symbol-of-ancestors",
     title: "ancestors",
     img: `${imgDir}/symbol-of-ancestors.png`
+  },
+  {
+    label: "Love",
+    path: "symbol-of-love",
+    title: "symbol of love",
+    img: `${imgDir}/symbol-of-love.png`
   }
 ];
 
