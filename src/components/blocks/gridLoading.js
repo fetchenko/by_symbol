@@ -25,6 +25,10 @@ function GridLoading(props) {
     <GridContainer
       rows={`${rows}px`}
       columns={`${columns}px`}
+      rowsMd={`${rows}px`}
+      columnsMd={`${columns}px`}
+      rowsSm={`${rows}px`}
+      columnsSm={`${columns}px`}
       rowGap={`${rowGap}px`}
       columnGap={`${columnGap}px`}
     >

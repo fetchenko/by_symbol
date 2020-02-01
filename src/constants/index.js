@@ -1,7 +1,4 @@
-const imgDir =
-  process.env.NODE_ENV === "development"
-    ? "/assets/images/"
-    : "/belorussian-symbols/assets/images/";
+const imgDir = "/assets/images/"
 
 export const SYMBOL_OPTIONS = [
   {
