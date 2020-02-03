@@ -3,12 +3,13 @@ import SymbolOfSpring from "../symbols/symbolOfSpring";
 import SymbolOfWealth from "../symbols/symbolOfWealth";
 import SymbolOfHarvest from "../symbols/symbolOfHarvest";
 import SymbolOfAncestors from "../symbols/symbolOfAncestors";
+import SymbolOfLove from "../symbols/symbolOfLove";
+import SymbolOfWomen from "../symbols/symbolOfWomen";
 import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
-import { SymbolOfLove } from "../compositions";
 import { Title } from "../../styled/typography";
-import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
 
 const Symbols = props => {
   const [symbol, setSymbol] = useState(SYMBOL_OPTIONS[0]);
@@ -36,6 +37,7 @@ const Symbols = props => {
           {symbol.path === "symbol-of-harvest" && <SymbolOfHarvest />}
           {symbol.path === "symbol-of-ancestors" && <SymbolOfAncestors />}
           {symbol.path === "symbol-of-love" && <SymbolOfLove />}
+          {symbol.path === "symbol-of-women" && <SymbolOfWomen />}
         </CarouselContent>
       </Carousel>
     </div>
