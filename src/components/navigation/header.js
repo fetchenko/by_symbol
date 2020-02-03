@@ -1,11 +1,14 @@
 import React from "react";
 import { Header } from "../../styled/header";
 import { Title } from "../typography";
+import { FormattedMessage } from "react-intl";
 
 const MainHeader = () => {
   return (
     <Header>
-      <Title>Belarussian Symbols</Title>
+      <Title>
+        <FormattedMessage id="belorussian-symbols" />
+      </Title>
     </Header>
   );
 };

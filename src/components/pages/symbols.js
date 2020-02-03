@@ -8,6 +8,7 @@ import { SYMBOL_OPTIONS } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
 import { SymbolOfLove } from "../compositions";
 import { Title } from "../../styled/typography";
+import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
 
 const Symbols = props => {
   const [symbol, setSymbol] = useState(SYMBOL_OPTIONS[0]);
@@ -23,7 +24,11 @@ const Symbols = props => {
         value={symbol}
         onSelect={handleSelect}
       />
-      {symbol && <Title>{symbol.label}</Title>}
+      {symbol && (
+        <Title>
+          <FormattedMessage id={symbol.path} />
+        </Title>
+      )}
       <Carousel>
         <CarouselContent>
           {symbol.path === "symbol-of-spring" && <SymbolOfSpring />}
