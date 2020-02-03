@@ -60,7 +60,7 @@ class BlocksMenu extends Component {
   };
 
   renderLoaderComponent = () => {
-    return <GridLoading containerProps={{ rows: 5, columns: 8 }} />;
+    return <GridLoading containerProps={{ rows: 6, columns: 8 }} />;
   };
 
   renderMenuItem = item => {

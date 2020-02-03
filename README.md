@@ -1,1 +1,1 @@
-https://fedchenko273.github.io/belorussian-symbols/
+https://symbols-75118.firebaseapp.com/

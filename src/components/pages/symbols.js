@@ -6,6 +6,7 @@ import SymbolOfAncestors from "../symbols/symbolOfAncestors";
 import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
+import { SymbolOfLove } from "../compositions";
 import { Title } from "../../styled/typography";
 
 const Symbols = props => {
@@ -22,13 +23,14 @@ const Symbols = props => {
         value={symbol}
         onSelect={handleSelect}
       />
-      {symbol && <Title>- {symbol.label} -</Title>}
+      {symbol && <Title>{symbol.label}</Title>}
       <Carousel>
         <CarouselContent>
           {symbol.path === "symbol-of-spring" && <SymbolOfSpring />}
           {symbol.path === "symbol-of-wealth" && <SymbolOfWealth />}
           {symbol.path === "symbol-of-harvest" && <SymbolOfHarvest />}
           {symbol.path === "symbol-of-ancestors" && <SymbolOfAncestors />}
+          {symbol.path === "symbol-of-love" && <SymbolOfLove />}
         </CarouselContent>
       </Carousel>
     </div>

@@ -32,7 +32,6 @@ const Container = styled.div`
 
 const SymbolsMenu = props => {
   const { match } = props;
-  console.log({ match });
   return (
     <Container>
       <Link to="/">

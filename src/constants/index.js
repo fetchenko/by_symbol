@@ -1,40 +1,43 @@
-const imgDir =
-  process.env.NODE_ENV === "development"
-    ? "/assets/img/"
-    : "/belorussian-symbols/assets/img/";
+const imgDir = "/assets/images/"
 
 export const SYMBOL_OPTIONS = [
   {
-    label: "Symbol of spring and youth",
+    label: "Spring and youth",
     path: "symbol-of-spring",
     title: "spring and youth",
-    img: `${imgDir}/symbol-of-spring.png`
+    img: `${imgDir}/symbol-of-spring.webp`
   },
   {
-    label: "Symbol of wealth",
+    label: "Wealth",
     path: "symbol-of-wealth",
     title: "wealth",
-    img: `${imgDir}/symbol-of-wealth.png`
+    img: `${imgDir}/symbol-of-wealth.webp`
   },
   {
-    label: "Union of the sun and the earth. Symbol of harvest",
+    label: "The sun and the earth",
     path: "symbol-of-harvest",
     title: "harvest",
-    img: `${imgDir}/symbol-of-harvest.png`
+    img: `${imgDir}/symbol-of-harvest.webp`
   },
   {
-    label: "Symbol of ancestors",
+    label: "Ancestors",
     path: "symbol-of-ancestors",
     title: "ancestors",
-    img: `${imgDir}/symbol-of-ancestors.png`
+    img: `${imgDir}/symbol-of-ancestors.webp`
+  },
+  {
+    label: "Love",
+    path: "symbol-of-love",
+    title: "symbol of love",
+    img: `${imgDir}/symbol-of-love.webp`
   }
 ];
 
 export const COMPOSITIONS = [
   {
-    label: "Symbol of love",
+    label: "Love",
     path: "symbol-of-love",
     title: "symbol of love",
-    img: `${imgDir}/symbol-of-love.png`
+    img: `${imgDir}/symbol-of-love.webp`
   }
 ];
