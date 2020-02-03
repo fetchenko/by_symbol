@@ -20,8 +20,6 @@ export const mediaQueries = mediaBreakpoints.reduce((acc, item) => {
   return { ...acc, [item.name]: createMediaQuery(item.size) };
 }, {});
 
-console.log({ mediaQueries });
-
 const theme = {
   unit: 4,
   primary: {
