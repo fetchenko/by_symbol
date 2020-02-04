@@ -23,7 +23,7 @@ export const SYMBOL_OPTIONS = [
   },
   {
     path: "symbol-of-women",
-    img: `${imgDir}/symbol-of-love.webp`
+    img: `${imgDir}/symbol-of-women.webp`
   }
 ];
 
