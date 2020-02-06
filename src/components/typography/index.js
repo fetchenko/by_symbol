@@ -8,7 +8,7 @@ export const Title = styled.h4`
   padding: ${props => props.theme.unit * 3}px;
 
   ${props => props.theme.mediaQueries.sm} {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 `;
 
