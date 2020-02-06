@@ -11,7 +11,7 @@ import SymbolOfSources from "../symbols/symbolOfSources";
 import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
-import { Title } from "../../styled/typography";
+import { SymbolTitle } from "../typography";
 import { getNextValue, getPrevValue } from "../../helpers/collection";
 
 const Symbols = props => {
@@ -41,9 +41,9 @@ const Symbols = props => {
         onSelect={handleSelect}
       />
       {symbol && (
-        <Title>
+        <SymbolTitle>
           <FormattedMessage id={symbol.path} />
-        </Title>
+        </SymbolTitle>
       )}
       <Swipeable onSwipedLeft={handleNext} onSwipedRight={handlePrev}>
         <Carousel>
