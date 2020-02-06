@@ -8,6 +8,7 @@ import {
 } from "../../styled/menu";
 import GridLoading from "../blocks/gridLoading";
 import ImageWithLoader from "../blocks/imageWithLoader";
+import { getNextValue, getPrevValue } from "../../helpers/collection";
 
 class BlocksMenu extends Component {
   constructor(props) {
@@ -42,20 +43,20 @@ class BlocksMenu extends Component {
   handleNextButton = () => {
     const { options, onSelect, value } = this.props;
 
-    const currentIndex = options.findIndex(item => item.path === value.path);
+    const nextValue = getNextValue(options, value);
 
-    if (options[currentIndex + 1]) {
-      onSelect(options[currentIndex + 1]);
+    if (nextValue) {
+      onSelect(nextValue);
     }
   };
 
   handlePrevButton = () => {
     const { options, onSelect, value } = this.props;
 
-    const currentIndex = options.findIndex(item => item.path === value.path);
+    const prevValue = getPrevValue(options, value);
 
-    if (options[currentIndex - 1]) {
-      onSelect(options[currentIndex - 1]);
+    if (prevValue) {
+      onSelect(prevValue);
     }
   };
 
