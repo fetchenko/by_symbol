@@ -10,6 +10,7 @@ import SymbolOfWomen from "../symbols/symbolOfWomen";
 import SymbolOfSources from "../symbols/symbolOfSources";
 import SymbolOfMother from "../symbols/symbolOfMother";
 import SymbolOfEarth from "../symbols/symbolOfEarth";
+import SymbolOfSun from "../symbols/symbolOfSun";
 import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
@@ -59,6 +60,7 @@ const Symbols = props => {
             {symbol.path === "symbol-of-sources" && <SymbolOfSources />}
             {symbol.path === "symbol-of-mother" && <SymbolOfMother />}
             {symbol.path === "symbol-of-earth" && <SymbolOfEarth />}
+            {symbol.path === "symbol-of-sun" && <SymbolOfSun />}
           </CarouselContent>
         </Carousel>
       </Swipeable>
