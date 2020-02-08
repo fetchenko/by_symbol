@@ -33,6 +33,17 @@ export const SYMBOL_OPTIONS = [
     path: "symbol-of-mother",
     img: `${imgDir}/symbol-of-mother.webp`
   },
+  {
+    path: "symbol-of-earth",
+    img: `${imgDir}/symbol-of-earth.webp`
+  }
+];
+
+export const CUSTOM_SYMBOL_OPTIONS = [
+  {
+    path: "symbol-of-ant",
+    img: `${imgDir}/symbol-of-mother.webp`
+  }
 ];
 
 export const COMPOSITIONS = [
@@ -41,5 +52,20 @@ export const COMPOSITIONS = [
     path: "symbol-of-love",
     title: "symbol of love",
     img: `${imgDir}/symbol-of-love.webp`
+  }
+];
+
+export const SymbolMenuOptions = [
+  {
+    path: "/",
+    label: "home"
+  },
+  {
+    path: "/make-symbol",
+    label: "make-symbol"
+  },
+  {
+    path: "/custom-symbols",
+    label: "custom-symbols"
   }
 ];

@@ -21,3 +21,18 @@ export const SymbolTitle = styled.h4`
     font-size: 1.3rem;
   }
 `;
+
+export const CapitalLetter = styled.h4`
+  font-size: ${props => props.theme.fonts.secondary};
+  color: ${props => props.theme.primary.light};
+  text-decoration: none;
+  font-family: ${props => props.theme.fonts.teko};
+  font-size: 1.4rem;
+  margin: 0 10px 0 0;
+  font-weight: normal;
+  text-align: end;
+
+  ${props => props.theme.mediaQueries.sm} {
+    font-size: 2rem;
+  }
+`;

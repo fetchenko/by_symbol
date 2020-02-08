@@ -1,45 +1,22 @@
 import React from "react";
-import { Link as RouteLink, withRouter } from "react-router-dom";
-import styled from "styled-components";
+import { withRouter } from "react-router-dom";
+import { Link } from "../../styled/links";
+import { Container } from "../../styled/containers";
+import { CapitalLetter } from "../typography";
+import { FormattedMessage } from "react-intl";
 
-const CapitalLetter = styled.h4`
-  font-size: ${props => props.theme.fonts.secondary};
-  color: ${props => props.theme.primary.light};
-  text-decoration: none;
-  font-family: ${props => props.theme.fonts.teko};
-  font-size: 1.4rem;
-  margin: 0 10px 0 0;
-  font-weight: normal;
-  text-align: end;
-
-  ${props => props.theme.mediaQueries.sm} {
-    font-size: 2rem;
-  }
-`;
-
-const Link = styled(RouteLink)`
-  text-decoration: none;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  ${props => props.theme.mediaQueries.sm} {
-    flex-direction: row;
-  }
-`;
-
-const SymbolsMenu = props => {
-  const { match } = props;
+const SymbolsMenu = ({ options = [] }) => {
   return (
     <Container>
-      <Link to="/">
-        <CapitalLetter>Sybmol</CapitalLetter>
-      </Link>
-      <Link to="/compositions">
-        <CapitalLetter>Composition</CapitalLetter>
-      </Link>
+      {options.map(option => {
+        return (
+          <Link key={option.label} to={option.path}>
+            <CapitalLetter>
+              <FormattedMessage id={option.label} />
+            </CapitalLetter>
+          </Link>
+        );
+      })}
     </Container>
   );
 };
