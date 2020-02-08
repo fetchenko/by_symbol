@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Swipeable } from "react-swipeable";
-import SymbolOfSpring from "../symbols/symbolOfSpring";
-import SymbolOfWealth from "../symbols/symbolOfWealth";
-import SymbolOfHarvest from "../symbols/symbolOfHarvest";
-import SymbolOfAncestors from "../symbols/symbolOfAncestors";
-import SymbolOfLove from "../symbols/symbolOfLove";
-import SymbolOfWomen from "../symbols/symbolOfWomen";
-import SymbolOfSources from "../symbols/symbolOfSources";
-import SymbolOfMother from "../symbols/symbolOfMother";
-import SymbolOfEarth from "../symbols/symbolOfEarth";
-import SymbolOfSun from "../symbols/symbolOfSun";
+// import SymbolOfSpring from "../symbols/symbolOfSpring";
+// import SymbolOfWealth from "../symbols/symbolOfWealth";
+// import SymbolOfHarvest from "../symbols/symbolOfHarvest";
+// import SymbolOfAncestors from "../symbols/symbolOfAncestors";
+// import SymbolOfLove from "../symbols/symbolOfLove";
+// import SymbolOfWomen from "../symbols/symbolOfWomen";
+// import SymbolOfSources from "../symbols/symbolOfSources";
+// import SymbolOfMother from "../symbols/symbolOfMother";
+// import SymbolOfEarth from "../symbols/symbolOfEarth";
+// import SymbolOfSun from "../symbols/symbolOfSun";
+import { symbols } from "../symbols";
 import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
@@ -51,16 +52,11 @@ const Symbols = props => {
       <Swipeable onSwipedLeft={handleNext} onSwipedRight={handlePrev}>
         <Carousel>
           <CarouselContent>
-            {symbol.path === "symbol-of-spring" && <SymbolOfSpring />}
-            {symbol.path === "symbol-of-wealth" && <SymbolOfWealth />}
-            {symbol.path === "symbol-of-harvest" && <SymbolOfHarvest />}
-            {symbol.path === "symbol-of-ancestors" && <SymbolOfAncestors />}
-            {symbol.path === "symbol-of-love" && <SymbolOfLove />}
-            {symbol.path === "symbol-of-women" && <SymbolOfWomen />}
-            {symbol.path === "symbol-of-sources" && <SymbolOfSources />}
-            {symbol.path === "symbol-of-mother" && <SymbolOfMother />}
-            {symbol.path === "symbol-of-earth" && <SymbolOfEarth />}
-            {symbol.path === "symbol-of-sun" && <SymbolOfSun />}
+            {symbols.map(symbolData => {
+              const { path, component: SymbolView } = symbolData;
+
+              return path === symbol.path ? <SymbolView key={path} /> : null;
+            })}
           </CarouselContent>
         </Carousel>
       </Swipeable>

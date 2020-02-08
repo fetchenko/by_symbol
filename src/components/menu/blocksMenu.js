@@ -81,10 +81,13 @@ class BlocksMenu extends Component {
     }
 
     return (
-      <BlockMenuItem {...props} onClick={this.handleClick(item.path)}>
+      <BlockMenuItem
+        key={item.path}
+        {...props}
+        onClick={this.handleClick(item.path)}
+      >
         {item.img && (
           <ImageWithLoader
-            key={item.path}
             src={item.img}
             alt={item.label}
             loaderComponent={this.renderLoaderComponent}
