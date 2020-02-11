@@ -8,6 +8,7 @@ import SymbolOfSpring from "./spring";
 import SymbolOfSun from "./sun";
 import SymbolOfWealth from "./wealth";
 import SymbolOfWomen from "./women";
+import SymbolOfMermaid from "./mermaid";
 
 export {
   SymbolOfEarth,
@@ -19,7 +20,8 @@ export {
   SymbolOfMother,
   SymbolOfSources,
   SymbolOfSun,
-  SymbolOfWomen
+  SymbolOfWomen,
+  SymbolOfMermaid
 };
 
 export const symbols = [
@@ -62,5 +64,9 @@ export const symbols = [
   {
     path: "symbol-of-women",
     component: SymbolOfWomen
+  },
+  {
+    path: "symbol-of-mermaid",
+    component: SymbolOfMermaid
   }
 ];

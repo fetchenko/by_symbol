@@ -40,6 +40,10 @@ export const SYMBOL_OPTIONS = [
   {
     path: "symbol-of-sun",
     img: `${imgDir}/symbol-of-sun.webp`
+  },
+  {
+    path: "symbol-of-mermaid",
+    img: `${imgDir}/symbol-of-sun.webp`
   }
 ];
 

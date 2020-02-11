@@ -1,21 +1,27 @@
 import React, { Component } from "react";
 import { createArray } from "../../helpers/collection";
+import Slider from "../inputs/slider";
 
 const styles = {
   grid: {
     display: "grid",
-    gridAutoRows: 15,
-    gridAutoColumns: 15
+    gridAutoRows: 19,
+    gridAutoColumns: 19
   },
   cell: {
     width: "100%",
     height: "100%",
-    border: "solid 1px"
+    border: "solid 1px #ccc"
+  },
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
   }
 };
 
-const columns = createArray(70, 1);
-const rows = createArray(50, 1);
+const columns = createArray(90, 1);
+const rows = createArray(90, 1);
 
 class SymbolBuilder extends Component {
   constructor(props) {
@@ -47,8 +53,8 @@ class SymbolBuilder extends Component {
     const { symbol } = this.state;
 
     return (
-      <div>
-        <h3>Symbol Builder</h3>
+      <div style={styles.root}>
+        <Slider />
         <div style={styles.grid} onClick={this.handleGridClick}>
           {rows.map(col =>
             columns.map(row => {
