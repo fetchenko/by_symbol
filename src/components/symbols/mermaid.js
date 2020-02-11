@@ -625,12 +625,12 @@ let gridAreas = [
 const SymbolOfMermaid = () => {
   return (
     <GridContainer
-      rows="7px"
-      columns="7px"
-      rowsSm="8px"
-      columnsSm="8px"
-      rowsMd="11px"
-      columnsMd="11px"
+      rows="3px"
+      columns="3px"
+      rowsSm="5px"
+      columnsSm="5px"
+      rowsMd="8px"
+      columnsMd="8px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;
