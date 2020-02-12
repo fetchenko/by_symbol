@@ -9,6 +9,8 @@ import SymbolOfSun from "./sun";
 import SymbolOfWealth from "./wealth";
 import SymbolOfWomen from "./women";
 import SymbolOfMermaid from "./mermaid";
+import SymbolOfLoveSong from "./loveSong";
+import SymbolOfStrongFamily from "./strongFamily";
 
 export {
   SymbolOfEarth,
@@ -21,7 +23,9 @@ export {
   SymbolOfSources,
   SymbolOfSun,
   SymbolOfWomen,
-  SymbolOfMermaid
+  SymbolOfMermaid,
+  SymbolOfLoveSong,
+  SymbolOfStrongFamily
 };
 
 export const symbols = [
@@ -68,5 +72,13 @@ export const symbols = [
   {
     path: "symbol-of-mermaid",
     component: SymbolOfMermaid
+  },
+  {
+    path: "symbol-of-love-song",
+    component: SymbolOfLoveSong
+  },
+  {
+    path: "symbol-of-strong-family",
+    component: SymbolOfStrongFamily
   }
 ];

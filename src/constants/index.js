@@ -44,6 +44,14 @@ export const SYMBOL_OPTIONS = [
   {
     path: "symbol-of-mermaid",
     img: `${imgDir}/symbol-of-mermaid.webp`
+  },
+  {
+    path: "symbol-of-love-song",
+    img: `${imgDir}/symbol-of-mermaid.webp`
+  },
+  {
+    path: "symbol-of-strong-family",
+    img: `${imgDir}/symbol-of-mermaid.webp`
   }
 ];
 
