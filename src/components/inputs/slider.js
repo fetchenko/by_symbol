@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Slider = () => {
-  const [value, setValue] = useState(10);
+const styles = {
+  root: {
+    display: "flex",
+    flexDirection: "column"
+  }
+};
+
+const Slider = props => {
+  const { label, value, onChange, min = 1, max = 100 } = props;
 
   return (
-    <div>
-      <p>Custom range slider:</p>
+    <div style={styles.root}>
+      <label>{label}</label>
       <input
         value={value}
         onChange={event => {
-          setValue(event.target.value);
+          if (onChange) {
+            onChange(event);
+          }
         }}
         type="range"
-        min="1"
-        max="100"
-        class="slider"
-        id="myRange"
+        min={min}
+        max={max}
       />
     </div>
   );
