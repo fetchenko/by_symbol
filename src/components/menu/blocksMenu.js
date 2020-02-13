@@ -102,11 +102,9 @@ class BlocksMenu extends Component {
 
     return (
       <BlockMenu>
-        <BlockMenuContent>
-          <PrevButton onClick={this.handlePrevButton}>&#8249;</PrevButton>
-          {options.map(this.renderMenuItem)}
-          <NextButton onClick={this.handleNextButton}>&#8250;</NextButton>
-        </BlockMenuContent>
+        <PrevButton onClick={this.handlePrevButton}>&#8249;</PrevButton>
+        <BlockMenuContent>{options.map(this.renderMenuItem)}</BlockMenuContent>
+        <NextButton onClick={this.handleNextButton}>&#8250;</NextButton>
       </BlockMenu>
     );
   }

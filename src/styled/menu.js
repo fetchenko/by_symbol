@@ -33,8 +33,10 @@ export const BlockMenuItem = styled.li`
 
 export const BlockMenu = styled.ul`
   position: relative;
+  display: flex;
+  align-items: stretch;
   margin: 0;
-  padding: ${props => 2 * props.theme.unit}px ${props => 9 * props.theme.unit}px;
+  padding: 0;
   background-color: ${props => props.theme.primary.light}33;
 `;
 
@@ -43,13 +45,25 @@ export const BlockMenuContent = styled.div`
   flex-direction: row;
   align-items: center;
   width: 100%;
+  padding: 5px 0;
   overflow: auto hidden;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${props => props.theme.primary.light}80;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.primary.main}80;
+  }
 `;
 
 export const MenuButton = styled.button`
   cursor: pointer;
-  position: absolute;
-  height: 100%;
   border: none;
   background-color: ${props => props.theme.primary.light};
   color: ${props => props.theme.primary.main};
@@ -58,10 +72,6 @@ export const MenuButton = styled.button`
     ${props => 2 * props.theme.unit}px ${props => 2 * props.theme.unit}px;
 `;
 
-export const PrevButton = styled(MenuButton)`
-  left: 0;
-`;
+export const PrevButton = styled(MenuButton)``;
 
-export const NextButton = styled(MenuButton)`
-  right: 0;
-`;
+export const NextButton = styled(MenuButton)``;
