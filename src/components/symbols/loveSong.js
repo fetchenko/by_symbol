@@ -252,8 +252,8 @@ const gridAreas = [
 const SymbolOfLoveSong = () => {
   return (
     <GridContainer
-      rows="8px"
-      columns="8px"
+      rows="7px"
+      columns="7px"
       rowsSm="10px"
       columnsSm="10px"
       rowsMd="13px"

@@ -247,8 +247,8 @@ const gridAreas = [
 const SymbolOfStrongFamily = () => {
   return (
     <GridContainer
-      rows="8px"
-      columns="8px"
+      rows="6px"
+      columns="6px"
       rowsSm="10px"
       columnsSm="10px"
       rowsMd="12px"

@@ -277,8 +277,8 @@ const gridAreas = [
 const SymbolOfMother = () => {
   return (
     <GridContainer
-      rows="7px"
-      columns="7px"
+      rows="6px"
+      columns="6px"
       rowsSm="8px"
       columnsSm="8px"
       rowsMd="10px"
