@@ -42,11 +42,42 @@ class SymbolBuilder extends Component {
     };
   }
 
-  handleExport = () => {
-    const blob = new Blob(["Hello, world!"], {
-      type: "text/plain;charset=utf-8"
+  getSymbolContent = () => {
+    const { symbol } = this.state;
+
+    let areas = Array.from(symbol).map(area => {
+      const [v1, h1, v2, h2] = area.split("/");
+
+      return [v1, h1, v2, h2];
     });
-    FileSaver.saveAs(blob, "hello world.txt");
+
+    const v1Arr = areas.map(arr => arr[0]);
+    const h1Arr = areas.map(arr => arr[1]);
+
+    const vMin = Math.min(...v1Arr) - 1;
+    const hMin = Math.min(...h1Arr) - 1;
+
+    areas = areas.map(area => {
+      const [v1, h1, v2, h2] = area;
+
+      return `${v1 - vMin} / ${h1 - hMin} / ${v2 - vMin} / ${h2 - hMin}`;
+    });
+
+    areas = areas.reduce((acc, item) => {
+      return `${acc}"${item}",\n`;
+    }, "");
+    return areas;
+  };
+
+  handleExport = () => {
+    const symbolContent = this.getSymbolContent();
+
+    if (symbolContent) {
+      const blob = new Blob([symbolContent], {
+        type: "text/plain;charset=utf-8"
+      });
+      FileSaver.saveAs(blob, "hello world.txt");
+    }
   };
 
   handleGridClick = event => {
