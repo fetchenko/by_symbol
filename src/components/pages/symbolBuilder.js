@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FileSaver from "file-saver";
 import { createArray } from "../../helpers/collection";
 import Slider from "../inputs/slider";
 
@@ -6,10 +7,12 @@ const styles = {
   grid: {
     display: "grid",
     gridAutoRows: 19,
-    gridAutoColumns: 19,
+    gridAutoColumns: 19
+  },
+  gridWrapper: {
     maxHeight: "80vh",
-    overflow: "auto",
-    maxWidth: "90vh"
+    maxWidth: "90vh",
+    overflow: "auto"
   },
   cell: {
     width: "100%",
@@ -38,6 +41,13 @@ class SymbolBuilder extends Component {
       rowsAmount: 50
     };
   }
+
+  handleExport = () => {
+    const blob = new Blob(["Hello, world!"], {
+      type: "text/plain;charset=utf-8"
+    });
+    FileSaver.saveAs(blob, "hello world.txt");
+  };
 
   handleGridClick = event => {
     const symbol = new Set(this.state.symbol);
@@ -87,32 +97,34 @@ class SymbolBuilder extends Component {
             }
             label="rows amount"
           />
+          <button onClick={this.handleExport}>export</button>
         </div>
-
-        <div
-          style={{
-            ...styles.grid,
-            gridAutoColumns: `${cellSize}px`,
-            gridAutoRows: `${cellSize}px`
-          }}
-          onClick={this.handleGridClick}
-        >
-          {rows.map(col =>
-            columns.map(row => {
-              const area = `${col} / ${row} / ${col} / ${row}`;
-              return (
-                <div
-                  id={area}
-                  key={area}
-                  style={{
-                    ...styles.cell,
-                    gridArea: area,
-                    backgroundColor: symbol.has(area) ? "blue" : "white"
-                  }}
-                />
-              );
-            })
-          )}
+        <div style={styles.gridWrapper}>
+          <div
+            style={{
+              ...styles.grid,
+              gridAutoColumns: `${cellSize}px`,
+              gridAutoRows: `${cellSize}px`
+            }}
+            onClick={this.handleGridClick}
+          >
+            {rows.map(col =>
+              columns.map(row => {
+                const area = `${col} / ${row} / ${col} / ${row}`;
+                return (
+                  <div
+                    id={area}
+                    key={area}
+                    style={{
+                      ...styles.cell,
+                      gridArea: area,
+                      backgroundColor: symbol.has(area) ? "blue" : "white"
+                    }}
+                  />
+                );
+              })
+            )}
+          </div>
         </div>
       </div>
     );
