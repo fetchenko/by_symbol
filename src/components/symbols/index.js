@@ -15,6 +15,10 @@ import SymbolOfLifeTree from "./lifeTree";
 import SymbolOfTalisman from "./talisman";
 import SymbolOfWomenShare from "./womenShare";
 import SymbolOfSong from "./song";
+import SymbolOfMother2 from "./mother2";
+import SymbolOfBereginia from "./bereginia";
+import SymbolOfCropYield from "./cropYield";
+import SymbolOfBathingFire from "./bathingFire";
 
 export {
   SymbolOfEarth,
@@ -33,7 +37,9 @@ export {
   SymbolOfLifeTree,
   SymbolOfTalisman,
   SymbolOfWomenShare,
-  SymbolOfSong
+  SymbolOfSong,
+  SymbolOfMother2,
+  SymbolOfCropYield
 };
 
 export const symbols = [
@@ -104,5 +110,21 @@ export const symbols = [
   {
     path: "symbol-of-song",
     component: SymbolOfSong
+  },
+  {
+    path: "symbol-of-mother-2",
+    component: SymbolOfMother2
+  },
+  {
+    path: "symbol-of-bereginia",
+    component: SymbolOfBereginia
+  },
+  {
+    path: "symbol-of-crop-yield",
+    component: SymbolOfCropYield
+  },
+  {
+    path: "symbol-of-bathering-fire",
+    component: SymbolOfBathingFire
   }
 ];

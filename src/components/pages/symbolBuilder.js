@@ -51,6 +51,8 @@ class SymbolBuilder extends Component {
       return [v1, h1, v2, h2];
     });
 
+    areas = areas.filter(area => area);
+
     const v1Arr = areas.map(arr => arr[0]);
     const h1Arr = areas.map(arr => arr[1]);
 

@@ -68,6 +68,22 @@ export const SYMBOL_OPTIONS = [
   {
     path: "symbol-of-song",
     img: `${imgDir}/symbol-of-talisman.webp`
+  },
+  {
+    path: "symbol-of-mother-2",
+    img: `${imgDir}/symbol-of-talisman.webp`
+  },
+  {
+    path: "symbol-of-bereginia",
+    img: `${imgDir}/symbol-of-talisman.webp`
+  },
+  {
+    path: "symbol-of-crop-yield",
+    img: `${imgDir}/symbol-of-talisman.webp`
+  },
+  {
+    path: "symbol-of-bathering-fire",
+    img: `${imgDir}/symbol-of-talisman.webp`
   }
 ];
 
