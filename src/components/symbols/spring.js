@@ -102,8 +102,8 @@ const SymbolOfSpring = () => {
       columns="12px"
       rowsSm="20px"
       columnsSm="20px"
-      rowsMd="25px"
-      columnsMd="25px"
+      rowsMd="22px"
+      columnsMd="22px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

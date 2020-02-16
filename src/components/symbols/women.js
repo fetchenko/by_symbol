@@ -89,7 +89,14 @@ const gridAreas = [
 
 const SymbolOfWomen = () => {
   return (
-    <GridContainer rowsSm="15px" columnsSm="15px" rows="10px" columns="10px">
+    <GridContainer
+      rows="10px"
+      columns="10px"
+      rowsSm="15px"
+      columnsSm="15px"
+      columnsMd="16px"
+      rowsMd="16px"
+    >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;
       })}

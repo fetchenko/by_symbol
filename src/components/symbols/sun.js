@@ -447,8 +447,8 @@ const SymbolOfSun = () => {
       columns="8px"
       rowsSm="14px"
       columnsSm="14px"
-      rowsMd="16px"
-      columnsMd="16px"
+      rowsMd="15px"
+      columnsMd="15px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

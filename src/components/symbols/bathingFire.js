@@ -650,12 +650,12 @@ const gridAreas = [
 const SymbolOfBathingFire = () => {
   return (
     <GridContainer
-      rows="8px"
-      columns="8px"
-      rowsSm="12px"
-      columnsSm="12px"
-      rowsMd="16px"
-      columnsMd="16px"
+      rows="4px"
+      columns="4px"
+      rowsSm="6px"
+      columnsSm="6px"
+      rowsMd="8px"
+      columnsMd="8px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

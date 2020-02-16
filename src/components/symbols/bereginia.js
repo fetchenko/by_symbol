@@ -333,12 +333,12 @@ const gridAreas = [
 const SymbolOfBereginia = () => {
   return (
     <GridContainer
-      rows="8px"
-      columns="8px"
-      rowsSm="12px"
-      columnsSm="12px"
-      rowsMd="16px"
-      columnsMd="16px"
+      rows="5px"
+      columns="5px"
+      rowsSm="8px"
+      columnsSm="8px"
+      rowsMd="10px"
+      columnsMd="10px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

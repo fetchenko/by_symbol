@@ -256,8 +256,8 @@ const SymbolOfLoveSong = () => {
       columns="8px"
       rowsSm="10px"
       columnsSm="10px"
-      rowsMd="15px"
-      columnsMd="15px"
+      rowsMd="13px"
+      columnsMd="13px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

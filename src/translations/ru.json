@@ -1,5 +1,5 @@
 {
-  "belorussian-symbols": "Белорусские символы",
+  "belorussian-symbols": "Белорусский орнамент",
   "symbol-of-spring": "Весна и молодость",
   "symbol-of-wealth": "Богатство",
   "symbol-of-harvest": "Солнце и Земля",
@@ -15,6 +15,11 @@
   "symbol-of-strong-family": "Крепкая семья",
   "symbol-of-life-tree": "Дерево жизни",
   "symbol-of-talisman": "Талисман",
+  "symbol-of-womens-share": "Женская доля",
+  "symbol-of-song": "Песня",
+  "symbol-of-bereginia": "Берегиня",
+  "symbol-of-crop-yield": "Плодородие",
+  "symbol-of-bathing-fire": "Купальский костёр",
   "home": "Главная",
   "make-symbol": "Создать символ"
 }

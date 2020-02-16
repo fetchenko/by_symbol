@@ -62,28 +62,28 @@ export const SYMBOL_OPTIONS = [
     img: `${imgDir}/symbol-of-talisman.webp`
   },
   {
-    path: "symbol-of-women-share",
-    img: `${imgDir}/symbol-of-talisman.webp`
+    path: "symbol-of-womens-share",
+    img: `${imgDir}/symbol-of-womens-share.webp`
   },
   {
     path: "symbol-of-song",
-    img: `${imgDir}/symbol-of-talisman.webp`
+    img: `${imgDir}/symbol-of-song.webp`
   },
-  {
-    path: "symbol-of-mother-2",
-    img: `${imgDir}/symbol-of-talisman.webp`
-  },
+  // {
+  //   path: "symbol-of-mother-2",
+  //   img: `${imgDir}/symbol-of-talisman.webp`
+  // },
   {
     path: "symbol-of-bereginia",
-    img: `${imgDir}/symbol-of-talisman.webp`
+    img: `${imgDir}/symbol-of-bereginia.webp`
   },
   {
     path: "symbol-of-crop-yield",
-    img: `${imgDir}/symbol-of-talisman.webp`
+    img: `${imgDir}/symbol-of-crop-yield.webp`
   },
   {
-    path: "symbol-of-bathering-fire",
-    img: `${imgDir}/symbol-of-talisman.webp`
+    path: "symbol-of-bathing-fire",
+    img: `${imgDir}/symbol-of-bathing-fire.webp`
   }
 ];
 

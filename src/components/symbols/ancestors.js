@@ -59,8 +59,8 @@ const SymbolOfHarvest = () => {
       columns="18px"
       rowsSm="25px"
       columnsSm="25px"
-      rowsMd="30px"
-      columnsMd="30px"
+      rowsMd="26px"
+      columnsMd="26px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

@@ -320,12 +320,12 @@ const gridAreas = [
 const SymbolOfSong = () => {
   return (
     <GridContainer
-      rows="12px"
-      columns="12px"
-      rowsSm="20px"
-      columnsSm="20px"
-      rowsMd="25px"
-      columnsMd="25px"
+      rows="9px"
+      columns="9px"
+      rowsSm="12px"
+      columnsSm="12px"
+      rowsMd="16px"
+      columnsMd="16px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

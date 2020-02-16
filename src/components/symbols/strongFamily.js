@@ -251,8 +251,8 @@ const SymbolOfStrongFamily = () => {
       columns="8px"
       rowsSm="10px"
       columnsSm="10px"
-      rowsMd="15px"
-      columnsMd="15px"
+      rowsMd="12px"
+      columnsMd="12px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

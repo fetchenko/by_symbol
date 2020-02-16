@@ -1,6 +1,5 @@
 import React from "react";
 import { GridContainer, GridBlock } from "../../styled/grid";
-import { changeAreas } from "../../helpers/areas";
 
 let gridAreas = [
   "1 / 18 / 1 / 18",
@@ -370,8 +369,8 @@ const SymbolOfSun = () => {
       columns="6px"
       rowsSm="10px"
       columnsSm="10px"
-      rowsMd="12px"
-      columnsMd="12px"
+      rowsMd="11px"
+      columnsMd="11px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

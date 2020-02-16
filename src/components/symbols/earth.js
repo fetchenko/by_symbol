@@ -319,8 +319,8 @@ const SymbolOfEarth = () => {
       columns="8px"
       rowsSm="12px"
       columnsSm="12px"
-      rowsMd="16px"
-      columnsMd="16px"
+      rowsMd="14px"
+      columnsMd="14px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

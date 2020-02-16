@@ -104,17 +104,17 @@ export const symbols = [
     component: SymbolOfTalisman
   },
   {
-    path: "symbol-of-women-share",
+    path: "symbol-of-womens-share",
     component: SymbolOfWomenShare
   },
   {
     path: "symbol-of-song",
     component: SymbolOfSong
   },
-  {
-    path: "symbol-of-mother-2",
-    component: SymbolOfMother2
-  },
+  // {
+  //   path: "symbol-of-mother-2",
+  //   component: SymbolOfMother2
+  // },
   {
     path: "symbol-of-bereginia",
     component: SymbolOfBereginia
@@ -124,7 +124,7 @@ export const symbols = [
     component: SymbolOfCropYield
   },
   {
-    path: "symbol-of-bathering-fire",
+    path: "symbol-of-bathing-fire",
     component: SymbolOfBathingFire
   }
 ];

@@ -197,12 +197,12 @@ const gridAreas = [
 const SymbolOfCropYield = () => {
   return (
     <GridContainer
-      rows="8px"
-      columns="8px"
-      rowsSm="12px"
-      columnsSm="12px"
-      rowsMd="16px"
-      columnsMd="16px"
+      rows="6px"
+      columns="6px"
+      rowsSm="8px"
+      columnsSm="8px"
+      rowsMd="12px"
+      columnsMd="12px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;
