@@ -60,6 +60,14 @@ export const SYMBOL_OPTIONS = [
   {
     path: "symbol-of-talisman",
     img: `${imgDir}/symbol-of-talisman.webp`
+  },
+  {
+    path: "symbol-of-women-share",
+    img: `${imgDir}/symbol-of-talisman.webp`
+  },
+  {
+    path: "symbol-of-song",
+    img: `${imgDir}/symbol-of-talisman.webp`
   }
 ];
 

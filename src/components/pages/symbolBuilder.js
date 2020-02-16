@@ -54,8 +54,11 @@ class SymbolBuilder extends Component {
     const v1Arr = areas.map(arr => arr[0]);
     const h1Arr = areas.map(arr => arr[1]);
 
-    const vMin = Math.min(...v1Arr) - 1;
-    const hMin = Math.min(...h1Arr) - 1;
+    let vMin = Math.min(...v1Arr) - 1;
+    let hMin = Math.min(...h1Arr) - 1;
+
+    if (!vMin) vMin = 0;
+    if (!hMin) hMin = 0;
 
     areas = areas.map(area => {
       const [v1, h1, v2, h2] = area;
