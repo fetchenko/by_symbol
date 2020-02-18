@@ -24,7 +24,7 @@ const theme = {
   unit: 4,
   primary: {
     light: "#ffcccc",
-    main: "#ff4d4d"
+    main: "#ff6666"
   },
   typograpty: {
     primary: {

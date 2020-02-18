@@ -11,7 +11,7 @@ const MainHeader = () => {
       <Title>
         <FormattedMessage id="belorussian-symbols" />
       </Title>
-      <SymbolsMenu options={SymbolMenuOptions} />
+      {/* <SymbolsMenu options={SymbolMenuOptions} /> */}
     </Header>
   );
 };
