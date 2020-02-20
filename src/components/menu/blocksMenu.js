@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { injectIntl } from "react-intl";
 import {
   BlockMenuItem,
   BlockMenu,
@@ -65,7 +66,8 @@ class BlocksMenu extends Component {
   };
 
   renderMenuItem = item => {
-    const { value } = this.props;
+    const { value, intl } = this.props;
+    const label = intl.formatMessage({ id: item.path });
 
     const active = value.path === item.path;
 
@@ -85,11 +87,12 @@ class BlocksMenu extends Component {
         key={item.path}
         {...props}
         onClick={this.handleClick(item.path)}
+        onTouchStart={this.handleClick(item.path)}
       >
         {item.img && (
           <ImageWithLoader
             src={item.img}
-            alt={item.label}
+            alt={label}
             loaderComponent={this.renderLoaderComponent}
           />
         )}
@@ -110,4 +113,4 @@ class BlocksMenu extends Component {
   }
 }
 
-export default BlocksMenu;
+export default injectIntl(BlocksMenu);

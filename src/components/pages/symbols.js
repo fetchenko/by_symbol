@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Swipeable } from "react-swipeable";
-// import SymbolOfSpring from "../symbols/symbolOfSpring";
-// import SymbolOfWealth from "../symbols/symbolOfWealth";
-// import SymbolOfHarvest from "../symbols/symbolOfHarvest";
-// import SymbolOfAncestors from "../symbols/symbolOfAncestors";
-// import SymbolOfLove from "../symbols/symbolOfLove";
-// import SymbolOfWomen from "../symbols/symbolOfWomen";
-// import SymbolOfSources from "../symbols/symbolOfSources";
-// import SymbolOfMother from "../symbols/symbolOfMother";
-// import SymbolOfEarth from "../symbols/symbolOfEarth";
-// import SymbolOfSun from "../symbols/symbolOfSun";
 import { symbols } from "../symbols";
 import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS } from "../../constants";
