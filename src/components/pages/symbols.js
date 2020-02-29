@@ -27,6 +27,21 @@ const Symbols = props => {
     prevValue && setSymbol(prevValue);
   };
 
+  const renderSymbolContent = () => {
+    return symbols.map(symbolData => {
+      const { path, component: SymbolView } = symbolData;
+
+      return path === symbol.path ? (
+        <div>
+          <SymbolTitle>
+            <FormattedMessage id={symbol.path} />
+          </SymbolTitle>
+          <SymbolView key={path} />
+        </div>
+      ) : null;
+    });
+  };
+
   return (
     <div>
       <BlocksMenu
@@ -34,20 +49,9 @@ const Symbols = props => {
         value={symbol}
         onSelect={handleSelect}
       />
-      {symbol && (
-        <SymbolTitle>
-          <FormattedMessage id={symbol.path} />
-        </SymbolTitle>
-      )}
       <Swipeable onSwipedLeft={handleNext} onSwipedRight={handlePrev}>
         <Carousel>
-          <CarouselContent>
-            {symbols.map(symbolData => {
-              const { path, component: SymbolView } = symbolData;
-
-              return path === symbol.path ? <SymbolView key={path} /> : null;
-            })}
-          </CarouselContent>
+          <CarouselContent>{renderSymbolContent()}</CarouselContent>
         </Carousel>
       </Swipeable>
     </div>
