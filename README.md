@@ -1,1 +1,1 @@
-https://symbols-75118.firebaseapp.com/
+https://belorussiansymbols.web.app/
