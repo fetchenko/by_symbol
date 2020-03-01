@@ -18,6 +18,15 @@ export const SymbolTitle = styled.h4`
   text-align: center;
 
   ${props => props.theme.mediaQueries.sm} {
+    font-size: 1.6rem;
+  }
+`;
+
+export const SymbolDescription = styled.h4`
+  font-size: 1.2rem;
+  font-weight: normal;
+
+  ${props => props.theme.mediaQueries.sm} {
     font-size: 1.3rem;
   }
 `;

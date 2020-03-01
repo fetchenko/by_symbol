@@ -6,7 +6,11 @@ export const Carousel = styled.div`
   height: 100%;
   display: flex;
   align-items: stretch;
-  margin: ${props => props.theme.unit * 10}px 0;
+  margin: ${props => props.theme.unit * 2}px 0;
+
+  ${props => props.theme.mediaQueries.sm} {
+    margin: ${props => props.theme.unit * 10}px 0;
+  }
 `;
 
 export const CarouselContent = styled.div`

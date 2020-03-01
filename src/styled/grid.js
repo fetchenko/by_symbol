@@ -8,6 +8,7 @@ export const GridContainer = styled.div`
   padding: ${props => props.padding};
   grid-row-gap: ${props => props.rowGap};
   grid-column-gap: ${props => props.columnGap};
+  margin: 0 auto;
 
   ${props => props.theme.mediaQueries.sm} {
     grid-auto-rows: ${props => props.rowsSm || "15px"};
