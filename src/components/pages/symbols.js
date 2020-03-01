@@ -5,8 +5,9 @@ import { symbols } from "../symbols";
 import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
-import { SymbolTitle } from "../typography";
+import { SymbolTitle, SymbolDescription } from "../typography";
 import { getNextValue, getPrevValue } from "../../helpers/collection";
+import InfoCardLayout from "../layouts/infoCardLayout";
 
 const Symbols = props => {
   const [symbol, setSymbol] = useState(SYMBOL_OPTIONS[0]);
@@ -32,12 +33,20 @@ const Symbols = props => {
       const { path, component: SymbolView } = symbolData;
 
       return path === symbol.path ? (
-        <div>
-          <SymbolTitle>
-            <FormattedMessage id={symbol.path} />
-          </SymbolTitle>
-          <SymbolView key={path} />
-        </div>
+        <InfoCardLayout
+          key={path}
+          title={
+            <SymbolTitle>
+              <FormattedMessage id={symbol.path} />
+            </SymbolTitle>
+          }
+          description={
+            <SymbolDescription>
+              <FormattedMessage id={symbol.description} />
+            </SymbolDescription>
+          }
+          image={<SymbolView key={path} />}
+        />
       ) : null;
     });
   };
