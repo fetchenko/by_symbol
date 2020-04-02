@@ -148,3 +148,10 @@ export const Address = {
 export const locationIcon = `${iconDir}/location.svg`;
 
 export const bricksImg = `${imgDir}/bricks.png`;
+
+export const KeyCodes = {
+  LEFT: 37,
+  UP: 38,
+  RIGHT: 39,
+  DOWN: 40
+};
