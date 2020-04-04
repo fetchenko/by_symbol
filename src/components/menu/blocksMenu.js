@@ -87,7 +87,6 @@ class BlocksMenu extends Component {
         key={item.path}
         {...props}
         onClick={this.handleClick(item.path)}
-        onTouchStart={this.handleClick(item.path)}
       >
         {item.img && (
           <ImageWithLoader

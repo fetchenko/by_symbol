@@ -8,7 +8,10 @@ const Footer = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: ${props => props.theme.unit * 14}px;
+  height: ${props => props.theme.unit * 11}px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: ${props => props.theme.primary.light};
 `;
 
@@ -37,8 +40,8 @@ function MainFooter() {
       <Img bgImg={bricksImg} />
       <FooterContent>
         <LocationInfo />
-        <Divider>{"  |  "}</Divider>
-        <AuthorInfo />
+        {/* <Divider>{"  |  "}</Divider>
+        <AuthorInfo /> */}
       </FooterContent>
       <Img bgImg={bricksImg} />
     </Footer>

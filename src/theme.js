@@ -37,4 +37,11 @@ const theme = {
   mediaQueries
 };
 
+export const createTheme = (primary) => {
+  return {
+    ...theme,
+    primary, 
+  }
+}
+
 export default theme;

@@ -146,8 +146,8 @@ export const Address = {
 };
 
 export const locationIcon = `${iconDir}/location.svg`;
-
 export const bricksImg = `${imgDir}/bricks.png`;
+export const themeIcon = `${iconDir}/palette.svg`;
 
 export const KeyCodes = {
   LEFT: 37,

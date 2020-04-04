@@ -40,7 +40,7 @@ function LocationInfo() {
         <Name>
           <FormattedMessage id={AddressInfo.country} /> {` ${AddressInfo.year}`}
         </Name>
-        <Icon src={locationIcon} />
+        {/* <Icon src={locationIcon} /> */}
       </Address>
     </Container>
   );
