@@ -629,8 +629,8 @@ const SymbolOfMermaid = () => {
       columns="4px"
       rowsSm="5px"
       columnsSm="5px"
-      rowsMd="8px"
-      columnsMd="8px"
+      rowsMd="6px"
+      columnsMd="6px"
     >
       {gridAreas.map(area => {
         return <GridBlock key={area} gridArea={area} />;

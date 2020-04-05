@@ -9,6 +9,12 @@ import { SymbolTitle, SymbolDescription } from "../typography";
 import { getNextValue, getPrevValue } from "../../helpers/collection";
 import InfoCardLayout from "../layouts/infoCardLayout";
 
+const styles = {
+  column: {
+    display: 'flex',
+    flexDirection: 'column',
+  }
+}
 class Symbols extends Component {
   constructor(props) {
     super(props);
@@ -53,15 +59,32 @@ class Symbols extends Component {
     this.setState({ symbol: value });
   };
 
+  renderSimpleView = (symbolData) => {
+    const { path, component: SymbolView } = symbolData
+
+    return (
+      <div style={styles.column}>
+        <SymbolTitle>
+          <FormattedMessage id={path} />
+        </SymbolTitle>
+        <SymbolView key={path} />
+      </div>
+    )
+  }
+
   renderSymbolContent = () => {
     const { symbol } = this.state;
 
     return symbols.map(symbolData => {
       const { path, component: SymbolView } = symbolData;
 
+      return (path === symbol.path)
+        ? this.renderSimpleView(symbolData)
+        : null;
+
       return path === symbol.path ? (
         <InfoCardLayout
-          key={path}
+          key={symbol.path}
           title={
             <SymbolTitle>
               <FormattedMessage id={symbol.path} />
@@ -72,7 +95,7 @@ class Symbols extends Component {
               <FormattedMessage id={symbol.description} />
             </SymbolDescription>
           }
-          image={<SymbolView key={path} />}
+          image={<SymbolView key={symbol.path} />}
         />
       ) : null;
     });
