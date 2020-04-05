@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
-import { Address as AddressInfo, locationIcon } from "../../constants";
+import { Address as AddressInfo } from "../../constants";
 
 const Container = styled.div`
   display: flex;
@@ -12,15 +12,10 @@ const Container = styled.div`
 
 const Name = styled.h5`
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   letter-spacing: 1;
-  color: ${props => props.theme.primary.main};
-`;
-
-const Icon = styled.img`
-  width: 20px;
-  height: 20px;
-  padding: 5px;
+  color: #fff;
+  opacity: 0.6;
 `;
 
 const Address = styled.div`
@@ -28,19 +23,13 @@ const Address = styled.div`
   align-items: center;
 `;
 
-export const Divider = styled.span`
-  margin: 0 10px;
-  color: ${props => props.theme.primary.main};
-`;
-
 function LocationInfo() {
   return (
     <Container>
       <Address>
         <Name>
-          <FormattedMessage id={AddressInfo.country} /> {` ${AddressInfo.year}`}
+          <FormattedMessage id={AddressInfo.country} /> {`${AddressInfo.year}`}
         </Name>
-        {/* <Icon src={locationIcon} /> */}
       </Address>
     </Container>
   );

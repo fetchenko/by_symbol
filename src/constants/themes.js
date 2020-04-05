@@ -1,27 +1,45 @@
 export const Red = {
-    main: '#ff6666',
-    light: '#ffcccc'
-}
+  main: "#ff3333",
+  light: "#ffcccc"
+};
 
 export const Green = {
-    main: '#00e673',
-    light: '#99ffcc'
-}
+  main: "#00994d",
+  light: "#00cc66"
+};
 
 export const Blue = {
-    main: '#4da6ff',
-    light: '#b3d9ff',
-}
+  main: "#0039e6",
+  light: "#4d79ff"
+};
 
 export const Black = {
-    main: '#404040',
-    light: '#a6a6a6',
-}
+  main: "#404040",
+  light: "#8c8c8c"
+};
 
 export const Pink = {
-    main: '#ff66ff',
-    light: '#ffb3ff',
-}
+  main: "#ff66ff",
+  light: "#ffb3ff"
+};
 
-export const MAIN_COLORS = [Red.main, Green.main, Blue.main, Black.main, Pink.main]
-export const THEME_COLORS = new Map([[Red.main, Red], [Green.main, Green], [Blue.main, Blue], [Black.main, Black], [Pink.main, Pink]]);
+export const Orange = {
+  main: "#ff6600",
+  light: "#ffa366"
+};
+
+export const MAIN_COLORS = [
+  Red.main,
+  Green.main,
+  Blue.main,
+  Orange.main,
+  Black.main
+];
+
+export const THEME_COLORS = new Map([
+  [Red.main, Red],
+  [Green.main, Green],
+  [Blue.main, Blue],
+  [Orange.main, Orange],
+  [Black.main, Black]
+]);
