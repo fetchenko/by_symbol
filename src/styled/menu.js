@@ -31,22 +31,24 @@ export const BlockMenuItem = styled.li`
   transition: 0.5s;
 `;
 
-export const BlockMenu = styled.ul`
+export const BlockMenu = styled.div`
   position: relative;
   display: flex;
   align-items: stretch;
-  margin: 0;
-  padding: 0;
   background-color: ${props => props.theme.primary.light}33;
 `;
 
-export const BlockMenuContent = styled.div`
+export const BlockMenuContent = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   padding: 5px 0;
+  margin: 0;
   overflow: auto hidden;
+  scrollbar-color: ${props => props.theme.primary.main}80 ${props => props.theme.primary.light}80; 
+  scrollbar-width: thin;
+  scrollbar-height: thin;
 
   &::-webkit-scrollbar {
     width: 5px;

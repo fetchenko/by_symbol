@@ -16,6 +16,7 @@ const Name = styled.h5`
   letter-spacing: 1;
   color: #fff;
   opacity: 0.6;
+  font-family: 'Oxygen', sans-serif;
 `;
 
 const Address = styled.div`
