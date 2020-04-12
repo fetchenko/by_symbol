@@ -5,16 +5,11 @@ import { symbols } from "../symbols";
 import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS, KeyCodes } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
+import { Column } from "../../styled/flex";
 import { SymbolTitle, SymbolDescription } from "../typography";
 import { getNextValue, getPrevValue } from "../../helpers/collection";
 import InfoCardLayout from "../layouts/infoCardLayout";
 
-const styles = {
-  column: {
-    display: 'flex',
-    flexDirection: 'column',
-  }
-}
 class Symbols extends Component {
   constructor(props) {
     super(props);
@@ -59,18 +54,18 @@ class Symbols extends Component {
     this.setState({ symbol: value });
   };
 
-  renderSimpleView = (symbolData) => {
-    const { path, component: SymbolView } = symbolData
+  renderSimpleView = symbolData => {
+    const { path, component: SymbolView } = symbolData;
 
     return (
-      <div style={styles.column} key={path}>
+      <Column key={path}>
         <SymbolTitle>
           <FormattedMessage id={path} />
         </SymbolTitle>
         <SymbolView key={path} />
-      </div>
-    )
-  }
+      </Column>
+    );
+  };
 
   renderSymbolContent = () => {
     const { symbol } = this.state;
@@ -78,9 +73,7 @@ class Symbols extends Component {
     return symbols.map(symbolData => {
       const { path, component: SymbolView } = symbolData;
 
-      return (path === symbol.path)
-        ? this.renderSimpleView(symbolData)
-        : null;
+      return path === symbol.path ? this.renderSimpleView(symbolData) : null;
 
       return path === symbol.path ? (
         <InfoCardLayout

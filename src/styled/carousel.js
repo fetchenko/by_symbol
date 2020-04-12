@@ -17,4 +17,9 @@ export const CarouselContent = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 4vh 0 0 0;
+
+  ${props => props.theme.mediaQueries.sm} {
+    margin: 0;
+  }
 `;
