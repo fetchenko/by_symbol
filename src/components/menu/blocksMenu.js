@@ -8,7 +8,7 @@ import {
   NextButton
 } from "../../styled/menu";
 import GridLoading from "../blocks/gridLoading";
-import ImageWithLoader from "../blocks/imageWithLoader";
+import ImageButtonWithLoader from "../blocks/imageButtonWithLoader";
 import { getNextValue, getPrevValue } from "../../helpers/collection";
 
 class BlocksMenu extends Component {
@@ -73,9 +73,9 @@ class BlocksMenu extends Component {
 
     const props = active
       ? {
-          active,
-          ref: this.activeItemRef
-        }
+        active,
+        ref: this.activeItemRef
+      }
       : {};
 
     if (active) {
@@ -83,16 +83,13 @@ class BlocksMenu extends Component {
     }
 
     return (
-      <BlockMenuItem
-        key={item.path}
-        {...props}
-        onClick={this.handleClick(item.path)}
-      >
+      <BlockMenuItem key={item.path} ref={props.ref} active={active}>
         {item.img && (
-          <ImageWithLoader
+          <ImageButtonWithLoader
             src={item.img}
             alt={label}
             loaderComponent={this.renderLoaderComponent}
+            onClick={this.handleClick(item.path)}
           />
         )}
       </BlockMenuItem>

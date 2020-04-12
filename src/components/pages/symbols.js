@@ -63,7 +63,7 @@ class Symbols extends Component {
     const { path, component: SymbolView } = symbolData
 
     return (
-      <div style={styles.column}>
+      <div style={styles.column} key={path}>
         <SymbolTitle>
           <FormattedMessage id={path} />
         </SymbolTitle>

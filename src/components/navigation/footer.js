@@ -7,10 +7,14 @@ const Footer = styled.div`
   bottom: 0;
   width: 100%;
   height: ${props => props.theme.unit * 11}px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   background-color: ${props => props.theme.primary.light};
+
+  ${props => props.theme.mediaQueries.sm} {
+    display: flex;
+  }
 `;
 
 function MainFooter() {

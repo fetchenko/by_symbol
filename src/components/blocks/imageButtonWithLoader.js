@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Img } from "../../styled/image";
+import { Img, ImageButton } from "../../styled/image";
 
 const Container = styled.div`
   position: relative;
@@ -15,17 +15,24 @@ const LoaderContainer = styled.div`
   visibility: ${props => (props.hide ? "hidden" : "")};
 `;
 
-const ImageWithLoader = props => {
-  const { src, alt, loaderComponent: LoaderComponent } = props;
+const ImageButtonWithLoader = props => {
+  const { src, alt, loaderComponent: LoaderComponent, onClick } = props;
   const [loaded, setLoadedStatus] = useState(false);
 
   return (
     <Container width="90px" height="60px">
       <Img
-        hide={!loaded}
+        // hide={!loaded}
+        hide
         src={src}
         alt={alt}
         onLoad={() => setLoadedStatus(true)}
+      />
+      <ImageButton
+        type="image"
+        src={src}
+        hide={!loaded}
+        onClick={() => onClick && onClick()}
       />
       <LoaderContainer hide={loaded}>
         {LoaderComponent ? <LoaderComponent /> : <div>loading...</div>}
@@ -34,4 +41,4 @@ const ImageWithLoader = props => {
   );
 };
 
-export default ImageWithLoader;
+export default ImageButtonWithLoader;
