@@ -89,8 +89,6 @@ class SymbolBuilder extends Component {
     const symbol = new Set(this.state.symbol);
     const { id } = event.target;
 
-    console.log({ id, symbol });
-
     if (symbol.has(id)) {
       symbol.delete(id);
     } else {

@@ -105,6 +105,12 @@ export const SYMBOL_OPTIONS = [
     path: "symbol-of-bathing-fire",
     img: `${imgDir}/symbol-of-bathing-fire.webp`,
     description: "symbol-of-bathing-fire"
+  },
+  {
+    path: 'symbol-of-crown',
+    img: `${imgDir}/symbol-of-crown.webp`,
+    description: "symbol-of-crown",
+    hints: ['hints.symbol-of-crown']
   }
 ];
 

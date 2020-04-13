@@ -19,6 +19,7 @@ import SymbolOfMother2 from "./mother2";
 import SymbolOfBereginia from "./bereginia";
 import SymbolOfCropYield from "./cropYield";
 import SymbolOfBathingFire from "./bathingFire";
+import SymbolOfCrown from './crown';
 
 export {
   SymbolOfEarth,
@@ -39,7 +40,8 @@ export {
   SymbolOfWomenShare,
   SymbolOfSong,
   SymbolOfMother2,
-  SymbolOfCropYield
+  SymbolOfCropYield,
+  SymbolOfCrown
 };
 
 export const symbols = [
@@ -126,5 +128,10 @@ export const symbols = [
   {
     path: "symbol-of-bathing-fire",
     component: SymbolOfBathingFire
+  },
+  {
+    path: 'symbol-of-crown',
+    component: SymbolOfCrown,
+    hints: ['hints.symbol-of-crown']
   }
 ];

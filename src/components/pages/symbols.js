@@ -6,7 +6,7 @@ import BlocksMenu from "../menu/blocksMenu";
 import { SYMBOL_OPTIONS, KeyCodes } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
 import { Column } from "../../styled/flex";
-import { SymbolTitle, SymbolDescription } from "../typography";
+import { SymbolTitle, SymbolDescription, SymbolHint } from "../typography";
 import { getNextValue, getPrevValue } from "../../helpers/collection";
 import InfoCardLayout from "../layouts/infoCardLayout";
 
@@ -55,7 +55,7 @@ class Symbols extends Component {
   };
 
   renderSimpleView = symbolData => {
-    const { path, component: SymbolView } = symbolData;
+    const { path, component: SymbolView, hints } = symbolData;
 
     return (
       <Column key={path}>
@@ -63,6 +63,13 @@ class Symbols extends Component {
           <FormattedMessage id={path} />
         </SymbolTitle>
         <SymbolView key={path} />
+        {hints && (
+          <SymbolHint>
+            {hints.map((hint) => (
+              <FormattedMessage key={hint} id={hint} />
+            ))}
+          </SymbolHint>
+        )}
       </Column>
     );
   };

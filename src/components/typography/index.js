@@ -24,6 +24,18 @@ export const SymbolTitle = styled.h4`
   }
 `;
 
+export const SymbolHint = styled.p`
+  opacity: 0.7;
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+
+  ${props => props.theme.mediaQueries.sm} {
+    width: auto;
+    margin: 30px auto;
+  }
+
+`
 export const SymbolDescription = styled.h4`
   font-size: 1.2rem;
   font-weight: normal;
