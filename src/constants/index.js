@@ -8,6 +8,10 @@ export const SYMBOL_OPTIONS = [
     description: "meanings.symbol-of-spring"
   },
   {
+    path: "symbol-of-belarus",
+    img: `${imgDir}/symbol-of-belarus.webp`
+  },
+  {
     path: "symbol-of-wealth",
     img: `${imgDir}/symbol-of-wealth.webp`,
     description: "meanings.symbol-of-wealth"
@@ -63,6 +67,10 @@ export const SYMBOL_OPTIONS = [
     description: "symbol-of-love-song"
   },
   {
+    path: "symbol-of-life",
+    img: `${imgDir}/symbol-of-life.webp`
+  },
+  {
     path: "symbol-of-strong-family",
     img: `${imgDir}/symbol-of-strong-family.webp`,
     description: "symbol-of-strong-family"
@@ -107,10 +115,10 @@ export const SYMBOL_OPTIONS = [
     description: "symbol-of-bathing-fire"
   },
   {
-    path: 'symbol-of-crown',
+    path: "symbol-of-crown",
     img: `${imgDir}/symbol-of-crown.webp`,
     description: "symbol-of-crown",
-    hints: ['hints.symbol-of-crown']
+    hints: ["hints.symbol-of-crown"]
   }
 ];
 
