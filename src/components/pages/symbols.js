@@ -104,19 +104,19 @@ class Symbols extends Component {
   render() {
     return (
       <div>
-        <BlocksMenu
+        {/* <BlocksMenu
           options={SYMBOL_OPTIONS}
           value={this.state.symbol}
           onSelect={this.handleSelect}
-        />
-        <Swipeable
+        /> */}
+        {/* <Swipeable
           onSwipedLeft={this.handleNext}
           onSwipedRight={this.handlePrev}
-        >
+        > */}
           <Carousel>
             <CarouselContent>{this.renderSymbolContent()}</CarouselContent>
           </Carousel>
-        </Swipeable>
+        {/* </Swipeable> */}
       </div>
     );
   }
