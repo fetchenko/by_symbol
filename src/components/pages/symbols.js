@@ -101,6 +101,7 @@ class Symbols extends Component {
     });
   };
 
+  
   render() {
     return (
       <div>
