@@ -5,6 +5,10 @@ import Footer from "../navigation/footer";
 import ThemeControl from '../../components/blocks/themeControl'
 import MainMenu from '../menu/mainMenu';
 
+const PageContent = styled.div`
+  display: flex;
+`
+
 const Layout = props => {
   const { children, onChangedTheme } = props;
 
@@ -12,13 +16,10 @@ const Layout = props => {
     <div>
       <Header />
       <ThemeControl onChangedTheme={onChangedTheme} />
-      <div>
-        <div>
-          <MainMenu />
-        </div>
+      <PageContent>
+        <MainMenu />
         {children}
-      </div>
-      {/* <Footer /> */}
+      </PageContent>
     </div>
   );
 };
