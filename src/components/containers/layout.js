@@ -4,10 +4,8 @@ import Header from "../navigation/header";
 import Footer from "../navigation/footer";
 import ThemeControl from '../../components/blocks/themeControl'
 import MainMenu from '../menu/mainMenu';
-
-const PageContent = styled.div`
-  display: flex;
-`
+import BlockMenu from 'components/menu/blockMenu'
+import { SYMBOL_OPTIONS } from 'constants/index'
 
 const Layout = props => {
   const { children, onChangedTheme } = props;
@@ -16,10 +14,9 @@ const Layout = props => {
     <div>
       <Header />
       <ThemeControl onChangedTheme={onChangedTheme} />
-      <PageContent>
-        <MainMenu />
-        {children}
-      </PageContent>
+      {/* <BlockMenu /> */}
+      {/* <MainMenu /> */}
+      {children}
     </div>
   );
 };

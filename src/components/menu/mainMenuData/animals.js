@@ -1,5 +1,5 @@
 export const animals = {
-    id: animals,
+    id: 'animals',
     sections: [
         {
             id: 'hare',

@@ -1,24 +1,22 @@
 import React, { useState, Component } from "react";
 import { FormattedMessage } from "react-intl";
+import { withRouter } from 'react-router-dom';
 import { Swipeable } from "react-swipeable";
 import { symbols } from "../symbols";
-import BlocksMenu from "../menu/blocksMenu";
+import BlockMenu from "../menu/blockMenu";
 import { SYMBOL_OPTIONS, KeyCodes } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
 import { Column } from "../../styled/flex";
 import { SymbolTitle, SymbolDescription, SymbolHint } from "../typography";
 import { getNextValue, getPrevValue } from "../../helpers/collection";
 import InfoCardLayout from "../layouts/infoCardLayout";
+import {
+  blockMenuOptions,
+  NEXT_CODES,
+  PREV_CODES,
+} from 'constants/index'
 
 class Symbols extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      symbol: SYMBOL_OPTIONS[0]
-    };
-  }
-
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown);
   }
@@ -28,30 +26,33 @@ class Symbols extends Component {
   }
 
   handleKeyDown = event => {
-    if (event.keyCode === KeyCodes.LEFT || event.keyCode === KeyCodes.DOWN) {
+    if (PREV_CODES.includes(event.keyCode)) {
       this.handlePrev();
-    } else if (
-      event.keyCode === KeyCodes.RIGHT ||
-      event.keyCode === KeyCodes.UP
-    ) {
+    } else if (NEXT_CODES.includes(event.keyCode)) {
       this.handleNext();
     }
   };
 
   handleNext = () => {
-    const nextValue = getNextValue(SYMBOL_OPTIONS, this.state.symbol);
+    const { location: { pathname }, history } = this.props;
+    const symbolId = pathname.replace('/', '');
 
-    nextValue && this.setState({ symbol: nextValue });
+    const nextValue = blockMenuOptions[symbolId].nextEl;
+
+    if (nextValue) {
+      history.push(nextValue)
+    }
   };
 
   handlePrev = () => {
-    const prevValue = getPrevValue(SYMBOL_OPTIONS, this.state.symbol);
+    const { location: { pathname }, history } = this.props;
+    const symbolId = pathname.replace('/', '');
 
-    prevValue && this.setState({ symbol: prevValue });
-  };
+    const prevValue = blockMenuOptions[symbolId].prevEl;
 
-  handleSelect = value => {
-    this.setState({ symbol: value });
+    if (prevValue) {
+      history.push(prevValue)
+    }
   };
 
   renderSimpleView = symbolData => {
@@ -104,22 +105,18 @@ class Symbols extends Component {
   render() {
     return (
       <div>
-        {/* <BlocksMenu
-          options={SYMBOL_OPTIONS}
-          value={this.state.symbol}
-          onSelect={this.handleSelect}
-        /> */}
-        {/* <Swipeable
+        <BlockMenu />
+        <Swipeable
           onSwipedLeft={this.handleNext}
           onSwipedRight={this.handlePrev}
-        > */}
+        >
           <Carousel>
             <CarouselContent>{this.renderSymbolContent()}</CarouselContent>
           </Carousel>
-        {/* </Swipeable> */}
+        </Swipeable>
       </div>
     );
   }
 }
 
-export default Symbols;
+export default withRouter(Symbols);

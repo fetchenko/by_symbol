@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Swipeable } from "react-swipeable";
 import SymbolOfAnt from "../customSymbols/SymbolOfAnt";
-import BlocksMenu from "../menu/blocksMenu";
+import BlocksMenu from "../menu/blockMenu";
 import { CUSTOM_SYMBOL_OPTIONS } from "../../constants";
 import { Carousel, CarouselContent } from "../../styled/carousel";
 import { SymbolTitle } from "../typography";
@@ -12,27 +12,27 @@ const Symbols = props => {
   const [symbol, setSymbol] = useState(CUSTOM_SYMBOL_OPTIONS[0]);
 
   const handleSelect = value => {
-    setSymbol(value);
+    // setSymbol(value);
   };
 
   const handleNext = () => {
-    const nextValue = getNextValue(CUSTOM_SYMBOL_OPTIONS, symbol);
+    // const nextValue = getNextValue(CUSTOM_SYMBOL_OPTIONS, symbol);
 
-    nextValue && setSymbol(nextValue);
+    // nextValue && setSymbol(nextValue);
   };
 
   const handlePrev = () => {
-    const prevValue = getPrevValue(CUSTOM_SYMBOL_OPTIONS, symbol);
+    // const prevValue = getPrevValue(CUSTOM_SYMBOL_OPTIONS, symbol);
 
-    prevValue && setSymbol(prevValue);
+    // prevValue && setSymbol(prevValue);
   };
 
   return (
     <div>
       <BlocksMenu
-        options={CUSTOM_SYMBOL_OPTIONS}
-        value={symbol}
-        onSelect={handleSelect}
+        // options={CUSTOM_SYMBOL_OPTIONS}
+        // value={symbol}
+        // onSelect={handleSelect}
       />
       {symbol && (
         <SymbolTitle>

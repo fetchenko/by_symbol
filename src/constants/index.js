@@ -122,6 +122,17 @@ export const SYMBOL_OPTIONS = [
   }
 ];
 
+export const blockMenuOptions = SYMBOL_OPTIONS.reduce((acc, item, index, items) => {
+  return {
+    ...acc,
+    [item.path]: {
+      ...item,
+      prevEl: (index === 0) ? null : items[index - 1].path,
+      nextEl: ((index + 1) === items.length) ? null : items[index + 1].path,
+    }
+  }
+}, {});
+
 export const CUSTOM_SYMBOL_OPTIONS = [
   {
     path: "symbol-of-ant",
@@ -165,3 +176,8 @@ export const KeyCodes = {
   RIGHT: 39,
   DOWN: 40
 };
+
+export const NEXT_CODES = [KeyCodes.RIGHT, KeyCodes.UP];
+export const PREV_CODES = [KeyCodes.LEFT, KeyCodes.DOWN];
+
+export const DEFAULT_SYMBOL = 'pigeon';

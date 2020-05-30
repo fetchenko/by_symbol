@@ -1,7 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import styled from 'styled-components'
 import { getSymbolData } from '../../assets/symbols'
 import { GridContainer, GridBlock } from '../../styled/grid'
+import BlockMenu from 'components/menu/blockMenu'
+import { DEFAULT_SYMBOL } from 'constants/index'
 
 export const SymbolGrid = ({ symbol }) => {
     return (
@@ -20,19 +23,33 @@ export const SymbolGrid = ({ symbol }) => {
     )
 }
 
+const Root = styled.div`
+    width: 100%;
+`
+
+const SymbolsWrapper = styled.div`
+    display: flex;
+`
+
 export default function SymbolsView() {
-    const { symbolId } = useParams();
+    const { symbolId = DEFAULT_SYMBOL } = useParams();
 
     const symbolData = getSymbolData(symbolId);
 
+    console.log({ symbolData })
+
     return (
-        <div>
+        <Root>
+            <BlockMenu />
             {symbolId}
-            {symbolData && symbolData.map((symbol) => {
-                return (
-                    <SymbolGrid symbol={symbol} />
-                )
-            })}
-        </div>
+            {symbolData && <h3>{symbolData.title}</h3>}
+            <SymbolsWrapper>
+                {symbolData && symbolData.symbols && symbolData.symbols.map((symbol) => {
+                    return (
+                        <SymbolGrid symbol={symbol} />
+                    )
+                })}
+            </SymbolsWrapper>
+        </Root>
     )
 }

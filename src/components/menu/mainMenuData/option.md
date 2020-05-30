@@ -88,3 +88,29 @@ MenuItem : {
         },
     ]
 }
+
+_____
+
+menuitem : {  
+    id: string,
+    symbols: [
+        {
+            id: string,
+        },
+        {
+            id: string,
+        }
+    ]
+}
+
+menuitem : {
+    id: string,
+    sections: [
+        {
+            id: string,
+        },
+        {
+            id: string,
+        },
+    ]
+}
