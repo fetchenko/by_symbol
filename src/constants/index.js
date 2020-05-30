@@ -1,4 +1,4 @@
-const imgDir = "/assets/images/";
+const imgDir = "/assets/images";
 const iconDir = "/assets/icons/";
 
 export const SYMBOL_OPTIONS = [
