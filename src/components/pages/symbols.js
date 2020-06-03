@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { Swipeable } from "react-swipeable";
 import { symbols } from "../symbols";

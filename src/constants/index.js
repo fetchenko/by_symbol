@@ -1,5 +1,4 @@
 const imgDir = "/assets/images";
-const iconDir = "/assets/icons/";
 
 export const SYMBOL_OPTIONS = [
   {
@@ -129,29 +128,10 @@ export const CUSTOM_SYMBOL_OPTIONS = [
   }
 ];
 
-export const SymbolMenuOptions = [
-  {
-    path: "/",
-    label: "home"
-  },
-  {
-    path: "/make-symbol",
-    label: "make-symbol"
-  },
-  {
-    path: "/custom-symbols",
-    label: "custom-symbols"
-  }
-];
-
-export const SOCIAL_LINKS = [
-  {
-    label: "Twitter",
-    name: "Tanya Fedchenko",
-    link: "https://twitter.com/tn_fedchenko",
-    icon: `${iconDir}/twitter.svg`
-  }
-];
+export const author = {
+  name: "Tanya Fedchenko",
+  link: "https://twitter.com/tn_fedchenko",
+}
 
 export const Address = {
   country: "Belarus",

@@ -1,5 +1,5 @@
 {
-  "belorussian-symbols": "Belarusian ornament",
+  "belorussian-symbols": "Belarusian symbols",
   "symbol-of-spring": "Symbol of spring and youth",
   "symbol-of-wealth": "Symbol of wealth",
   "symbol-of-harvest": "Symbol of the sun and the earth",
@@ -26,7 +26,9 @@
   "home": "Home",
   "make-symbol": "Make symbol",
   "Belarus": "Belarus",
+  "Vitebsk": "Vitebsk",
   "meanings.symbol-of-love": "Dove are a symbol of love. Two birds turned their heads towards each other and between them a bouquet - Love in its prime.",
   "meanings.symbol-of-crop-yield": "Before collectivization, the peasant fields after the harvest were laden with sheaves. So dried rye was dried. Beauties-grandmothers were the basis for the emergence of the symbol of the crop - Zhitnaya Baba.\nZhitnaya Baba was made of a large dozhinochnoy sheaf, bandaged with a towel, watered with bountiful water and placed under the image in a red corner.\nGromovik (born in 1885, Zhitkovichi) adopted this pattern from his grandmother Ivaniha, who remembered the French. She believed that Zhitnaya Baba heals female diseases, helps in childbirth. Those who honor Zhitnaya Baba always receive a good harvest in the field.",
-  "hints.symbol-of-crown": "It is not one of belarusian symbols. This symbol was created for Yulka Agel."
+  "hints.symbol-of-crown": "It is not one of belarusian symbols. This symbol was created for Yulka Agel.",
+  "created-by": "created by"
 }
