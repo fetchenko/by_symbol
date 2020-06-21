@@ -10,8 +10,13 @@ import {
 } from "styled/menu";
 import GridLoading from "components/blocks/gridLoading";
 import ImageButtonWithLoader from "components/blocks/imageButtonWithLoader";
-import { SYMBOL_OPTIONS, blockMenuOptions, DEFAULT_SYMBOL } from 'constants/index'
-
+import {
+  SYMBOL_OPTIONS,
+  DEFAULT_SYMBOL,
+  NEXT_CODES,
+  PREV_CODES,
+  blockMenuOptions,
+} from 'constants/index'
 class BlocksMenu extends Component {
   constructor(props) {
     super(props);
@@ -19,10 +24,18 @@ class BlocksMenu extends Component {
     this.activeItemRef = React.createRef();
   }
 
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyDown);
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
       this.ensureActiveItemVisible();
     }
+  }
+
+  componentWillUnmount() {
+    document.addEventListener("keydown", this.handleKeyDown);
   }
 
   ensureActiveItemVisible() {
@@ -36,20 +49,38 @@ class BlocksMenu extends Component {
     }
   }
 
-  handleNextButton = () => {
-    const { location: { pathname }, history } = this.props;
-    const symbolId = pathname.replace('/', '');
+  handleKeyDown = event => {
+    if (PREV_CODES.includes(event.keyCode)) {
+      this.handlePrev();
+    } else if (NEXT_CODES.includes(event.keyCode)) {
+      this.handleNext();
+    }
+  };
+
+  handleNext = () => {
+    const {
+      match: {
+        params: { symbolId = DEFAULT_SYMBOL },
+      },
+      history,
+    } = this.props;
 
     const nextValue = blockMenuOptions[symbolId].nextEl;
+
+    console.log({ symbolId, nextValue })
 
     if (nextValue) {
       history.push(nextValue)
     }
   };
 
-  handlePrevButton = () => {
-    const { location: { pathname }, history } = this.props;
-    const symbolId = pathname.replace('/', '');
+  handlePrev = () => {
+    const {
+      match: {
+        params: { symbolId = DEFAULT_SYMBOL },
+      },
+      history,
+    } = this.props;
 
     const prevValue = blockMenuOptions[symbolId].prevEl;
 
@@ -78,7 +109,7 @@ class BlocksMenu extends Component {
           <Link to={item.path}>
             <ImageButtonWithLoader
               src={item.img}
-              alt={intl.formatMessage({ id: item.path })}
+              alt={intl.formatMessage({ id: item.title || 'test' })}
               loaderComponent={this.renderLoaderComponent}
             />
           </Link>
@@ -90,9 +121,9 @@ class BlocksMenu extends Component {
   render() {
     return (
       <BlockMenu>
-        <PrevButton onClick={this.handlePrevButton}>&#8249;</PrevButton>
+        <PrevButton onClick={this.handlePrev}>&#8249;</PrevButton>
         <BlockMenuContent>{SYMBOL_OPTIONS.map(this.renderMenuItem)}</BlockMenuContent>
-        <NextButton onClick={this.handleNextButton}>&#8250;</NextButton>
+        <NextButton onClick={this.handleNext}>&#8250;</NextButton>
       </BlockMenu>
     );
   }

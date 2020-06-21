@@ -3,121 +3,86 @@ const iconDir = "/assets/icons/";
 
 export const SYMBOL_OPTIONS = [
   {
-    path: "symbol-of-spring",
+    path: "spring",
+    title: "title.spring",
     img: `${imgDir}/symbol-of-spring.webp`,
-    description: "meanings.symbol-of-spring"
   },
   {
-    path: "symbol-of-belarus",
+    path: "belarus",
+    title: "title.belarus",
     img: `${imgDir}/symbol-of-belarus.webp`
   },
   {
-    path: "symbol-of-wealth",
+    path: "wealth",
     img: `${imgDir}/symbol-of-wealth.webp`,
-    description: "meanings.symbol-of-wealth"
   },
+  // {
+  //   path: "harvest",
+  //   img: `${imgDir}/symbol-of-harvest.webp`,
+  // },
   {
-    path: "symbol-of-harvest",
-    img: `${imgDir}/symbol-of-harvest.webp`,
-    description: "meanings.symbol-of-harvest"
-  },
-  {
-    path: "symbol-of-ancestors",
+    path: "ancestors",
     img: `${imgDir}/symbol-of-ancestors.webp`,
-    description: "meanings.symbol-of-ancestors"
   },
   {
-    path: "symbol-of-love",
+    path: "love",
     img: `${imgDir}/symbol-of-love.webp`,
-    description: "meanings.symbol-of-love"
   },
   {
-    path: "symbol-of-women",
+    path: "woman",
     img: `${imgDir}/symbol-of-women.webp`,
-    description: "meanings.symbol-of-women"
   },
   {
-    path: "symbol-of-sources",
+    path: "source",
     img: `${imgDir}/symbol-of-sources.webp`,
-    description: "symbol-of-sources"
   },
   {
-    path: "symbol-of-mother",
+    path: "mother",
     img: `${imgDir}/symbol-of-mother.webp`,
-    description: "symbol-of-mother"
   },
   {
-    path: "symbol-of-earth",
+    path: "earth",
     img: `${imgDir}/symbol-of-earth.webp`,
-    description: "symbol-of-earth"
   },
   {
-    path: "symbol-of-sun",
+    path: "sun",
     img: `${imgDir}/symbol-of-sun.webp`,
-    description: "symbol-of-sun"
   },
   {
-    path: "symbol-of-mermaid",
+    path: "mermaid",
     img: `${imgDir}/symbol-of-mermaid.webp`,
-    description: "symbol-of-mermaid"
   },
   {
-    path: "symbol-of-love-song",
-    img: `${imgDir}/symbol-of-love-song.webp`,
-    description: "symbol-of-love-song"
-  },
-  {
-    path: "symbol-of-life",
+    path: "life",
     img: `${imgDir}/symbol-of-life.webp`
   },
   {
-    path: "symbol-of-strong-family",
+    path: "family",
     img: `${imgDir}/symbol-of-strong-family.webp`,
-    description: "symbol-of-strong-family"
   },
   {
-    path: "symbol-of-life-tree",
-    img: `${imgDir}/symbol-tree-of-life.webp`,
-    description: "symbol-of-life-tree"
-  },
-  {
-    path: "symbol-of-talisman",
+    path: "talisman",
     img: `${imgDir}/symbol-of-talisman.webp`,
-    description: "symbol-of-talisman"
   },
   {
-    path: "symbol-of-womens-share",
-    img: `${imgDir}/symbol-of-womens-share.webp`,
-    description: "symbol-of-womens-share"
-  },
-  {
-    path: "symbol-of-song",
+    path: "song",
     img: `${imgDir}/symbol-of-song.webp`,
-    description: "symbol-of-song"
   },
-  // {
-  //   path: "symbol-of-mother-2",
-  //   img: `${imgDir}/symbol-of-talisman.webp`
-  // },
   {
-    path: "symbol-of-bereginia",
+    path: "bereginia",
     img: `${imgDir}/symbol-of-bereginia.webp`,
-    description: "symbol-of-bereginia"
   },
   {
-    path: "symbol-of-crop-yield",
+    path: "rye-woman",
     img: `${imgDir}/symbol-of-crop-yield.webp`,
-    description: "meanings.symbol-of-crop-yield"
   },
   {
-    path: "symbol-of-bathing-fire",
+    path: "kupala",
     img: `${imgDir}/symbol-of-bathing-fire.webp`,
-    description: "symbol-of-bathing-fire"
   },
   {
-    path: "symbol-of-crown",
+    path: "crown",
     img: `${imgDir}/symbol-of-crown.webp`,
-    description: "symbol-of-crown",
     hints: ["hints.symbol-of-crown"]
   }
 ];
@@ -180,4 +145,4 @@ export const KeyCodes = {
 export const NEXT_CODES = [KeyCodes.RIGHT, KeyCodes.UP];
 export const PREV_CODES = [KeyCodes.LEFT, KeyCodes.DOWN];
 
-export const DEFAULT_SYMBOL = 'pigeon';
+export const DEFAULT_SYMBOL = 'spring';
