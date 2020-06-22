@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { GithubPicker } from "react-color";
-import { Icon } from "../../styled/icon";
-import { themeIcon } from "../../constants";
 import { MAIN_COLORS } from "../../constants/themes";
 import PaletteIcon from "../../assets/icons/palette";
 

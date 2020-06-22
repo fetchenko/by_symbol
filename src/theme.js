@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    font-family: ${props => props.theme.fontFamily};
   }
 `;
 
@@ -31,16 +30,18 @@ const theme = {
       main: "#fff"
     }
   },
+  mediaQueries,
   fonts: {
-    teko: "Teko"
-  },
-  mediaQueries
+    asap: "'Asap', sans-serif",
+    dancing: "'Dancing Script', cursive",
+    merriweather: "'Merriweather', serif",
+  }
 };
 
 export const createTheme = (primary) => {
   return {
     ...theme,
-    primary, 
+    primary,
   }
 }
 

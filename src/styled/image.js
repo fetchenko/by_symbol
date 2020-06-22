@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const Img = styled.img`
@@ -8,6 +7,7 @@ export const Img = styled.img`
 `;
 
 export const ImageButton = styled.input`
+  outline: none;
   visibility: ${props => (props.hide ? "hidden" : "")};
   width: 100%;
   height: 100%;
