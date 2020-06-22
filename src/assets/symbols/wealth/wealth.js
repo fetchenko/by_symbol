@@ -1,7 +1,7 @@
 export const wealth = {
     id: 'wealth',
     sizes: {
-        xs: '15px',
+        xs: '13px',
         sm: "",
         md: "",
     },

@@ -7,7 +7,7 @@ import Layout from "./components/containers/layout";
 import { IntlProvider } from "react-intl";
 import { getLanguage } from "./helpers/localization";
 import { messages } from "./translations";
-import { THEME_COLORS, Black } from './constants/themes'
+import { THEME_COLORS, Red } from './constants/themes'
 
 const language = getLanguage();
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      theme: createTheme(THEME_COLORS.get(Black.main))
+      theme: createTheme(THEME_COLORS.get(Red.main))
     };
   }
 

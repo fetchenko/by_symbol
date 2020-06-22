@@ -1,7 +1,7 @@
 export const springAndYouth = {
     id: 'spring',
     sizes: {
-        xs: "12px",
+        xs: "11px",
         sm: "20px",
         md: "22px",
     },

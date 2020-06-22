@@ -67,8 +67,6 @@ class BlocksMenu extends Component {
 
     const nextValue = blockMenuOptions[symbolId].nextEl;
 
-    console.log({ symbolId, nextValue })
-
     if (nextValue) {
       history.push(nextValue)
     }

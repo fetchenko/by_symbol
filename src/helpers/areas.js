@@ -1,4 +1,5 @@
 import sortBy from 'lodash/sortBy'
+import uniq from 'lodash/uniq';
 
 export const changeAreas = (areas, vSize = 0, hSize = 0) => {
   return areas.map(item => {
@@ -144,4 +145,40 @@ export const optimizeDataVert = (data) => {
       color: item.color,
     }
   });
+}
+
+
+export const sliceUnnecessaryCells = (cells) => {
+  let coords = cells.map((cell) => {
+    const [y1, x1, y2, x2] = cell.split('/')
+
+    return {
+      x: parseInt(x1, 10),
+      y: parseInt(y1, 10),
+      x2: parseInt(x2, 10),
+      y2: parseInt(y2, 10),
+      color: cell.color,
+    };
+  });
+
+  const xPoints = uniq(coords.map((area) => parseInt(area.x, 10)));
+  const yPoints = uniq(coords.map((area) => parseInt(area.y, 10)));
+
+  const diffX = Math.min(...xPoints) - 1;
+  const diffY = Math.min(...yPoints) - 1;
+
+  return coords.map((cell) => {
+    const xPos = cell.x - diffX;
+    const yPos = cell.y - diffY;
+
+    const x2Pos = cell.x2 - diffX;
+    const y2Pos = cell.y2 - diffY;
+
+    return `${yPos} / ${xPos} / ${y2Pos} / ${x2Pos}`;
+
+    return {
+      area: `${yPos} / ${xPos} / ${yPos} / ${xPos}`,
+      color: cell.color,
+    }
+  })
 }

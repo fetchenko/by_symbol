@@ -7,4 +7,7 @@ export const Column = styled.div`
 
 export const Row = styled.div`
   display: flex;
+  flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'};
+  align-items: center;
+  justify-content: center;
 `

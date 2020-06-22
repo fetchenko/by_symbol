@@ -79,11 +79,11 @@ export const SYMBOL_OPTIONS = [
     path: "kupala",
     img: `${imgDir}/symbol-of-bathing-fire.webp`,
   },
-  {
-    path: "crown",
-    img: `${imgDir}/symbol-of-crown.webp`,
-    hints: ["hints.symbol-of-crown"]
-  }
+  // {
+  //   path: "crown",
+  //   img: `${imgDir}/symbol-of-crown.webp`,
+  //   hints: ["hints.symbol-of-crown"]
+  // }
 ];
 
 export const blockMenuOptions = SYMBOL_OPTIONS.reduce((acc, item, index, items) => {

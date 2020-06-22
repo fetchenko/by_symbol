@@ -1,9 +1,9 @@
 export const life = {
     id: 'life',
     sizes: {
-        xs: '5px',
+        xs: '8px',
         sm: "10px",
-        md: "15px",
+        md: "14px",
     },
     areas: [
         "1 / 13 / 1 / 15",

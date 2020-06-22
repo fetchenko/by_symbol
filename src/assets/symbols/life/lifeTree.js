@@ -1,9 +1,9 @@
 export const lifeTree = {
     id: 'lifeTree',
     sizes: {
-        xs: '',
+        xs: '12px',
         sm: '',
-        md: '',
+        md: '19px',
     },
     areas: [
         "1 / 10 / 1 / 11",

@@ -1,7 +1,7 @@
 export const pigeonInLove = {
     id: 'pigeonInLove',
     sizes: {
-        xs: '5px',
+        xs: '4px',
         sm: "8px",
         md: "11px",
     },

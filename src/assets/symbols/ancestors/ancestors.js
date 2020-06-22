@@ -1,7 +1,7 @@
 export const ancestors = {
     id: 'ancestors',
     sizes: {
-        xs: '18px',
+        xs: '16px',
         sm: '25px',
         md: '26px',
     },
