@@ -4,3 +4,10 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const Row = styled.div`
+  display: flex;
+  flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'};
+  align-items: center;
+  justify-content: center;
+`

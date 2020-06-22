@@ -7,12 +7,12 @@ const Layout = props => {
   const { children, onChangedTheme } = props;
 
   return (
-    <div>
+    <>
       <Header />
       <ThemeControl onChangedTheme={onChangedTheme} />
       {children}
       <Footer />
-    </div>
+    </>
   );
 };
 

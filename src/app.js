@@ -15,7 +15,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      theme: createTheme(THEME_COLORS.get(Red.main))  
+      theme: createTheme(THEME_COLORS.get(Red.main))
     };
   }
 
