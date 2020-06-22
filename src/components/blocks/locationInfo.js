@@ -13,10 +13,9 @@ const Container = styled.div`
 const Name = styled.h5`
   margin: 0;
   font-size: 1.3rem;
-  letter-spacing: 1;
+  font-family: ${props => props.theme.fonts.asap};
   color: #fff;
   opacity: 0.6;
-  font-family: 'Oxygen', sans-serif;
 `;
 
 const Address = styled.div`
@@ -29,7 +28,7 @@ function LocationInfo() {
     <Container>
       <Address>
         <Name>
-          <FormattedMessage id={AddressInfo.country} /> {`${AddressInfo.year}`}
+          <FormattedMessage id={AddressInfo.city} /> {AddressInfo.year}
         </Name>
       </Address>
     </Container>

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const MenuView = styled.div`
@@ -22,7 +21,7 @@ export const MenuItem = styled.li`
 export const BlockMenuItem = styled.li`
   width: 90px;
   height: 60px;
-  border: solid 2px
+  border: solid 3px
     ${props =>
       props.active ? props.theme.primary.main : props.theme.primary.light};
   list-style-type: none;

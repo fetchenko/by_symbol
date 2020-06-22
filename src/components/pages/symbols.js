@@ -1,125 +1,65 @@
-import React, { useState, Component } from "react";
-import { FormattedMessage } from "react-intl";
+import React from "react";
+import { useParams, useHistory } from 'react-router-dom';
 import { Swipeable } from "react-swipeable";
-import { symbols } from "../symbols";
-import BlocksMenu from "../menu/blocksMenu";
-import { SYMBOL_OPTIONS, KeyCodes } from "../../constants";
-import { Carousel, CarouselContent } from "../../styled/carousel";
-import { Column } from "../../styled/flex";
-import { SymbolTitle, SymbolDescription, SymbolHint } from "../typography";
-import { getNextValue, getPrevValue } from "../../helpers/collection";
-import InfoCardLayout from "../layouts/infoCardLayout";
+import { getSymbolData } from 'assets/symbols'
+import BlockMenu from "components/menu/blockMenu";
+import { Carousel, CarouselContent } from "styled/carousel";
+import { Column } from "styled/flex";
+import { DEFAULT_SYMBOL, blockMenuOptions } from 'constants/index';
+import SymbolSummary from 'components/blocks/symbolSummary';
+import SymbolsContent from 'components/blocks/symbolsContent';
+import SymbolNotFound from 'components/blocks/symbolNotFound';
 
-class Symbols extends Component {
-  constructor(props) {
-    super(props);
+function Symbols() {
+  const { symbolId = DEFAULT_SYMBOL } = useParams();
+  const history = useHistory();
 
-    this.state = {
-      symbol: SYMBOL_OPTIONS[0]
-    };
+  const symbolData = getSymbolData(symbolId);
+
+  if (!symbolData) {
+    return (
+      <SymbolNotFound />
+    )
   }
 
-  componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyDown);
-  }
+  const handleNext = () => {
+    const nextValue = blockMenuOptions[symbolId].nextEl;
 
-  componentWillUnmount() {
-    document.addEventListener("keydown", this.handleKeyDown);
-  }
-
-  handleKeyDown = event => {
-    if (event.keyCode === KeyCodes.LEFT || event.keyCode === KeyCodes.DOWN) {
-      this.handlePrev();
-    } else if (
-      event.keyCode === KeyCodes.RIGHT ||
-      event.keyCode === KeyCodes.UP
-    ) {
-      this.handleNext();
+    if (nextValue) {
+      history.push(nextValue)
     }
   };
 
-  handleNext = () => {
-    const nextValue = getNextValue(SYMBOL_OPTIONS, this.state.symbol);
+  const handlePrev = () => {
+    const prevValue = blockMenuOptions[symbolId].prevEl;
 
-    nextValue && this.setState({ symbol: nextValue });
+    if (prevValue) {
+      history.push(prevValue)
+    }
   };
 
-  handlePrev = () => {
-    const prevValue = getPrevValue(SYMBOL_OPTIONS, this.state.symbol);
-
-    prevValue && this.setState({ symbol: prevValue });
-  };
-
-  handleSelect = value => {
-    this.setState({ symbol: value });
-  };
-
-  renderSimpleView = symbolData => {
-    const { path, component: SymbolView, hints } = symbolData;
-
-    return (
-      <Column key={path}>
-        <SymbolTitle>
-          <FormattedMessage id={path} />
-        </SymbolTitle>
-        <SymbolView key={path} />
-        {hints && (
-          <SymbolHint>
-            {hints.map((hint) => (
-              <FormattedMessage key={hint} id={hint} />
-            ))}
-          </SymbolHint>
-        )}
-      </Column>
-    );
-  };
-
-  renderSymbolContent = () => {
-    const { symbol } = this.state;
-
-    return symbols.map(symbolData => {
-      const { path, component: SymbolView } = symbolData;
-
-      return path === symbol.path ? this.renderSimpleView(symbolData) : null;
-
-      return path === symbol.path ? (
-        <InfoCardLayout
-          key={symbol.path}
-          title={
-            <SymbolTitle>
-              <FormattedMessage id={symbol.path} />
-            </SymbolTitle>
-          }
-          description={
-            <SymbolDescription>
-              <FormattedMessage id={symbol.description} />
-            </SymbolDescription>
-          }
-          image={<SymbolView key={symbol.path} />}
-        />
-      ) : null;
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <BlocksMenu
-          options={SYMBOL_OPTIONS}
-          value={this.state.symbol}
-          onSelect={this.handleSelect}
-        />
-        <Swipeable
-          onSwipedLeft={this.handleNext}
-          onSwipedRight={this.handlePrev}
-        >
-          <Carousel>
-            <CarouselContent>{this.renderSymbolContent()}</CarouselContent>
-          </Carousel>
-        </Swipeable>
-      </div>
-    );
-  }
+  return (
+    <>
+      <BlockMenu />
+      <Swipeable
+        onSwipedLeft={handleNext}
+        onSwipedRight={handlePrev}
+      >
+        <Carousel>
+          <CarouselContent>
+            <Column>
+              <SymbolSummary
+                title={symbolData.title}
+                description={symbolData.description}
+              />
+              <SymbolsContent symbols={symbolData.symbols} />
+            </Column>
+          </CarouselContent>
+        </Carousel>
+      </Swipeable>
+    </>
+  );
 }
 
 export default Symbols;
+
