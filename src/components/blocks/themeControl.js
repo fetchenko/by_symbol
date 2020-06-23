@@ -42,7 +42,7 @@ const Picker = styled.div`
   }
 `;
 
-function ThemeConthrol({ color, onChangedTheme }) {
+function ThemeControl({ color, onChangedTheme }) {
   const [openPicker, setOpenPicker] = useState(false);
 
   const handleChangeColor = color => {
@@ -51,7 +51,11 @@ function ThemeConthrol({ color, onChangedTheme }) {
 
   return (
     <Container>
-      <Button active={openPicker} onClick={() => setOpenPicker(!openPicker)}>
+      <Button
+        active={openPicker}
+        onClick={() => setOpenPicker(!openPicker)}
+        aria-label="change theme"
+      >
         <PaletteIcon />
       </Button>
       {openPicker && (
@@ -69,4 +73,4 @@ function ThemeConthrol({ color, onChangedTheme }) {
   );
 }
 
-export default ThemeConthrol;
+export default ThemeControl;

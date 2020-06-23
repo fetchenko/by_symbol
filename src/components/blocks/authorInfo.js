@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Name = styled.h5`
   margin: 0;
-  color: ${props => props.theme.primary.main};
+  color: ${props => props.theme.text.onPrimaryLight};
   font-size: 1rem;
   font-family: ${props => props.theme.fonts.dancing};
   font-weight: normal;
@@ -30,7 +30,7 @@ const Link = styled.a`
   text-decoration: unset;
   font-family: ${props => props.theme.fonts.dancing};
   font-size: 1rem;
-  color: ${props => props.theme.primary.main};
+  color: ${props => props.theme.text.onPrimaryLight};
   cursor: pointer;
 
   &:hover {
@@ -48,7 +48,7 @@ function AuthorInfo() {
       <Name>
         <FormattedMessage id="created-by" />
       </Name>
-      <Link href={author.link} target="_blank">
+      <Link href={author.link} target="_blank" rel="noopener">
         {author.name}
       </Link>
     </Container>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Title = styled.h4`
-  color: ${props => props.theme.typograpty.primary.main};
+  color: #fff;
   font-size: 1.5rem;
   margin: 0;
   padding: ${props => props.theme.unit * 3}px;
@@ -14,7 +14,7 @@ export const Title = styled.h4`
 
 export const SymbolTitle = styled.h4`
   font-size: 1.3rem;
-  color: ${props => props.theme.primary.main};
+  color: ${props => props.theme.text.onWhite};
   text-align: center;
   font-weight: 500;
   font-family: ${props => props.theme.fonts.asap};

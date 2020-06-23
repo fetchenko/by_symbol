@@ -1,45 +1,86 @@
 export const Red = {
-  main: "#ff3333",
-  light: "#ffcccc"
+  primary: {
+    main: "#f44336",
+    light: "#ffcdd2",
+  },
+  text: {
+    onPrimaryMain: '',
+    onPrimaryLight: '#b40404',
+    onWhite: '#e41a1a',
+  }
 };
 
 export const Green = {
-  main: "#00994d",
-  light: "#00cc66"
+  primary: {
+    main: "#004d40",
+    light: "#4db6ac"
+  },
+  text: {
+    onPrimary: '',
+    onPrimaryLight: '#011310',
+    onWhite: '#004d40',
+  }
 };
 
 export const Blue = {
-  main: "#0039e6",
-  light: "#4d79ff"
+  primary: {
+    main: "#0d47a1",
+    light: "#90caf9"
+  },
+  text: {
+    onPrimary: '',
+    onPrimaryLight: '#0d47a1',
+    onWhite: '#0d47a1',
+  }
 };
 
 export const Black = {
-  main: "#404040",
-  light: "#8c8c8c"
+  primary: {
+    main: "#212121",
+    light: "#bdbdbd"
+  },
+  text: {
+    onPrimary: '',
+    onPrimaryLight: '#212121',
+    onWhite: '#212121',
+  }
 };
 
 export const Pink = {
-  main: "#ff66ff",
-  light: "#ffb3ff"
+  primary: {
+    main: "#ff66ff",
+    light: "#ffb3ff"
+  },
+  text: {
+    onPrimary: '',
+    onWhite: '',
+  }
 };
 
 export const Orange = {
-  main: "#ff6600",
-  light: "#ffa366"
+  primary: {
+    main: "#ef6c00",
+    light: "#ffcc80"
+  },
+  text: {
+    onPrimary: '',
+    onPrimaryLight: '#5f2c01',
+    onWhite: '#ef6c00',
+  }
 };
 
 export const MAIN_COLORS = [
-  Red.main,
-  Green.main,
-  Blue.main,
-  Orange.main,
-  Black.main
+  Red.primary.main,
+  Green.primary.main,
+  Blue.primary.main,
+  Orange.primary.main,
+  Black.primary.main
 ];
 
 export const THEME_COLORS = new Map([
-  [Red.main, Red],
-  [Green.main, Green],
-  [Blue.main, Blue],
-  [Orange.main, Orange],
-  [Black.main, Black]
+  [Red.primary.main, Red],
+  [Green.primary.main, Green],
+  [Blue.primary.main, Blue],
+  [Orange.primary.main, Orange],
+  [Black.primary.main, Black]
 ]);
