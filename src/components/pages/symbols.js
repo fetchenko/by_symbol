@@ -1,14 +1,24 @@
 import React from "react";
+import styled from 'styled-components';
 import { useParams, useHistory } from 'react-router-dom';
 import { Swipeable } from "react-swipeable";
 import { getSymbolData } from 'assets/symbols'
-import BlockMenu from "components/menu/blockMenu";
 import { Carousel, CarouselContent } from "styled/carousel";
 import { Column } from "styled/flex";
 import { DEFAULT_SYMBOL, blockMenuOptions } from 'constants/index';
 import SymbolSummary from 'components/blocks/symbolSummary';
 import SymbolsContent from 'components/blocks/symbolsContent';
 import SymbolNotFound from 'components/blocks/symbolNotFound';
+
+const Root = styled.div`
+  height: 100%;
+  padding: 20px;
+`
+
+const Container = styled.div`
+  height: calc(100% - 40px);
+  overflow: auto;
+`
 
 function Symbols() {
   const { symbolId = DEFAULT_SYMBOL } = useParams();
@@ -39,25 +49,26 @@ function Symbols() {
   };
 
   return (
-    <>
-      <BlockMenu />
-      <Swipeable
-        onSwipedLeft={handleNext}
-        onSwipedRight={handlePrev}
-      >
-        <Carousel>
-          <CarouselContent>
-            <Column>
-              <SymbolSummary
-                title={symbolData.title}
-                description={symbolData.description}
-              />
-              <SymbolsContent symbols={symbolData.symbols} />
-            </Column>
-          </CarouselContent>
-        </Carousel>
-      </Swipeable>
-    </>
+    <Root>
+      <Container>
+        <Swipeable
+          onSwipedLeft={handleNext}
+          onSwipedRight={handlePrev}
+        >
+          <Carousel>
+            <CarouselContent>
+              <Column>
+                <SymbolSummary
+                  title={symbolData.title}
+                  description={symbolData.description}
+                />
+                <SymbolsContent symbols={symbolData.symbols} />
+              </Column>
+            </CarouselContent>
+          </Carousel>
+        </Swipeable>
+      </Container>
+    </Root>
   );
 }
 

@@ -3,25 +3,31 @@ import styled from "styled-components";
 import LocationInfo from "../blocks/locationInfo";
 import AuthorInfo from '../blocks/authorInfo';
 
-const Footer = styled.div`
-  position: fixed;
-  bottom: 0;
+const Footer = styled.footer`
   width: 100%;
-  height: ${props => props.theme.unit * 12}px;
-  display: none;
+  height: 100%;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 ${props => props.theme.unit * 4}px;
   box-sizing: border-box;
   background-color: ${props => props.theme.primary.light};
-
-  ${props => props.theme.mediaQueries.sm} {
-    display: flex;
-  }
 `;
 
 const ContentBlock = styled.div`
-  width: 30%;
+  width: 50%;
+
+  &:first-child {
+    display: none;
+  }
+
+  ${props => props.theme.mediaQueries.sm} {
+    width: 30%;
+    
+    &:first-child {
+      display: block;
+    }
+  }
 `
 function MainFooter() {
   return (
