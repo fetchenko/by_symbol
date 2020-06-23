@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import isEqual from 'lodash/isEqual';
 import { injectIntl } from "react-intl";
 import { withRouter, Link } from 'react-router-dom';
 import {
@@ -29,7 +30,7 @@ class BlocksMenu extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
+    if (!isEqual(this.props.match.params, prevProps.match.params)) {
       this.ensureActiveItemVisible();
     }
   }
@@ -92,13 +93,12 @@ class BlocksMenu extends Component {
   };
 
   renderMenuItem = item => {
-    const { intl, location: { pathname } } = this.props;
-    const symbolId = pathname.replace('/', '');
+    const { intl, match: { params: { symbolId = DEFAULT_SYMBOL } } } = this.props;
 
     const active = (symbolId === item.path);
 
     const props = {
-      ref: (active) ? this.activeItemRef : undefined,
+      ref: (active) ? this.activeItemRef : null,
     }
 
     return (
@@ -107,7 +107,7 @@ class BlocksMenu extends Component {
           <Link to={item.path}>
             <ImageButtonWithLoader
               src={item.img}
-              alt={intl.formatMessage({ id: item.title || 'test' })}
+              alt={intl.formatMessage({ id: item.title })}
               loaderComponent={this.renderLoaderComponent}
             />
           </Link>
