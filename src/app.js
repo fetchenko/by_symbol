@@ -11,7 +11,7 @@ import { THEME_COLORS, Red } from './constants/themes'
 
 const language = getLanguage();
 function App() {
-  const [themeColor, setThemeColor] = useState(Red.main);
+  const [themeColor, setThemeColor] = useState(Red.primary.main);
   const theme = createTheme(THEME_COLORS.get(themeColor));
 
   return (
@@ -19,7 +19,7 @@ function App() {
       <IntlProvider locale={language} messages={messages[language]}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <ThemeControl onChangedTheme={setThemeColor} />
+          <ThemeControl color={themeColor} onChangedTheme={setThemeColor} />
           <Routes />
         </ThemeProvider>
       </IntlProvider>

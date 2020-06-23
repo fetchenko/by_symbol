@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Red } from 'constants/themes';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -25,15 +26,8 @@ export const mediaQueries = mediaBreakpoints.reduce((acc, item) => {
 
 const theme = {
   unit: 4,
-  primary: {
-    light: "#ffcccc",
-    main: "#ff6666"
-  },
-  typograpty: {
-    primary: {
-      main: "#fff"
-    }
-  },
+  primary: Red.primary,
+  text: Red.text,
   mediaQueries,
   fonts: {
     asap: "'Asap', sans-serif",
@@ -42,10 +36,10 @@ const theme = {
   }
 };
 
-export const createTheme = (primary) => {
+export const createTheme = (palette) => {
   return {
     ...theme,
-    primary,
+    ...palette,
   }
 }
 

@@ -31,6 +31,7 @@ const ImageButtonWithLoader = props => {
       <ImageButton
         type="image"
         src={src}
+        alt={alt}
         hide={!loaded}
         onClick={() => onClick && onClick()}
       />

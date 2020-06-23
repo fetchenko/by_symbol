@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FormattedMessage } from "react-intl";
+import { useIntl } from "react-intl";
 import { Address as AddressInfo } from "../../constants";
 
 const Container = styled.div`
@@ -14,8 +14,8 @@ const Name = styled.h5`
   margin: 0;
   font-size: 1.3rem;
   font-family: ${props => props.theme.fonts.asap};
-  color: #fff;
-  opacity: 0.6;
+  font-weight: 100;
+  color: ${props => props.theme.text.onPrimaryLight};
 `;
 
 const Address = styled.div`
@@ -24,11 +24,14 @@ const Address = styled.div`
 `;
 
 function LocationInfo() {
+  const intl = useIntl();
+  const city = intl.formatMessage({ id: AddressInfo.city })
+
   return (
     <Container>
       <Address>
         <Name>
-          <FormattedMessage id={AddressInfo.city} /> {AddressInfo.year}
+          {`${city} ${AddressInfo.year}`}
         </Name>
       </Address>
     </Container>
