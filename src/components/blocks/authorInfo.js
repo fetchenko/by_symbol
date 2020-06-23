@@ -14,9 +14,13 @@ const Container = styled.div`
 const Name = styled.h5`
   margin: 0;
   color: ${props => props.theme.primary.main};
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-family: ${props => props.theme.fonts.dancing};
   font-weight: normal;
+
+  ${props => props.theme.mediaQueries.md} {
+    font-size: 1.3rem;
+  }
 `;
 
 const Link = styled.a`
@@ -25,12 +29,16 @@ const Link = styled.a`
   border: none;
   text-decoration: unset;
   font-family: ${props => props.theme.fonts.dancing};
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: ${props => props.theme.primary.main};
   cursor: pointer;
 
   &:hover {
     text-decoration: underline;
+  }
+
+  ${props => props.theme.mediaQueries.md} {
+    font-size: 1.3rem;
   }
 `;
 

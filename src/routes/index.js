@@ -1,12 +1,12 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Symbols from "components/pages/symbols";
+import SymbolPage from "components/pages/symbolPage";
 
 const Navigation = () => {
   return (
     <Switch>
       <Route path="/:symbolId?">
-        <Symbols />
+        <SymbolPage />
       </Route>
     </Switch>
   );

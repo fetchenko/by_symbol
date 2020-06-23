@@ -4,16 +4,20 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
   }
+
+  button {
+    outline: none;
+  }
 `;
 
 export const mediaBreakpoints = [
-  { name: "sm", size: 36 },
-  { name: "md", size: 48 },
-  { name: "lg", size: 62 },
-  { name: "xl", size: 75 }
+  { name: "sm", size: 600 },
+  { name: "md", size: 960 },
+  { name: "lg", size: 1280 },
+  { name: "xl", size: 1920 }
 ];
 
-const createMediaQuery = n => `@media screen and (min-width:${n}em)`;
+const createMediaQuery = n => `@media screen and (min-width:${n}px)`;
 
 export const mediaQueries = mediaBreakpoints.reduce((acc, item) => {
   return { ...acc, [item.name]: createMediaQuery(item.size) };
