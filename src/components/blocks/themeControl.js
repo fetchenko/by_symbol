@@ -9,19 +9,20 @@ const Container = styled.div`
   z-index: 9;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   position: absolute;
   border: none;
   cursor: pointer;
-  top: 90px;
+  top: 10px;
   right: 16px;
   padding: 5px;
   border-radius: 50%;
   border: solid 2px
-    ${props => (props.active ? props.theme.primary.main : "transparent")};
+    ${props => (props.active ? props.theme.primary.light : "transparent")};
+  background-color: transparent;
 
   ${props => props.theme.mediaQueries.sm} {
-    top: 100px;
+    top: 180px;
     right: 20px;
   }
 
@@ -32,11 +33,11 @@ const Button = styled.div`
 
 const Picker = styled.div`
   position: absolute;
-  top: 145px;
-  right: 18px;
+  top: 60px;
+  right: 20px;
 
   ${props => props.theme.mediaQueries.sm} {
-    top: 155px;
+    top: 235px;
     right: 22px;
   }
 `;

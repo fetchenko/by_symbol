@@ -5,10 +5,6 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: ${props => props.theme.unit * 15}px;
+  height: 100%;
   background-color: ${props => props.theme.primary.main};
-
-  ${props => props.theme.mediaQueries.sm} {
-    height: ${props => props.theme.unit * 20}px;
-  }
 `;
