@@ -22,6 +22,7 @@ import { bereginia } from './characters/bereginia/bereginia'
 import { ryeWoman } from './characters/ryeWoman/ryeWoman';
 import { kupalaFire } from './holidays/kupala/kupalaFire';
 import { crown } from './custom/crown';
+import { sparysh } from './sparysh/sparysh';
 
 export const symbols = {
     spring: {
@@ -186,6 +187,14 @@ export const symbols = {
         description: 'meaning.crown',
         symbols: [
             crown,
+        ]
+    },
+    sparysh: {
+        id: 'sparysh',
+        title: 'title.sparysh',
+        description: 'meaning.sparysh',
+        symbols: [
+            sparysh,
         ]
     }
 };

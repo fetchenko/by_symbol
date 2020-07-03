@@ -1,6 +1,6 @@
-import messages_ru from "./ru.json";
-import messages_en from "./en.json";
-import messages_be from "./be.json";
+import messages_ru from "./ru.js";
+import messages_en from "./en.js";
+import messages_be from "./be.js";
 
 export const messages = {
   en: messages_en,

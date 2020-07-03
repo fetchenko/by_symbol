@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from "react-intl";
 import { SymbolTitle, SymbolDescription } from "components/typography";
 
-const Container = styled.div``
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
 function SymbolSummary({ title = 'test', description }) {
     const intl = useIntl();
