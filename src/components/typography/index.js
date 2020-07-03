@@ -12,14 +12,16 @@ export const Title = styled.h4`
   }
 `;
 
-export const SymbolTitle = styled.h4`
-  font-size: 1.3rem;
+export const SymbolTitle = styled.h2`
+  margin: 10px 0;
   color: ${props => props.theme.text.onWhite};
   text-align: center;
+  font-size: 1.3rem;
   font-weight: 500;
   font-family: ${props => props.theme.fonts.asap};
 
   ${props => props.theme.mediaQueries.sm} {
+    margin: 20px 0;
     font-size: 1.6rem;
   }
 `;
@@ -37,10 +39,20 @@ export const SymbolHint = styled.p`
 
 `
 export const SymbolDescription = styled.h4`
-  font-size: 1.2rem;
+  width: 100%;
+  margin: 8px 0;
+  font-size: 1rem;
   font-weight: normal;
+  font-family: ${props => props.theme.fonts.asap};
+  white-space: break-spaces;
+  text-align: center;
 
   ${props => props.theme.mediaQueries.sm} {
+    margin: 16px 0;
     font-size: 1.3rem;
+  }
+
+  ${props => props.theme.mediaQueries.md} {
+    width: 60%;
   }
 `;
