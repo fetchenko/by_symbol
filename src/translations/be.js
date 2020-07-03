@@ -1,4 +1,6 @@
-{
+import { meaningOfSparysh } from 'assets/symbols/sparysh/meaningOfSparysh';
+
+export default {
   "belorussian-symbols": "Беларускія сімвалы",
   "title.spring": "Сімвалы вясны і маладосці",
   "meaning.spring": "#",
@@ -45,6 +47,8 @@
   "meaning.life": "#",
   "title.harvest": "#",
   "meaning.harvest": "#",
+  "title.sparysh": "Сімвал Спарыша",
+  "meaning.sparysh": meaningOfSparysh.be,
   "home": "Дахаты",
   "make-symbol": "Стварыць сімвал",
   "Belarus": "Беларусь",

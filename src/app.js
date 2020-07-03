@@ -10,6 +10,7 @@ import { messages } from "./translations";
 import { THEME_COLORS, Red } from './constants/themes'
 
 const language = getLanguage();
+
 function App() {
   const [themeColor, setThemeColor] = useState(Red.primary.main);
   const theme = createTheme(THEME_COLORS.get(themeColor));

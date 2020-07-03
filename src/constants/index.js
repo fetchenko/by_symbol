@@ -95,6 +95,11 @@ export const SYMBOL_OPTIONS = [
     title: "title.kupala",
     img: `${imgDir}/symbol-of-bathing-fire.webp`,
   },
+  {
+    path: "sparysh",
+    title: "title.sparysh",
+    img: `${imgDir}/sparysh.webp`,
+  }
   // {
   //   path: "crown",
   //   img: `${imgDir}/symbol-of-crown.webp`,
