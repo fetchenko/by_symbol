@@ -50,6 +50,8 @@ export default {
   "meaning.harvest": "#",
   "title.sparysh": "Символ Спарыша",
   "meaning.sparysh": meaningOfSparysh.ru,
+  "title.love-battle-win": "Верим Можем Победим",
+  "meaning.love-battle-win": "#",
   "home": "Главная",
   "make-symbol": "Создать символ",
   "Belarus": "Беларусь",
