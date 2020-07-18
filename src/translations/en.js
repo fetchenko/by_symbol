@@ -49,6 +49,8 @@ export default {
   "meaning.harvest": "#",
   "title.sparysh": "Symbol of Sparysh",
   "meaning.sparysh": meaningOfSparysh.en,
+  "title.love-battle-win": "Love Battle Win",
+  "meaning.love-battle-win": "#",
   "home": "Home",
   "make-symbol": "Make symbol",
   "Belarus": "Belarus",
