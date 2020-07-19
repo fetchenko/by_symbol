@@ -210,7 +210,7 @@ export const symbols = {
             love,
             battle,
             win,
-        ]
+        ],
     }
 };
 

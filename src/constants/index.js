@@ -103,7 +103,7 @@ export const SYMBOL_OPTIONS = [
   {
     path: "love-battle-win",
     title: "title.love-battle-win",
-    img: `${imgDir}/love-win-battle.webp`,
+    img: `${imgDir}/love-battle-win.webp`,
   }
   // {
   //   path: "crown",
