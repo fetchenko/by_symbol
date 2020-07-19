@@ -1,3 +1,5 @@
+export const bgColor = '#f8f9f4';
+
 export const Red = {
   primary: {
     main: "#f44336",
@@ -48,19 +50,20 @@ export const Black = {
 
 export const Pink = {
   primary: {
-    main: "#ff66ff",
+    main: "#d81b60",
     light: "#ffb3ff"
   },
   text: {
     onPrimary: '',
-    onWhite: '',
+    onPrimaryLight: '#700433',
+    onWhite: '#880e4f',
   }
 };
 
 export const Orange = {
   primary: {
     main: "#ef6c00",
-    light: "#ffcc80"
+    light: "#ffcc80",
   },
   text: {
     onPrimary: '',
@@ -73,7 +76,8 @@ export const MAIN_COLORS = [
   Red.primary.main,
   Green.primary.main,
   Blue.primary.main,
-  Orange.primary.main,
+  Pink.primary.main,
+  // Orange.primary.main,
   Black.primary.main
 ];
 
@@ -81,6 +85,7 @@ export const THEME_COLORS = new Map([
   [Red.primary.main, Red],
   [Green.primary.main, Green],
   [Blue.primary.main, Blue],
-  [Orange.primary.main, Orange],
+  // [Orange.primary.main, Orange],
+  [Pink.primary.main, Pink],
   [Black.primary.main, Black]
 ]);

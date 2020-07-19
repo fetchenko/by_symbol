@@ -1,9 +1,10 @@
 import { createGlobalStyle } from "styled-components";
-import { Red } from 'constants/themes';
+import { Red, bgColor } from 'constants/themes';
 
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
+    background-color: ${bgColor};
   }
 
   button {
@@ -28,6 +29,10 @@ const theme = {
   unit: 4,
   primary: Red.primary,
   text: Red.text,
+  background: {
+    paper: '#fff',
+    default: bgColor,
+  },
   mediaQueries,
   fonts: {
     asap: "'Asap', sans-serif",

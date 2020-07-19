@@ -22,7 +22,6 @@ const ImageButtonWithLoader = props => {
   return (
     <Container width="90px" height="60px">
       <Img
-        // hide={!loaded}
         hide
         src={src}
         alt={alt}
