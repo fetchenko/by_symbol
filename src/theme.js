@@ -1,9 +1,10 @@
 import { createGlobalStyle } from "styled-components";
-import { Red } from 'constants/themes';
+import { Red, bgColor } from 'constants/themes';
 
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
+    background-color: ${bgColor};
   }
 
   button {

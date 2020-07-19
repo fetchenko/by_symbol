@@ -1,3 +1,5 @@
+export const bgColor = '#f8f9f4';
+
 export const Red = {
   primary: {
     main: "#f44336",
@@ -60,7 +62,7 @@ export const Pink = {
 export const Orange = {
   primary: {
     main: "#ef6c00",
-    light: "#ffcc80"
+    light: "#ffcc80",
   },
   text: {
     onPrimary: '',
