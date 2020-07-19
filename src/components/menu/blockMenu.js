@@ -13,11 +13,12 @@ import GridLoading from "components/blocks/gridLoading";
 import ImageButtonWithLoader from "components/blocks/imageButtonWithLoader";
 import {
   SYMBOL_OPTIONS,
-  DEFAULT_SYMBOL,
   NEXT_CODES,
   PREV_CODES,
   blockMenuOptions,
 } from 'constants/index'
+import { getSymbolIdFromRoute } from 'helpers/navigation';
+
 class BlocksMenu extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +31,7 @@ class BlocksMenu extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (!isEqual(this.props.match.params, prevProps.match.params)) {
+    if (!isEqual(this.props.location.hash, prevProps.location.hash)) {
       this.ensureActiveItemVisible();
     }
   }
@@ -42,7 +43,7 @@ class BlocksMenu extends Component {
   ensureActiveItemVisible() {
     const itemComponent = this.activeItemRef;
 
-    if (itemComponent) {
+    if (itemComponent && itemComponent.current) {
       itemComponent.current.scrollIntoView({
         behavior: "smooth",
         inline: "center"
@@ -59,32 +60,26 @@ class BlocksMenu extends Component {
   };
 
   handleNext = () => {
-    const {
-      match: {
-        params: { symbolId = DEFAULT_SYMBOL },
-      },
-      history,
-    } = this.props;
+    const { history, location } = this.props;
+
+    const symbolId = getSymbolIdFromRoute(location);
 
     const nextValue = blockMenuOptions[symbolId].nextEl;
 
     if (nextValue) {
-      history.push(nextValue)
+      history.push(`/#${nextValue}`)
     }
   };
 
   handlePrev = () => {
-    const {
-      match: {
-        params: { symbolId = DEFAULT_SYMBOL },
-      },
-      history,
-    } = this.props;
+    const { history, location } = this.props;
+
+    const symbolId = getSymbolIdFromRoute(location);
 
     const prevValue = blockMenuOptions[symbolId].prevEl;
 
     if (prevValue) {
-      history.push(prevValue)
+      history.push(`/#${prevValue}`)
     }
   };
 
@@ -93,7 +88,9 @@ class BlocksMenu extends Component {
   };
 
   renderMenuItem = item => {
-    const { intl, match: { params: { symbolId = DEFAULT_SYMBOL } } } = this.props;
+    const { intl, location } = this.props;
+
+    const symbolId = getSymbolIdFromRoute(location);
 
     const active = (symbolId === item.path);
 
@@ -104,7 +101,7 @@ class BlocksMenu extends Component {
     return (
       <BlockMenuItem key={item.path} ref={props.ref} active={active}>
         {item.img && (
-          <Link to={item.path}>
+          <Link to={`/#${item.path}`}>
             <ImageButtonWithLoader
               src={item.img}
               alt={intl.formatMessage({ id: item.title })}

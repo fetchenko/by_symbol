@@ -1,14 +1,15 @@
 import React from "react";
 import styled from 'styled-components';
-import { useParams, useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { Swipeable } from "react-swipeable";
 import { getSymbolData } from 'assets/symbols'
 import { Carousel, CarouselContent } from "styled/carousel";
 import { Column } from "styled/flex";
-import { DEFAULT_SYMBOL, blockMenuOptions } from 'constants/index';
+import { blockMenuOptions } from 'constants/index';
 import SymbolSummary from 'components/blocks/symbolSummary';
 import SymbolsContent from 'components/blocks/symbolsContent';
 import SymbolNotFound from 'components/blocks/symbolNotFound';
+import { getSymbolIdFromRoute } from 'helpers/navigation';
 
 const Root = styled.div`
   height: 100%;
@@ -21,8 +22,10 @@ const Container = styled.div`
 `
 
 function Symbols() {
-  const { symbolId = DEFAULT_SYMBOL } = useParams();
+  const location = useLocation();
   const history = useHistory();
+
+  const symbolId = getSymbolIdFromRoute(location);
 
   const symbolData = getSymbolData(symbolId);
 
@@ -36,7 +39,7 @@ function Symbols() {
     const nextValue = blockMenuOptions[symbolId].nextEl;
 
     if (nextValue) {
-      history.push(nextValue)
+      history.push(`/#${nextValue}`)
     }
   };
 
@@ -44,7 +47,7 @@ function Symbols() {
     const prevValue = blockMenuOptions[symbolId].prevEl;
 
     if (prevValue) {
-      history.push(prevValue)
+      history.push(`/#${prevValue}`)
     }
   };
 
