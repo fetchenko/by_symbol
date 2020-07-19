@@ -2,7 +2,7 @@ export const sparysh = {
     id: 'sparysh',
     sizes: {
         xs: '',
-        sm: '14px',
+        sm: '12px',
         md: '18px',
     },
     areas: [

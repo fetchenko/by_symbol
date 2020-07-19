@@ -99,6 +99,11 @@ export const SYMBOL_OPTIONS = [
     path: "sparysh",
     title: "title.sparysh",
     img: `${imgDir}/sparysh.webp`,
+  },
+  {
+    path: "love-battle-win",
+    title: "title.love-battle-win",
+    img: `${imgDir}/love-win-battle.webp`,
   }
   // {
   //   path: "crown",

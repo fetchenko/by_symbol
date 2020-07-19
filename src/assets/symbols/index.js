@@ -23,6 +23,10 @@ import { ryeWoman } from './characters/ryeWoman/ryeWoman';
 import { kupalaFire } from './holidays/kupala/kupalaFire';
 import { crown } from './custom/crown';
 import { sparysh } from './sparysh/sparysh';
+import { sparysh2 } from './sparysh/sparysh2';
+import { love } from './love-win-battle/love';
+import { battle } from './love-win-battle/battle';
+import { win } from './love-win-battle/win';
 
 export const symbols = {
     spring: {
@@ -195,6 +199,17 @@ export const symbols = {
         description: 'meaning.sparysh',
         symbols: [
             sparysh,
+            sparysh2,
+        ]
+    },
+    'love-battle-win': {
+        id: 'love-battle-win',
+        title: 'title.love-battle-win',
+        description: 'meaning.love-battle-win',
+        symbols: [
+            love,
+            battle,
+            win,
         ]
     }
 };
