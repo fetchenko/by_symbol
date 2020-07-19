@@ -11,5 +11,5 @@ export const ImageButton = styled.input`
   visibility: ${props => (props.hide ? "hidden" : "")};
   width: 100%;
   height: 100%;
-
+  background-color: ${props => props.theme.background.default};
 `

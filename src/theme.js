@@ -29,6 +29,10 @@ const theme = {
   unit: 4,
   primary: Red.primary,
   text: Red.text,
+  background: {
+    paper: '#fff',
+    default: bgColor,
+  },
   mediaQueries,
   fonts: {
     asap: "'Asap', sans-serif",
