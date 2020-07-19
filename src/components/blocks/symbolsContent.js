@@ -21,7 +21,7 @@ function SymbolsContent({ symbolId, symbols }) {
         const { sizes: { xs, sm, md } } = symbol;
 
         return (
-          <SymbolContainer key={symbol.id}>
+          <SymbolContainer id={symbol.id} key={symbol.id}>
             <GridContainer
               key={symbol.id}
               rows={xs}
