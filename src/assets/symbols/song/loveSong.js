@@ -3,7 +3,7 @@ export const loveSong = {
     sizes: {
         xs: '7px',
         sm: '10px',
-        md: '13px',
+        md: '12px',
     },
     areas: [
         "1 / 13 / 1 / 16",

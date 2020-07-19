@@ -62,7 +62,10 @@ function Symbols() {
                   title={symbolData.title}
                   description={symbolData.description}
                 />
-                <SymbolsContent symbols={symbolData.symbols} />
+                <SymbolsContent
+                  symbolId={symbolId}
+                  symbols={symbolData.symbols}
+                />
               </Column>
             </CarouselContent>
           </Carousel>
