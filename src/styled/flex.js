@@ -8,6 +8,6 @@ export const Column = styled.div`
 export const Row = styled.div`
   display: flex;
   flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'};
-  align-items: center;
+  align-items: ${props => props.align || 'center'};
   justify-content: center;
 `
