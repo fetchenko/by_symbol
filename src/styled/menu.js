@@ -21,11 +21,8 @@ export const MenuItem = styled.li`
 export const BlockMenuItem = styled.li`
   width: 90px;
   height: 60px;
-  border: solid 3px
-    ${props =>
-      props.active ? props.theme.primary.main : props.theme.primary.light};
   list-style-type: none;
-  margin: 0 ${props => props.theme.unit}px;
+  margin: 0px 4px 6px 4px;
   cursor: pointer;
   transition: 0.5s;
 `;
@@ -42,7 +39,7 @@ export const BlockMenuContent = styled.ul`
   flex-direction: row;
   align-items: center;
   width: 100%;
-  padding: 5px 0;
+  padding: 4px 0;
   margin: 0;
   overflow: auto hidden;
   scrollbar-color: ${props => props.theme.primary.main}80 ${props => props.theme.primary.light}80; 

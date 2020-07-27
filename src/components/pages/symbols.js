@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Swipeable } from "react-swipeable";
 import { getSymbolData } from 'assets/symbols'
+import { useDrop } from 'react-dnd';
 import { Carousel, CarouselContent } from "styled/carousel";
 import { Column } from "styled/flex";
 import { blockMenuOptions } from 'constants/index';
@@ -10,6 +11,8 @@ import SymbolSummary from 'components/blocks/symbolSummary';
 import SymbolsContent from 'components/blocks/symbolsContent';
 import SymbolNotFound from 'components/blocks/symbolNotFound';
 import { getSymbolIdFromRoute } from 'helpers/navigation';
+import { createHashLink } from 'helpers/link';
+import { DragTypes } from "constants/dragTypes";
 
 const Root = styled.div`
   height: 100%;
@@ -19,6 +22,11 @@ const Root = styled.div`
 const Container = styled.div`
   height: calc(100% - 40px);
   overflow: auto;
+  border: solid 2px transparent;
+  border-color: ${({ theme, hovered }) =>
+    hovered ? theme.primary.main : 'transparent'};
+  border-style: dashed;
+  transition: 250ms;
 `
 
 function Symbols() {
@@ -26,8 +34,17 @@ function Symbols() {
   const history = useHistory();
 
   const symbolId = getSymbolIdFromRoute(location);
-
   const symbolData = getSymbolData(symbolId);
+
+  const [{ isOver }, drop] = useDrop({
+    accept: DragTypes.SYMBOL,
+    drop: (item) => {
+      history.push(createHashLink(item.id));
+    },
+    collect: (monitor) => ({
+      isOver: monitor.isOver(),
+    }),
+  })
 
   if (!symbolData) {
     return (
@@ -39,7 +56,7 @@ function Symbols() {
     const nextValue = blockMenuOptions[symbolId].nextEl;
 
     if (nextValue) {
-      history.push(`/#${nextValue}`)
+      history.push(createHashLink(nextValue))
     }
   };
 
@@ -47,13 +64,13 @@ function Symbols() {
     const prevValue = blockMenuOptions[symbolId].prevEl;
 
     if (prevValue) {
-      history.push(`/#${prevValue}`)
+      history.push(createHashLink(prevValue))
     }
   };
 
   return (
     <Root>
-      <Container>
+      <Container hovered={isOver} ref={drop}>
         <Swipeable
           onSwipedLeft={handleNext}
           onSwipedRight={handlePrev}
