@@ -29,9 +29,6 @@ function BlockMenuItem({ item }) {
 		})
 	})
 
-
-	console.log({ isDragging })
-
 	function ensureActiveItemVisible() {
 		if (activeItemRef && activeItemRef.current) {
 			activeItemRef.current.scrollIntoView({
