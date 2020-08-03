@@ -24,6 +24,7 @@ import { kupalaFire } from './holidays/kupala/kupalaFire';
 import { crown } from './custom/crown';
 import { sparysh } from './sparysh/sparysh';
 import { sparysh2 } from './sparysh/sparysh2';
+import { sparysh3 } from './sparysh/sparysh3';
 import { love } from './love-win-battle/love';
 import { battle } from './love-win-battle/battle';
 import { win } from './love-win-battle/win';
@@ -200,6 +201,7 @@ export const symbols = {
         symbols: [
             sparysh,
             sparysh2,
+            sparysh3,
         ]
     },
     'love-battle-win': {
