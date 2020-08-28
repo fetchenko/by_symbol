@@ -5,6 +5,7 @@ export const mother = {
         sm: "8px",
         md: "10px",
     },
+    title: 'short-title.mother',
     areas: [
         "1 / 21 / 1 / 22",
         "1 / 23 / 1 / 24",

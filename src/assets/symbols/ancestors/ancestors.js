@@ -5,6 +5,7 @@ export const ancestors = {
         sm: '25px',
         md: '26px',
     },
+    title: 'short-title.ancestors',
     areas: [
         "1 / 6 / 1 / 7",
         "1 / 8 / 1 / 9",
