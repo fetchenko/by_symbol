@@ -1,43 +1,42 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { GithubPicker } from "react-color";
-import { MAIN_COLORS } from "../../constants/themes";
-import PaletteIcon from "../../assets/icons/palette";
+import { MAIN_COLORS } from "constants/themes";
+import PaletteIcon from "assets/icons/palette";
+import ClickableOpacity from "components/blocks/clickableOpacity";
 
 const Container = styled.div`
-  position: relative;
-  z-index: 9;
 `;
 
 const Button = styled.button`
-  position: absolute;
+  position: fixed;
   border: none;
   cursor: pointer;
-  top: 10px;
-  right: 16px;
+  top: 124px;
+  right: 8px;
   padding: 5px;
   border-radius: 50%;
   border: solid 2px
-    ${props => (props.active ? props.theme.primary.light : "transparent")};
+    ${(props) => (props.active ? props.theme.primary.light : "transparent")};
   background-color: transparent;
 
-  ${props => props.theme.mediaQueries.sm} {
-    top: 180px;
-    right: 20px;
+  ${(props) => props.theme.mediaQueries.sm} {
+    top: 98px;
+    right: 18px;
   }
 
   path {
-    fill: ${props => props.theme.primary.light};
+    fill: ${(props) => props.theme.primary.light};
   }
 `;
 
 const Picker = styled.div`
-  position: absolute;
-  top: 60px;
-  right: 20px;
+  position: fixed;
+  top: 170px;
+  right: 12px;
 
-  ${props => props.theme.mediaQueries.sm} {
-    top: 235px;
+  ${(props) => props.theme.mediaQueries.sm} {
+    top: 145px;
     right: 22px;
   }
 `;
@@ -45,7 +44,9 @@ const Picker = styled.div`
 function ThemeControl({ color, onChangedTheme }) {
   const [openPicker, setOpenPicker] = useState(false);
 
-  const handleChangeColor = color => {
+  const handleChangeColor = (color, event) => {
+    event.stopPropagation();
+
     onChangedTheme(color.hex);
   };
 
@@ -59,15 +60,17 @@ function ThemeControl({ color, onChangedTheme }) {
         <PaletteIcon />
       </Button>
       {openPicker && (
-        <Picker>
-          <GithubPicker
-            color={color}
-            colors={MAIN_COLORS}
-            onChange={handleChangeColor}
-            triangle="top-right"
-            width="125px"
-          />
-        </Picker>
+        <ClickableOpacity fixed={false} onClick={() => setOpenPicker(false)}>
+          <Picker>
+            <GithubPicker
+              color={color}
+              colors={MAIN_COLORS}
+              onChange={handleChangeColor}
+              triangle="top-right"
+              width="125px"
+            />
+          </Picker>
+        </ClickableOpacity>
       )}
     </Container>
   );

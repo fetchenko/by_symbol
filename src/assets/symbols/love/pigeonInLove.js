@@ -5,6 +5,7 @@ export const pigeonInLove = {
         sm: "8px",
         md: "11px",
     },
+    title: 'short-title.love',
     areas: [
         "1 / 35 / 1 / 35",
         "2 / 34 / 2 / 37",

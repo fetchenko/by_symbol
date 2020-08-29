@@ -5,6 +5,7 @@ export const woman = {
         sm: '15px',
         md: '16px',
     },
+    title: 'short-title.woman',
     areas: [
         "1 / 14 / 1 / 15",
         "2 / 13 / 2 / 16",

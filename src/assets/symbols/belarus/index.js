@@ -5,6 +5,7 @@ export const belarus = {
         sm: '12px',
         md: '14px',
     },
+    title: 'short-title.belarus',
     areas: [
         "1 / 6 / 1 / 7",
         "1 / 25 / 1 / 26",

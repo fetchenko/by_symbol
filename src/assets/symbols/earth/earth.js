@@ -5,6 +5,7 @@ export const earth = {
         sm: '12px',
         md: '14px',
     },
+    title: 'short-title.earth',
     areas: [
         "1 / 18 / 1 / 19",
         "2 / 17 / 2 / 20",

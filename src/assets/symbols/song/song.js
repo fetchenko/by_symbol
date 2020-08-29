@@ -5,6 +5,7 @@ export const song = {
         sm: '12px',
         md: '16px',
     },
+    title: 'short-title.song',
     areas: [
         "1 / 9 / 1 / 12",
         "1 / 14 / 1 / 15",
