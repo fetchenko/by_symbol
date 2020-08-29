@@ -1,4 +1,5 @@
-import { meaningOfSparysh } from 'assets/symbols/sparysh/meaningOfSparysh';
+import { meaningOfSparysh } from "assets/symbols/sparysh/meaningOfSparysh";
+import { SOURCES, ABOUT } from "constants/translations";
 
 export default {
   "belorussian-symbols": "Беларускія сімвалы",
@@ -51,12 +52,15 @@ export default {
   "meaning.sparysh": meaningOfSparysh.be,
   "title.love-battle-win": "Верым Можам Пераможам",
   "meaning.love-battle-win": "#",
-  "home": "Дахаты",
+  home: "Дахаты",
   "make-symbol": "Стварыць сімвал",
-  "Belarus": "Беларусь",
-  "Vitebsk": "Віцебск",
-  "hints.symbol-of-crown": "Гэта не беларускі арнамент. Гэты сімвал зроблены спецыяльна для Агель Юлі.",
+  Belarus: "Беларусь",
+  Vitebsk: "Віцебск",
+  "hints.symbol-of-crown":
+    "Гэта не беларускі арнамент. Гэты сімвал зроблены спецыяльна для Агель Юлі.",
   "created-by": " ",
   "symbol-not-found": "Сімвал не знойдзены",
-  "test": "#"
-}
+  test: "#",
+  [SOURCES]: "Крыніцы",
+  [ABOUT]: "Пра праект",
+};

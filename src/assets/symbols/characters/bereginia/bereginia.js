@@ -5,6 +5,7 @@ export const bereginia = {
         sm: '8px',
         md: '10px',
     },
+    title: 'short-title.bereginia',
     areas: [
         "1 / 14 / 1 / 15",
         "2 / 13 / 2 / 14",

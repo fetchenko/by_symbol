@@ -5,6 +5,7 @@ export const sun = {
         sm: '14px',
         md: '14px',
     },
+    title: 'short-title.sun',
     areas: [
         "1 / 14 / 1 / 15",
         "1 / 20 / 1 / 21",

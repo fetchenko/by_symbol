@@ -5,6 +5,7 @@ export const wealth = {
         sm: "",
         md: "",
     },
+    title: 'short-title.wealth',
     areas: [
         "1 / 1 / 2 / 2",
         "1 / 4 / 2 / 5",

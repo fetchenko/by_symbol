@@ -2,7 +2,6 @@ import React from "react";
 import Header from "components/navigation/header";
 import Footer from "components/navigation/footer";
 import ThemeControl from 'components/blocks/themeControl';
-import BlockMenu from 'components/menu/blockMenu';
 import {
   Container,
   HeaderRow,
@@ -20,7 +19,6 @@ const Layout = props => {
         <Header />
       </HeaderRow>
       <MenuRow>
-        <BlockMenu />
       </MenuRow>
       <ContentRow>
         {children}

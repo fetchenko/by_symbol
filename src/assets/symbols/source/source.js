@@ -5,6 +5,7 @@ export const source = {
         sm: '20px',
         md: '22px',
     },
+    title: 'short-title.source',
     areas: [
         "1 / 10 / 1 / 11",
         "2 / 8 / 2 / 10",
