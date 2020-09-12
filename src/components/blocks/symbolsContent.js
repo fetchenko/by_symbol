@@ -14,7 +14,7 @@ const SymbolContainer = styled.div`
   }
 `;
 
-function SymbolsContent({ symbolId, symbols }) {
+export default function SymbolsContent({ symbolId, symbols }) {
   const intl = useIntl();
   const symbolsLayout = getSymbolsLayouts(symbolId);
 
@@ -24,15 +24,16 @@ function SymbolsContent({ symbolId, symbols }) {
         symbols.map((symbol) => {
           const {
             sizes: { xs, sm, md },
+            areas,
           } = symbol;
 
           return (
             <SymbolContainer id={symbol.id} key={symbol.id}>
-              {symbol.title && (
+              {/* {symbol.title && (
                 <SymbolTitle>
                   {intl.formatMessage({ id: symbol.title })}
                 </SymbolTitle>
-              )}
+              )} */}
               <GridContainer
                 key={symbol.id}
                 rows={xs}
@@ -42,7 +43,7 @@ function SymbolsContent({ symbolId, symbols }) {
                 rowsMd={md}
                 columnsMd={md}
               >
-                {symbol.areas.map((area) => (
+                {areas.map((area) => (
                   <GridBlock key={area} gridArea={area} />
                 ))}
               </GridContainer>
@@ -52,5 +53,3 @@ function SymbolsContent({ symbolId, symbols }) {
     </Row>
   );
 }
-
-export default SymbolsContent;

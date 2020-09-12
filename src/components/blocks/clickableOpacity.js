@@ -13,7 +13,9 @@ const Anchor = styled.div`
   position: relative;
 `;
 
-export default function ClickableOpacity({ children, onClick, fixed = true }) {
+export default function ClickableOpacity(props) {
+  const { children, onClick, fixed = true } = props;
+
   return (
     <Root onClick={onClick} fixed={fixed}>
       <Anchor>{children}</Anchor>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import { useLocation, useHistory } from "react-router-dom";
 import { useIntl } from "react-intl";
 import Header from "components/navigation/header";
-import MainMenu from "components/menu/mainMenu";
+import MainMenu from "components/menu/mainMenu/index";
 import {
   Container,
   HeaderRow,
@@ -12,9 +13,27 @@ import {
 } from "styled/layout";
 import { getSymbolIdFromRoute } from "helpers/navigation";
 import { createHashLink } from "helpers/link";
-import { createOptionsConfig } from "helpers/collection";
+import {
+  createOptionsConfig,
+  createSubOptionsConfig,
+} from "helpers/collection";
 import { translateMenuOptions } from "helpers/translation";
 import Symbols from "./symbols";
+import { getSymbolData } from "assets/symbols";
+import MainMenuMobile from "components/menu/mainMenu/mainMenuMobile";
+import ThemeControl from "components/blocks/themeControl";
+import { THEME_COLORS, Red } from "constants/themes";
+import { createTheme } from "theme";
+import { ThemeProvider } from "styled-components";
+
+const ThemeAnchor = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: solid green;
+`;
 
 function getSymbolId(location, options) {
   const symbolIdFromRoute = getSymbolIdFromRoute(location);
@@ -23,23 +42,26 @@ function getSymbolId(location, options) {
   return symbolIdFromRoute || defaultSymbolId;
 }
 
-function SymbolPage() {
+function SymbolPage(props) {
   const intl = useIntl();
   const location = useLocation();
   const history = useHistory();
 
-  const menuOptions = translateMenuOptions(intl);
-  const menuConfig = createOptionsConfig(menuOptions);
+  const mainMenuOptions = translateMenuOptions(intl);
+  const mainMenuConfig = createOptionsConfig(mainMenuOptions);
+  const subOptionsConfig = createSubOptionsConfig(mainMenuOptions);
 
-  const [symbolId, setSymbolId] = useState(getSymbolId(location, menuOptions));
+  const [symbolId, setSymbolId] = useState(
+    getSymbolId(location, mainMenuOptions)
+  );
 
   useEffect(() => {
-    const symbolId = getSymbolId(location, menuOptions);
+    const symbolId = getSymbolId(location, mainMenuOptions);
     setSymbolId(symbolId);
   }, [location.hash]);
 
   function handleNext() {
-    const nextValue = menuConfig[symbolId].nextEl;
+    const nextValue = mainMenuConfig[symbolId].nextEl;
 
     if (nextValue) {
       history.push(createHashLink(nextValue));
@@ -47,7 +69,7 @@ function SymbolPage() {
   }
 
   function handlePrev() {
-    const prevValue = menuConfig[symbolId].prevEl;
+    const prevValue = mainMenuConfig[symbolId].prevEl;
 
     if (prevValue) {
       history.push(createHashLink(prevValue));
@@ -58,15 +80,20 @@ function SymbolPage() {
     <Container>
       <HeaderRow>
         <Header />
-        <MobileView>
-          <MainMenu value={symbolId} options={menuOptions} />
-        </MobileView>
+        {/* <MobileView>
+            <MainMenuMobile value={symbolId} options={mainMenuOptions} />
+          </MobileView> */}
       </HeaderRow>
       <ContentRow>
         <DesktopView>
-          <MainMenu value={symbolId} options={menuOptions} />
+          <MainMenu value={symbolId} options={mainMenuOptions} />
         </DesktopView>
-        <Symbols symbolId={symbolId} onNext={handleNext} onPrev={handlePrev} />
+        <Symbols
+          {...props}
+          symbolId={symbolId}
+          onNext={handleNext}
+          onPrev={handlePrev}
+        />
       </ContentRow>
     </Container>
   );

@@ -22,9 +22,23 @@ const Root = styled.div`
   }
 `;
 
-function Symbols({ symbolId, onNext, onPrev }) {
-  const [themeColor, setThemeColor] = useState(Red.primary.main);
-  const theme = createTheme(THEME_COLORS.get(themeColor));
+const ThemeControlContainer = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+const ThemeControlAnchor = styled.div`
+  position: relative;
+  text-align: end;
+  width: 100%;
+  height: 100%;
+`;
+
+function Symbols(props) {
+  const { symbolId, onNext, onPrev, theme, themeColor, onChangeTheme } = props;
 
   const symbolData = getSymbolData(symbolId);
 
@@ -33,27 +47,29 @@ function Symbols({ symbolId, onNext, onPrev }) {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Root>
-        <ThemeControl color={themeColor} onChangedTheme={setThemeColor} />
-        <Swipeable onSwipedLeft={onNext} onSwipedRight={onPrev}>
-          <Carousel>
-            <CarouselContent>
-              <Column>
-                <SymbolSummary
-                  title={symbolData.title}
-                  description={symbolData.description}
-                />
-                <SymbolsContent
-                  symbolId={symbolId}
-                  symbols={symbolData.symbols}
-                />
-              </Column>
-            </CarouselContent>
-          </Carousel>
-        </Swipeable>
-      </Root>
-    </ThemeProvider>
+    <Root>
+      <ThemeControlContainer>
+        <ThemeControlAnchor>
+          <ThemeControl color={themeColor} onChangeTheme={onChangeTheme} />
+        </ThemeControlAnchor>
+      </ThemeControlContainer>
+      <Swipeable onSwipedLeft={onNext} onSwipedRight={onPrev}>
+        <Carousel>
+          <CarouselContent>
+            <Column>
+              <SymbolSummary
+                title={symbolData.title}
+                description={symbolData.description}
+              />
+              <SymbolsContent
+                symbolId={symbolId}
+                symbols={symbolData.symbols}
+              />
+            </Column>
+          </CarouselContent>
+        </Carousel>
+      </Swipeable>
+    </Root>
   );
 }
 

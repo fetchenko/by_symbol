@@ -6,24 +6,18 @@ import PaletteIcon from "assets/icons/palette";
 import ClickableOpacity from "components/blocks/clickableOpacity";
 
 const Container = styled.div`
+  display: inline-block;
+  z-index: 99;
+  padding: 10px;
 `;
 
 const Button = styled.button`
-  position: fixed;
   border: none;
   cursor: pointer;
-  top: 124px;
-  right: 8px;
   padding: 5px;
   border-radius: 50%;
-  border: solid 2px
-    ${(props) => (props.active ? props.theme.primary.light : "transparent")};
+  ${(props) => (props.active ? props.theme.primary.light : "transparent")};
   background-color: transparent;
-
-  ${(props) => props.theme.mediaQueries.sm} {
-    top: 98px;
-    right: 18px;
-  }
 
   path {
     fill: ${(props) => props.theme.primary.light};
@@ -31,23 +25,18 @@ const Button = styled.button`
 `;
 
 const Picker = styled.div`
-  position: fixed;
-  top: 170px;
-  right: 12px;
-
-  ${(props) => props.theme.mediaQueries.sm} {
-    top: 145px;
-    right: 22px;
-  }
+  position: absolute;
+  top: 44px;
+  right: 10px;
 `;
 
-function ThemeControl({ color, onChangedTheme }) {
+function ThemeControl({ color, onChangeTheme }) {
   const [openPicker, setOpenPicker] = useState(false);
 
   const handleChangeColor = (color, event) => {
     event.stopPropagation();
 
-    onChangedTheme(color.hex);
+    onChangeTheme(color.hex);
   };
 
   return (

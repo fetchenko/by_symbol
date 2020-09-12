@@ -4,7 +4,7 @@ import SymbolPage from "components/pages/symbolPage";
 import SourcesPages from "components/pages/sourcesPages";
 import AboutPage from "components/pages/aboutPage";
 
-const Navigation = () => {
+const Navigation = (props) => {
   return (
     <Switch>
       <Route exact path="/sources">
@@ -14,7 +14,7 @@ const Navigation = () => {
         <AboutPage />
       </Route>
       <Route path="/:symbolId?">
-        <SymbolPage />
+        <SymbolPage {...props} />
       </Route>
     </Switch>
   );

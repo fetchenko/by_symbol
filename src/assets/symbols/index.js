@@ -1,16 +1,22 @@
 import { mother } from "./mother/mother";
 import { mother2 } from "./mother/mother2";
 import { wealth } from "./wealth/wealth";
+import { wealth2 } from "./wealth/wealth2";
+import { wealth3 } from "./wealth/wealth3";
 import { springAndYouth } from "./spring/springAndYouth";
+import { spring } from "./spring/spring";
 import { sunAndEarth } from "./spring/sunAndEarth";
 import { belarus } from "./belarus/index";
+import { belarus2 } from "./belarus/belarus2";
 import { ancestors } from "./ancestors/ancestors";
 import { pigeonInLove } from "./love/pigeonInLove";
 import { woman } from "./woman/woman";
 import { womanShare } from "./woman/womanShare";
 import { source } from "./source/source";
 import { earth } from "./earth/earth";
+import { earth2 } from "./earth/earth2";
 import { sun } from "./sun/sun";
+import { sun2 } from "./sun/sun2";
 import { mermaid } from "./characters/mermaid/mermaid";
 import { song } from "./song/song";
 import { loveSong } from "./song/loveSong";
@@ -33,25 +39,33 @@ import { win } from "./love-win-battle/win";
 import { zhiten } from "./characters/zhiten/zhiten";
 import { zhiten2 } from "./characters/zhiten/zhiten2";
 import { yarila } from "./characters/yarila/yarila";
+import { riche } from "./characters/riche/riche";
+import { riche2 } from "./characters/riche/riche2";
+import { bread } from "./bread/bread";
+import { bread2 } from "./bread/bread2";
+import { grain } from "./grain/grain";
 
 export const symbols = {
   spring: {
     id: "spring",
     title: "title.spring-and-youth",
     description: "meaning.spring",
-    symbols: [springAndYouth, sunAndEarth],
+    symbols: [springAndYouth, sunAndEarth, spring],
   },
   belarus: {
     id: "belarus",
     title: "title.belarus",
     description: "meaning.belarus",
-    symbols: [belarus],
+    symbols: [
+      // belarus,
+      belarus2,
+    ],
   },
   wealth: {
     id: "wealth",
     title: "title.wealth",
     description: "meaning.wealth",
-    symbols: [wealth],
+    symbols: [wealth, wealth2, wealth3],
   },
   harvest: {
     id: "harvest",
@@ -93,13 +107,13 @@ export const symbols = {
     id: "earth",
     title: "title.earth",
     description: "meaning.earth",
-    symbols: [earth],
+    symbols: [earth, earth2],
   },
   sun: {
     id: "sun",
     title: "title.sun",
     description: "meaning.sun",
-    symbols: [sun],
+    symbols: [sun, sun2],
   },
   mermaid: {
     id: "mermaid",
@@ -178,6 +192,24 @@ export const symbols = {
     title: "title.yarila",
     description: "meaning.yarila",
     symbols: [yarila],
+  },
+  riche: {
+    id: "riche",
+    title: "title.riche",
+    description: "meaning.riche",
+    symbols: [riche, riche2],
+  },
+  bread: {
+    id: "bread",
+    title: "title.bread",
+    description: "meaning.bread",
+    symbols: [bread, bread2],
+  },
+  grain: {
+    id: "grain",
+    title: "title.grain",
+    description: "meaning.grain",
+    symbols: [grain],
   },
 };
 

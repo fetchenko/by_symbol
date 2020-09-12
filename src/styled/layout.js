@@ -4,6 +4,7 @@ const headerHeightXS = 60;
 const headerHeightLG = 70;
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
 `;
@@ -29,13 +30,14 @@ export const DesktopView = styled.div`
   display: none;
 
   ${(props) => props.theme.mediaQueries.md} {
-    display: block;
+    display: initial;
   }
 `;
 
 export const ContentRow = styled.div`
+  position: relative;
   display: flex;
-  margin-top: 56px;
+  margin-top: 156px;
   padding-bottom: 20px;
 
   ${(props) => props.theme.mediaQueries.md} {
