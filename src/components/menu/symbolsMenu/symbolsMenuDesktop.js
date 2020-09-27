@@ -1,42 +1,32 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { ReactComponent as ExpandMore } from "icons/expand-more.svg";
+import { ReactComponent as ExpandLess } from "icons/expand-less.svg";
+import { Link } from "styled/links";
 import { createHashLink } from "helpers/link";
 
-const StyledLink = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  outline: 0;
-  padding: 4px 8px;
-  font: 18px ${(props) => props.theme.fonts.asap};
-  cursor: pointer;
-  border-radius: 4px;
-  text-decoration: none;
-  height: 24px;
-  opacity: ${(props) => (props.active ? 0.8 : 1)};
-  background-color: ${(props) =>
-    props.active ? props.theme.text.onPrimaryLight : "transparent"};
-  color: ${(props) =>
-    props.active ? "#fff" : props.theme.text.onPrimaryLight};
-  box-sizing: content-box;
-
-  &:hover {
-    background-color: ${(props) => props.theme.text.onPrimaryLight};
-    color: #fff;
-  }
-`;
-
-const Button = styled(StyledLink).attrs({
+const Button = styled(Link).attrs({
   as: "button",
 })`
   border: none;
+
+  svg {
+    fill: ${(props) =>
+      props.active ? "#fff" : props.theme.text.onPrimaryLight};
+  }
+
+  &:hover {
+    svg {
+      fill: #fff;
+    }
+  }
 `;
 
 const Root = styled.div`
   width: 280px;
   min-height: calc(100vh - 70px);
   box-sizing: border-box;
-  height: 100%;
+  height: auto;
   padding: 20px 12px;
   box-shadow: 2px 0 4px #ccc;
   background-color: ${(props) => props.theme.background.default};
@@ -60,13 +50,11 @@ const SubMenuView = styled(Menu)`
   }
 `;
 
-const MenuItem = styled.li`
+const StyledMenuItem = styled.li`
   margin: 4px;
 `;
 
-const SubMenuListItem = styled(MenuItem)``;
-
-function MainMenuItem(props) {
+function MenuItem(props) {
   const { item, activeItem } = props;
   const { id, title, subOptions } = item;
   const active = Number(id === activeItem);
@@ -76,36 +64,31 @@ function MainMenuItem(props) {
   return hasSubOptions ? (
     <ExpandableMenuItem item={item} activeItem={activeItem} />
   ) : (
-    <MenuItem>
-      <StyledLink active={active} to={createHashLink(id)}>
+    <StyledMenuItem>
+      <Link active={active} to={createHashLink(id)}>
         {title}
-      </StyledLink>
-    </MenuItem>
+      </Link>
+    </StyledMenuItem>
   );
 }
 
 function ExpandableMenuItem(props) {
   const { item, activeItem } = props;
-  const { id, title, subOptions } = item;
 
   const [collapsed, setCollapsed] = useState(true);
 
   return (
-    <MenuItem>
+    <StyledMenuItem>
       <Button onClick={() => setCollapsed(!collapsed)}>
         {item.title}
-        {collapsed ? (
-          <span className="material-icons">expand_more</span>
-        ) : (
-          <span className="material-icons">expand_less</span>
-        )}
+        {collapsed ? <ExpandMore /> : <ExpandLess />}
       </Button>
       <SubMenu
         options={item.subOptions}
         hidden={collapsed}
         activeItem={activeItem}
       />
-    </MenuItem>
+    </StyledMenuItem>
   );
 }
 
@@ -116,27 +99,25 @@ function SubMenu({ options, hidden, activeItem }) {
         const active = Number(option.id === activeItem);
 
         return (
-          <MenuItem key={option.id}>
-            <StyledLink active={active} to={createHashLink(option.id)}>
+          <StyledMenuItem key={option.id}>
+            <Link active={active} to={createHashLink(option.id)}>
               {option.title}
-            </StyledLink>
-          </MenuItem>
+            </Link>
+          </StyledMenuItem>
         );
       })}
     </SubMenuView>
   );
 }
 
-function MainMenu({ options, value }) {
+export default function SymbolsMenuDesktop({ options, value }) {
   return (
     <Root>
       <Menu>
         {options.map((option) => (
-          <MainMenuItem key={option.id} activeItem={value} item={option} />
+          <MenuItem key={option.id} activeItem={value} item={option} />
         ))}
       </Menu>
     </Root>
   );
 }
-
-export default MainMenu;

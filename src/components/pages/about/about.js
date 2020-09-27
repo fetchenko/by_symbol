@@ -49,9 +49,9 @@ export default function About() {
         {"."}
       </Text>
       <Text>
-        If you want to support or critize project, write me
+        If you want to support or critize project, write me{" "}
         <Link href="mailto:tanyalfedchenko@gmail.com">
-          {" tanyalfedchenko@gmail.com"}
+          {"tanyalfedchenko@gmail.com"}
         </Link>
       </Text>
     </Root>

@@ -1,5 +1,5 @@
 // import { meaningOfSparysh } from "assets/symbols/sparysh/meaningOfSparysh";
-import { HOME, SOURCES, ABOUT } from "constants/translations";
+import { HOME, SOURCES, ABOUT, SYMBOLS } from "constants/translations";
 
 export default {
   "belorussian-symbols": "Belarusian symbols",
@@ -69,7 +69,6 @@ export default {
   "title.life": "Symbol of life",
   "short-title.life": "Life",
   "meaning.life": "#",
-  "title.harvest": "#",
   "meaning.harvest": "#",
   "title.sparysh": "Symbol of Sparysh",
   "short-title.sparysh": "Sparysh",
@@ -121,4 +120,5 @@ export default {
   [SOURCES]: "Sources",
   [ABOUT]: "About",
   [HOME]: "Home",
+  [SYMBOLS]: "Symbols",
 };

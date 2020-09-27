@@ -36,7 +36,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-function MainMenuItem({ item, active }) {
+export default function SymbolMenuItem({ item, active }) {
   const { path, title } = item;
 
   return (
@@ -45,5 +45,3 @@ function MainMenuItem({ item, active }) {
     </MenuItem>
   );
 }
-
-export default MainMenuItem;

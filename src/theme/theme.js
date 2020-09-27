@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { Red, bgColor } from 'constants/themes';
+import { Red, bgColor } from "constants/themes";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -10,16 +10,28 @@ export const GlobalStyle = createGlobalStyle`
   button {
     outline: none;
   }
+
+  :root {
+    --header-height-sm: 60px;
+    --symbol-menu-height-sm: 56px;
+  }
 `;
 
 export const mediaBreakpoints = [
   { name: "sm", size: 600 },
   { name: "md", size: 960 },
   { name: "lg", size: 1280 },
-  { name: "xl", size: 1920 }
+  { name: "xl", size: 1920 },
 ];
 
-const createMediaQuery = n => `@media screen and (min-width:${n}px)`;
+export const breakpoints = mediaBreakpoints.reduce((acc, item) => {
+  return {
+    ...acc,
+    [item.name]: item.size,
+  };
+}, {});
+
+const createMediaQuery = (n) => `@media screen and (min-width:${n}px)`;
 
 export const mediaQueries = mediaBreakpoints.reduce((acc, item) => {
   return { ...acc, [item.name]: createMediaQuery(item.size) };
@@ -30,7 +42,7 @@ const theme = {
   primary: Red.primary,
   text: Red.text,
   background: {
-    paper: '#fff',
+    paper: "#fff",
     default: bgColor,
   },
   mediaQueries,
@@ -38,14 +50,14 @@ const theme = {
     asap: "'Asap', sans-serif",
     dancing: "'Dancing Script', cursive",
     merriweather: "'Merriweather', serif",
-  }
+  },
 };
 
 export const createTheme = (palette) => {
   return {
     ...theme,
     ...palette,
-  }
-}
+  };
+};
 
 export default theme;

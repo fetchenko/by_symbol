@@ -21,27 +21,27 @@ export function createOptionsConfig(options) {
   }, {});
 }
 
-export function createDirectionalObjectFromList(list) {
-  return list.reduce((acc, item, index, items) => {
+export function createDirectionalObjectFromList(item) {
+  return item.subOptions.reduce((acc, option, index, options) => {
     return {
       ...acc,
-      [item.id]: {
-        prevEl: index === 0 ? null : items[index - 1].id,
-        nextEl: index + 1 === items.length ? null : items[index + 1].id,
+      [option.id]: {
+        prevEl: index === 0 ? null : options[index - 1].id,
+        nextEl: index + 1 === options.length ? null : options[index + 1].id,
+        parentEl: { id: item.id, title: item.title },
       },
     };
-  });
+  }, {});
 }
 
 export function createSubOptionsConfig(options) {
   return options.reduce((acc, item) => {
     if (item.subOptions.length) {
-      const directionalObj = createDirectionalObjectFromList(item.subOptions);
+      const directionalObj = createDirectionalObjectFromList(item);
 
       return {
         ...acc,
         ...directionalObj,
-        parentEl: { id: item.id, title: item.title },
       };
     }
     return acc;

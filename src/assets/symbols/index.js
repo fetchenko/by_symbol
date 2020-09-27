@@ -6,7 +6,6 @@ import { wealth3 } from "./wealth/wealth3";
 import { springAndYouth } from "./spring/springAndYouth";
 import { spring } from "./spring/spring";
 import { sunAndEarth } from "./spring/sunAndEarth";
-import { belarus } from "./belarus/index";
 import { belarus2 } from "./belarus/belarus2";
 import { ancestors } from "./ancestors/ancestors";
 import { pigeonInLove } from "./love/pigeonInLove";
@@ -66,12 +65,6 @@ export const symbols = {
     title: "title.wealth",
     description: "meaning.wealth",
     symbols: [wealth, wealth2, wealth3],
-  },
-  harvest: {
-    id: "harvest",
-    title: "title.harvest",
-    description: "meaning.harvest",
-    symbols: [],
   },
   ancestors: {
     id: "ancestors",

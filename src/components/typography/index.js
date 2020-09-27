@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Title = styled.h4`
+export const AppTitle = styled.h4`
   color: #fff;
   font-size: 1.4rem;
   margin: 0;
@@ -11,7 +11,7 @@ export const Title = styled.h4`
   }
 `;
 
-export const SymbolTitle = styled.h2`
+export const Title = styled.h2`
   margin: 20px 0;
   color: ${(props) => props.theme.text.onWhite};
   text-align: center;
@@ -25,18 +25,7 @@ export const SymbolTitle = styled.h2`
   }
 `;
 
-export const SymbolHint = styled.p`
-  opacity: 0.7;
-  width: 80%;
-  margin: 20px auto;
-  text-align: center;
-
-  ${(props) => props.theme.mediaQueries.sm} {
-    width: auto;
-    margin: 30px auto;
-  }
-`;
-export const SymbolDescription = styled.h4`
+export const Description = styled.h4`
   width: 100%;
   margin: 8px 0;
   font-size: 1rem;

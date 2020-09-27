@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { FormattedMessage, useIntl } from "react-intl";
-import { SymbolTitle, SymbolDescription } from "components/typography";
+import { Title, Description } from "components/typography";
 
 const Container = styled.div`
   display: flex;
@@ -18,12 +18,12 @@ function SymbolSummary({ title, description }) {
   return (
     <Container>
       {title && (
-        <SymbolTitle>
+        <Title>
           <FormattedMessage id={title} />
-        </SymbolTitle>
+        </Title>
       )}
       {intlDescription !== "#" && (
-        <SymbolDescription>{intlDescription}</SymbolDescription>
+        <Description>{intlDescription}</Description>
       )}
     </Container>
   );

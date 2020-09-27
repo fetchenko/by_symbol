@@ -1,18 +1,18 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
-import { Link } from "styled/links";
+import { BaseLink } from "styled/links";
 import { Header } from "styled/header";
-import { Title } from "components/typography";
+import { AppTitle } from "components/typography";
 import HeaderMenu from "components/menu/headerMenu";
 
 const MainHeader = () => {
   return (
     <Header>
-      <Link to="/">
-        <Title>
+      <BaseLink to="/">
+        <AppTitle>
           <FormattedMessage id="belorussian-symbols" />
-        </Title>
-      </Link>
+        </AppTitle>
+      </BaseLink>
       <HeaderMenu />
     </Header>
   );

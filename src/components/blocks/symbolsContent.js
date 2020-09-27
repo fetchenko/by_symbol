@@ -1,10 +1,8 @@
 import React from "react";
-import { useIntl } from "react-intl";
 import styled from "styled-components";
 import { Row } from "styled/flex";
 import { GridContainer, GridBlock } from "styled/grid";
 import { getSymbolsLayouts } from "assets/symbols/layouts";
-import { SymbolTitle } from "components/typography/index";
 
 const SymbolContainer = styled.div`
   padding: 10px;
@@ -15,7 +13,6 @@ const SymbolContainer = styled.div`
 `;
 
 export default function SymbolsContent({ symbolId, symbols }) {
-  const intl = useIntl();
   const symbolsLayout = getSymbolsLayouts(symbolId);
 
   return (
@@ -29,11 +26,6 @@ export default function SymbolsContent({ symbolId, symbols }) {
 
           return (
             <SymbolContainer id={symbol.id} key={symbol.id}>
-              {/* {symbol.title && (
-                <SymbolTitle>
-                  {intl.formatMessage({ id: symbol.title })}
-                </SymbolTitle>
-              )} */}
               <GridContainer
                 key={symbol.id}
                 rows={xs}

@@ -14,12 +14,12 @@ export const Red = {
 
 export const Green = {
   primary: {
-    main: "#66bb6a",
-    light: "#4db6ac",
+    main: "#009688",
+    light: "#c8e6c9",
   },
   text: {
     onPrimary: "",
-    onPrimaryLight: "#011310",
+    onPrimaryLight: "#00695c",
     onWhite: "#004d40",
   },
 };
@@ -51,7 +51,7 @@ export const Black = {
 export const Pink = {
   primary: {
     main: "#f06292",
-    light: "#ffb3ff",
+    light: "#ffc1e3",
   },
   text: {
     onPrimary: "",
