@@ -1,10 +1,8 @@
 import React from "react";
-import { useIntl } from "react-intl";
 import styled from "styled-components";
 import { Row } from "styled/flex";
 import { GridContainer, GridBlock } from "styled/grid";
 import { getSymbolsLayouts } from "assets/symbols/layouts";
-import { SymbolTitle } from "components/typography/index";
 
 const SymbolContainer = styled.div`
   padding: 10px;
@@ -14,8 +12,7 @@ const SymbolContainer = styled.div`
   }
 `;
 
-function SymbolsContent({ symbolId, symbols }) {
-  const intl = useIntl();
+export default function SymbolsContent({ symbolId, symbols }) {
   const symbolsLayout = getSymbolsLayouts(symbolId);
 
   return (
@@ -24,15 +21,11 @@ function SymbolsContent({ symbolId, symbols }) {
         symbols.map((symbol) => {
           const {
             sizes: { xs, sm, md },
+            areas,
           } = symbol;
 
           return (
             <SymbolContainer id={symbol.id} key={symbol.id}>
-              {symbol.title && (
-                <SymbolTitle>
-                  {intl.formatMessage({ id: symbol.title })}
-                </SymbolTitle>
-              )}
               <GridContainer
                 key={symbol.id}
                 rows={xs}
@@ -42,7 +35,7 @@ function SymbolsContent({ symbolId, symbols }) {
                 rowsMd={md}
                 columnsMd={md}
               >
-                {symbol.areas.map((area) => (
+                {areas.map((area) => (
                   <GridBlock key={area} gridArea={area} />
                 ))}
               </GridContainer>
@@ -52,5 +45,3 @@ function SymbolsContent({ symbolId, symbols }) {
     </Row>
   );
 }
-
-export default SymbolsContent;

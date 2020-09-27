@@ -4,6 +4,7 @@ const headerHeightXS = 60;
 const headerHeightLG = 70;
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
 `;
@@ -19,23 +20,10 @@ export const HeaderRow = styled.div`
   }
 `;
 
-export const MobileView = styled.div`
-  ${(props) => props.theme.mediaQueries.md} {
-    display: none;
-  }
-`;
-
-export const DesktopView = styled.div`
-  display: none;
-
-  ${(props) => props.theme.mediaQueries.md} {
-    display: block;
-  }
-`;
-
 export const ContentRow = styled.div`
+  position: relative;
   display: flex;
-  margin-top: 56px;
+  margin-top: ${(props) => props.mt || "50px"};
   padding-bottom: 20px;
 
   ${(props) => props.theme.mediaQueries.md} {
@@ -43,5 +31,3 @@ export const ContentRow = styled.div`
     padding-bottom: 0;
   }
 `;
-
-export const FooterRow = styled.div``;

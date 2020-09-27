@@ -1,5 +1,5 @@
 // import { meaningOfSparysh } from "assets/symbols/sparysh/meaningOfSparysh";
-import { HOME, SOURCES, ABOUT } from "constants/translations";
+import { HOME, SOURCES, ABOUT, SYMBOLS } from "constants/translations";
 
 export default {
   "belorussian-symbols": "Belarusian symbols",
@@ -69,7 +69,6 @@ export default {
   "title.life": "Symbol of life",
   "short-title.life": "Life",
   "meaning.life": "#",
-  "title.harvest": "#",
   "meaning.harvest": "#",
   "title.sparysh": "Symbol of Sparysh",
   "short-title.sparysh": "Sparysh",
@@ -89,6 +88,22 @@ export default {
   "short-title.yarila": "Yarila",
   "title.yarila": "Symbol of Yarila",
   "meaning.yarila": "#",
+  "short-title.grain": "Grain",
+  "title.grain": "Symbol of grain",
+  "meaning.grain": "#",
+  "short-title.riche": "Riche",
+  "title.riche": "Symbol of Riche",
+  "meaning.riche": "#",
+  "short-title.characters": "Characters",
+  "title.characters": "Characters",
+  "short-title.harvest": "Harvest",
+  "title.harvest": "Harvest",
+  "short-title.holidays": "Holidays",
+  "title.holidays": "Holidays",
+  "short-title.nature": "Nature",
+  "title.nature": "Nature",
+  "title.people": "People",
+  "short-title.people": "People",
   home: "Home",
   "make-symbol": "Make symbol",
   Belarus: "Belarus",
@@ -105,4 +120,5 @@ export default {
   [SOURCES]: "Sources",
   [ABOUT]: "About",
   [HOME]: "Home",
+  [SYMBOLS]: "Symbols",
 };
