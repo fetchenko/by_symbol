@@ -12,11 +12,38 @@ export function createOptionsConfig(options) {
   return options.reduce((acc, item, index, items) => {
     return {
       ...acc,
-      [item.path]: {
+      [item.id]: {
         ...item,
-        prevEl: index === 0 ? null : items[index - 1].path,
-        nextEl: index + 1 === items.length ? null : items[index + 1].path,
+        prevEl: index === 0 ? null : items[index - 1].id,
+        nextEl: index + 1 === items.length ? null : items[index + 1].id,
       },
     };
+  }, {});
+}
+
+export function createDirectionalObjectFromList(item) {
+  return item.subOptions.reduce((acc, option, index, options) => {
+    return {
+      ...acc,
+      [option.id]: {
+        prevEl: index === 0 ? null : options[index - 1].id,
+        nextEl: index + 1 === options.length ? null : options[index + 1].id,
+        parentEl: { id: item.id, title: item.title },
+      },
+    };
+  }, {});
+}
+
+export function createSubOptionsConfig(options) {
+  return options.reduce((acc, item) => {
+    if (item.subOptions.length) {
+      const directionalObj = createDirectionalObjectFromList(item);
+
+      return {
+        ...acc,
+        ...directionalObj,
+      };
+    }
+    return acc;
   }, {});
 }

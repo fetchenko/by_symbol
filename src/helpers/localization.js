@@ -24,5 +24,5 @@ export function getBrowserLanguage() {
 
 export function getLanguage() {
   return "en";
-  return getLanguageFromCookie() || getBrowserLanguage();
+  // return getLanguageFromCookie() || getBrowserLanguage();
 }

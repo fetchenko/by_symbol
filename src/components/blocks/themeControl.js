@@ -1,76 +1,74 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { GithubPicker } from "react-color";
 import { MAIN_COLORS } from "constants/themes";
-import PaletteIcon from "assets/icons/palette";
-import ClickableOpacity from "components/blocks/clickableOpacity";
+import { ReactComponent as PaletteIcon } from "icons/palette.svg";
+import { useTheme } from "theme/themeContext";
 
 const Container = styled.div`
+  position: relative;
+  display: inline-block;
+  z-index: 9;
+  padding: 10px;
 `;
 
 const Button = styled.button`
-  position: fixed;
-  border: none;
   cursor: pointer;
-  top: 124px;
-  right: 8px;
   padding: 5px;
-  border-radius: 50%;
-  border: solid 2px
-    ${(props) => (props.active ? props.theme.primary.light : "transparent")};
-  background-color: transparent;
+  border: none;
+  background-color: ${props => props.theme.background.default};
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
 
-  ${(props) => props.theme.mediaQueries.sm} {
-    top: 98px;
-    right: 18px;
-  }
-
-  path {
+  svg {
     fill: ${(props) => props.theme.primary.light};
+    width: 32px;
+    height: 32px;
   }
 `;
 
 const Picker = styled.div`
-  position: fixed;
-  top: 170px;
+  position: absolute;
+  top: 52px;
   right: 12px;
-
-  ${(props) => props.theme.mediaQueries.sm} {
-    top: 145px;
-    right: 22px;
-  }
 `;
 
-function ThemeControl({ color, onChangedTheme }) {
-  const [openPicker, setOpenPicker] = useState(false);
+function ThemeControl() {
+  const {
+    theme,
+    onChangeTheme,
+    themePickerOpen,
+    setThemePickerOpen,
+  } = useTheme();
 
   const handleChangeColor = (color, event) => {
     event.stopPropagation();
 
-    onChangedTheme(color.hex);
+    onChangeTheme(color.hex);
   };
 
   return (
     <Container>
       <Button
-        active={openPicker}
-        onClick={() => setOpenPicker(!openPicker)}
+        active={themePickerOpen}
+        onClick={(event) => {
+          event.preventDefault();
+          setThemePickerOpen(!themePickerOpen);
+        }}
         aria-label="change theme"
       >
         <PaletteIcon />
       </Button>
-      {openPicker && (
-        <ClickableOpacity fixed={false} onClick={() => setOpenPicker(false)}>
-          <Picker>
-            <GithubPicker
-              color={color}
-              colors={MAIN_COLORS}
-              onChange={handleChangeColor}
-              triangle="top-right"
-              width="125px"
-            />
-          </Picker>
-        </ClickableOpacity>
+      {themePickerOpen && (
+        <Picker>
+          <GithubPicker
+            color={theme.primary}
+            colors={MAIN_COLORS}
+            onChange={handleChangeColor}
+            triangle="top-right"
+            width="125px"
+          />
+        </Picker>
       )}
     </Container>
   );

@@ -1,21 +1,35 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import SymbolPage from "components/pages/symbolPage";
-import SourcesPages from "components/pages/sourcesPages";
-import AboutPage from "components/pages/aboutPage";
+import SymbolPage from "components/pages/symbols";
+import SourcesPages from "components/pages/sources";
+import AboutPage from "components/pages/about";
 
-const Navigation = () => {
+const PAGES = [
+  {
+    Component: SourcesPages,
+    path: "/sources",
+    exact: true,
+  },
+  {
+    Component: AboutPage,
+    path: "/about",
+    exact: true,
+  },
+  {
+    Component: SymbolPage,
+    path: "/:symbolId?",
+    exact: false,
+  },
+];
+
+const Navigation = (props) => {
   return (
     <Switch>
-      <Route exact path="/sources">
-        <SourcesPages />
-      </Route>
-      <Route exact path="/about">
-        <AboutPage />
-      </Route>
-      <Route path="/:symbolId?">
-        <SymbolPage />
-      </Route>
+      {PAGES.map(({ path, Component, exact }) => (
+        <Route key={path} exact={exact} path={path}>
+          <Component />
+        </Route>
+      ))}
     </Switch>
   );
 };
