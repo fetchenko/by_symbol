@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import SymbolPage from "components/pages/symbols";
 import SourcesPages from "components/pages/sources";
 import AboutPage from "components/pages/about";
+import { useWindowSize } from "hooks/useWindowSize";
 
 const PAGES = [
   {
@@ -23,11 +24,13 @@ const PAGES = [
 ];
 
 const Navigation = (props) => {
+  const windowSize = useWindowSize();
+
   return (
     <Switch>
       {PAGES.map(({ path, Component, exact }) => (
         <Route key={path} exact={exact} path={path}>
-          <Component />
+          <Component windowSize={windowSize} />
         </Route>
       ))}
     </Switch>

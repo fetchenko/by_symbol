@@ -24,6 +24,7 @@ const List = styled.ul`
   width: 100%;
   overflow: auto;
   background-color: ${(props) => props.theme.background.default};
+  box-shadow: 0px 0px 4px ${props => props.theme.primary.light} inset;
 `;
 
 const IconButton = styled.button`

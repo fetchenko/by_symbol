@@ -23,15 +23,20 @@ export const ListItem = styled.li`
 `;
 
 const Link = styled(RouteLink)`
-  text-decoration: ${(props) => (props.active ? "underline" : "none")};
+  box-shadow: ${(props) =>
+    props.active
+      ? "0px 0px 6px " + props.theme.primary.light + " inset"
+      : "none"};
   background-color: transparent;
   color: #fff;
   font-size: 1.3rem;
   opacity: 1;
+  padding: 8px 14px;
+  border-radius: 16px;
 
   &:hover {
     background-color: transparent;
-    text-decoration: underline;
+    box-shadow: 0px 0px 10px ${props => props.theme.primary.light} inset;
   }
 `;
 
