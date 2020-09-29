@@ -16,8 +16,8 @@ import HeaderMobile from "./headerMobile";
 import ContentDesktop from "./contentDesktop";
 import ContentMobile from "./contentMobile";
 
-export default function SymbolPage() {
-  const windowSize = useWindowSize();
+export default function SymbolPage(props) {
+  const { windowSize } = props;
   const intl = useIntl();
   const location = useLocation();
   const { themePickerOpen, setThemePickerOpen } = useTheme();

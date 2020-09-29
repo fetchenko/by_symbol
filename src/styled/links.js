@@ -11,7 +11,6 @@ export const Link = styled(RouteLink)`
   border-radius: 4px;
   text-decoration: none;
   height: 24px;
-  opacity: ${(props) => (props.active ? 0.8 : 1)};
   background-color: ${(props) =>
     props.active ? props.theme.text.onPrimaryLight : "transparent"};
   color: ${(props) =>
