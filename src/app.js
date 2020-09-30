@@ -6,6 +6,9 @@ import Routes from "routes";
 import { getLanguage } from "helpers/localization";
 import { messages } from "translations";
 import CustomThemeProvider from "theme/themeProvider";
+import { printMessage } from "helpers/printMessage";
+
+printMessage();
 
 const language = getLanguage();
 
