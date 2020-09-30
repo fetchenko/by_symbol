@@ -2,7 +2,6 @@ import React, { useMemo, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useIntl } from "react-intl";
 import { Container, HeaderRow, ContentRow } from "styled/layout";
-import { useWindowSize } from "hooks/useWindowSize";
 import Header from "components/navigation/header";
 import { breakpoints } from "theme/theme";
 import { useTheme } from "theme/themeContext";
