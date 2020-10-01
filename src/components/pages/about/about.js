@@ -20,13 +20,13 @@ export default function About() {
     <Root>
       <Text>
         The goal of this project is to present the meaning and main ideas of
-        belarussian ornament.
+        Belarussian ornament.
       </Text>
       <Text>
         There are so many interesting things in belarussian history. But often
         there is no attention is paid to it. Not only from over the world but
         also in Belarus. Even in belarussian schools students don't get familiar
-        with belarussian symbols.
+        with Belarussian symbols.
       </Text>
       <br />
       <Text>
@@ -47,12 +47,6 @@ export default function About() {
           linkedin
         </Link>
         {"."}
-      </Text>
-      <Text>
-        If you want to support or critize project, write me{" "}
-        <Link href="mailto:tanyalfedchenko@gmail.com">
-          {"tanyalfedchenko@gmail.com"}
-        </Link>
       </Text>
     </Root>
   );
