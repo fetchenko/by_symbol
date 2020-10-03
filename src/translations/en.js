@@ -103,7 +103,7 @@ export default {
   "short-title.nature": "Nature",
   "title.nature": "Nature",
   "title.people": "People",
-  "title.big-sun": "Symbol of Big Sun",
+  "title.big-sun": "Symbols of Big Sun",
   "short-title.big-sun": "Big Sun",
   "meaning.big-sun": "#",
   "short-title.people": "People",
