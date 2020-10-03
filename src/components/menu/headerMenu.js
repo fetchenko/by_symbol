@@ -33,6 +33,7 @@ const Link = styled(RouteLink)`
   opacity: 1;
   padding: 8px 14px;
   border-radius: 16px;
+  transition: 0.4s;
 
   &:hover {
     background-color: transparent;

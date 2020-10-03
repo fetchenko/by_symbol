@@ -12,7 +12,6 @@ import { pigeonInLove } from "./love/pigeonInLove";
 import { woman } from "./woman/woman";
 import { womanShare } from "./woman/womanShare";
 import { source } from "./source/source";
-import { earth } from "./earth/earth";
 import { earth2 } from "./earth/earth2";
 import { sun } from "./sun/sun";
 import { sun2 } from "./sun/sun2";
@@ -42,7 +41,11 @@ import { riche } from "./characters/riche/riche";
 import { riche2 } from "./characters/riche/riche2";
 import { bread } from "./bread/bread";
 import { bread2 } from "./bread/bread2";
+import { bread3 } from "./bread/bread3";
 import { grain } from "./grain/grain";
+import { bigSun2 } from "./sun/bigSun2";
+import { bigSun4 } from "./sun/bigSun4";
+import { bigSun6 } from "./sun/bigSun6";
 
 export const symbols = {
   spring: {
@@ -100,7 +103,7 @@ export const symbols = {
     id: "earth",
     title: "title.earth",
     description: "meaning.earth",
-    symbols: [earth, earth2],
+    symbols: [earth2],
   },
   sun: {
     id: "sun",
@@ -196,13 +199,19 @@ export const symbols = {
     id: "bread",
     title: "title.bread",
     description: "meaning.bread",
-    symbols: [bread, bread2],
+    symbols: [bread, bread2, bread3],
   },
   grain: {
     id: "grain",
     title: "title.grain",
     description: "meaning.grain",
     symbols: [grain],
+  },
+  bigSun: {
+    id: "bigSun",
+    title: "title.big-sun",
+    description: "meaning.big-sun",
+    symbols: [bigSun2, bigSun4, bigSun6],
   },
 };
 

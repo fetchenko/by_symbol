@@ -123,6 +123,10 @@ export const SYMBOL_OPTIONS = [
         title: "title.sun",
       },
       {
+        id: 'bigSun',
+        title: "title.big-sun"
+      },
+      {
         id: "source",
         title: "title.source",
       },
