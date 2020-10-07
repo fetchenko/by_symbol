@@ -8,6 +8,8 @@ import { spring } from "./spring/spring";
 import { sunAndEarth } from "./spring/sunAndEarth";
 import { belarus2 } from "./belarus/belarus2";
 import { ancestors } from "./ancestors/ancestors";
+import { ancestors2 } from "./ancestors/ancestors2";
+import { ancestors4 } from "./ancestors/ancestors4";
 import { pigeonInLove } from "./love/pigeonInLove";
 import { woman } from "./woman/woman";
 import { womanShare } from "./woman/womanShare";
@@ -73,7 +75,7 @@ export const symbols = {
     id: "ancestors",
     title: "title.ancestors",
     description: "meaning.ancestors",
-    symbols: [ancestors],
+    symbols: [ancestors, ancestors2, ancestors4],
   },
   love: {
     id: "love",
