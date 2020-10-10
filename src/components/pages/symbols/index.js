@@ -41,6 +41,12 @@ export default function SymbolPage(props) {
     setSymbolId(symbolId);
   }, [location, symbolsMenuOptions]);
 
+  useEffect(() => {
+    if (window.scrollY) {
+      window.scrollTo(0, 0);
+    }
+  }, [symbolId]);
+
   const showBackButton = subOptionsConfig[symbolId];
   const isMobile = windowSize.width < breakpoints.md;
 

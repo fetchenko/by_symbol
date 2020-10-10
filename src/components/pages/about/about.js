@@ -13,6 +13,11 @@ const Link = styled.a`
   color: ${(props) => props.theme.text.onPrimaryLight};
 `;
 
+const Divider = styled.hr`
+  border-color: ${props => props.theme.primary.light};
+  border-style: dashed;
+`;
+
 export default function About() {
   const today = new Date();
 
@@ -28,16 +33,12 @@ export default function About() {
         also in Belarus. Even in belarussian schools students don't get familiar
         with Belarussian symbols.
       </Text>
-      <br />
+      <Divider />
       <Text>
         The project created by Tanya Fedchenko, {today.getFullYear() - 1997},
         software engineer from Vitebsk, Belarus. Me on{" "}
         <Link href="https://twitter.com/geeny273" target="_blank">
           twitter
-        </Link>
-        {", "}
-        <Link href="https://www.facebook.com/tanya.fedchenko" target="_blank">
-          facebook
         </Link>
         {", "}
         <Link
