@@ -5,7 +5,7 @@ import { GridContainer, GridBlock } from "styled/grid";
 import { getSymbolsLayouts } from "assets/symbols/layouts";
 
 const SymbolContainer = styled.div`
-  padding: 10px;
+  padding: 20px 10px;
 
   ${(props) => props.theme.mediaQueries.md} {
     padding: 40px;

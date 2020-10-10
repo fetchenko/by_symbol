@@ -1,8 +1,8 @@
-export const bgColor = "#F9FBE7"; // '#FFF8E1' // '#E0F7FA' //'#f8f9f4';
+export const bgColor = "#F9FBE7";
 
 export const Red = {
   primary: {
-    main: "#FF5252", // "#f44336",
+    main: "#d32f2f", 
     light: "#ffcdd2",
   },
   text: {
@@ -50,8 +50,8 @@ export const Black = {
 
 export const Pink = {
   primary: {
-    main: "#f06292",
-    light: "#ffc1e3",
+    main: "#8e24aa",
+    light: "#e1bee7",
   },
   text: {
     onPrimary: "",
