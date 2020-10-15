@@ -17,6 +17,7 @@ import { source } from "./source/source";
 import { earth2 } from "./earth/earth2";
 import { sun } from "./sun/sun";
 import { sun2 } from "./sun/sun2";
+import { sun4 } from "./sun/sun4";
 import { mermaid } from "./characters/mermaid/mermaid";
 import { song } from "./song/song";
 import { loveSong } from "./song/loveSong";
@@ -111,7 +112,7 @@ export const symbols = {
     id: "sun",
     title: "title.sun",
     description: "meaning.sun",
-    symbols: [sun, sun2],
+    symbols: [sun, sun2, sun4],
   },
   mermaid: {
     id: "mermaid",
