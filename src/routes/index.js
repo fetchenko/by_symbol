@@ -23,7 +23,7 @@ const PAGES = [
   },
 ];
 
-const Navigation = (props) => {
+const Navigation = () => {
   const windowSize = useWindowSize();
 
   return (

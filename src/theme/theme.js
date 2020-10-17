@@ -2,8 +2,12 @@ import { createGlobalStyle } from "styled-components";
 import { Red, bgColor } from "constants/themes";
 
 export const GlobalStyle = createGlobalStyle`
-  body {
+  body, html {
     margin: 0;
+    height: 100%;
+  }
+
+  body {
     background-color: ${bgColor};
   }
 
@@ -48,7 +52,6 @@ const theme = {
   mediaQueries,
   fonts: {
     asap: "'Asap', sans-serif",
-    dancing: "'Dancing Script', cursive",
     merriweather: "'Merriweather', serif",
   },
 };
