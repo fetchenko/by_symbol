@@ -1,7 +1,7 @@
 const SYMBOL_SIZE = {
   sm: 240,
   md: 300,
-  lg: 400,
+  lg: 350,
 };
 
 export function getSymbolSizes(areas) {
