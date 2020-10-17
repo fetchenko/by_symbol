@@ -28,7 +28,7 @@ const Root = styled.div`
   box-sizing: border-box;
   height: auto;
   padding: 20px 12px;
-  box-shadow: 2px 0 4px #ccc;
+  box-shadow: 2px 0 4px lavender;
   background-color: ${(props) => props.theme.background.default};
 `;
 
