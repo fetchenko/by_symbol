@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { getSymbolData } from "assets/symbols";
 import { Column } from "styled/flex";
-import SymbolSummary from "components/blocks/symbolSummary";
-import SymbolsContent from "components/blocks/symbolsContent";
-import SymbolNotFound from "components/blocks/symbolNotFound";
+import SymbolSummary from "components/blocks/symbol/symbolSummary";
+import SymbolsContent from "components/blocks/symbol/symbolsContent";
+import SymbolNotFound from "components/blocks/symbol/symbolNotFound";
 import ThemeControl from "components/blocks/themeControl";
 
 const Root = styled.div`

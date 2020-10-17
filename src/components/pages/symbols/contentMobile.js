@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { Swipeable } from "react-swipeable";
 import { getSymbolData } from "assets/symbols";
-import SymbolNotFound from "components/blocks/symbolNotFound";
+import SymbolNotFound from "components/blocks/symbol/symbolNotFound";
 import { Column } from "styled/flex";
-import SymbolSummary from "components/blocks/symbolSummary";
-import SymbolsContent from "components/blocks/symbolsContent";
+import SymbolSummary from "components/blocks/symbol/symbolSummary";
+import SymbolsContent from "components/blocks/symbol/symbolsContent";
 import { createHashLink } from "helpers/link";
 import SymbolsSubMenu from "./symbolsSubMenu";
 

@@ -1,4 +1,4 @@
-export const bgColor = "#F9FBE7";
+export const bgColor = "#fffff0";
 
 export const Red = {
   primary: {
