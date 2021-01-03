@@ -14,7 +14,7 @@ const Root = styled.div`
   width: 100%;
   min-height: calc(
     100vh - var(--header-height-sm) - var(--symbol-menu-height-sm) - 20px -
-      ${(props) => props.lessHeight}
+      ${(props) => props.decreaseContent}
   );
   height: auto;
 
@@ -34,14 +34,14 @@ function SymbolPage(props) {
 
   const symbolData = getSymbolData(symbolId);
 
-  const lessHeight = showBackButton ? "30px" : "0px";
+  const decreaseContent = showBackButton ? "30px" : "0px";
 
   if (
     symbolsMenuConfig[symbolId] &&
     symbolsMenuConfig[symbolId].subOptions.length
   ) {
     return (
-      <Root lessHeight={lessHeight}>
+      <Root decreaseContent={decreaseContent}>
         <Swipeable onSwipedLeft={handleNext} onSwipedRight={handlePrev}>
           <SymbolsSubMenu options={symbolsMenuConfig[symbolId].subOptions} />
         </Swipeable>
@@ -74,7 +74,7 @@ function SymbolPage(props) {
   }
 
   return (
-    <Root lessHeight={lessHeight}>
+    <Root decreaseContent={decreaseContent}>
       <Swipeable onSwipedLeft={handleNext} onSwipedRight={handlePrev}>
         <Column>
           <SymbolSummary

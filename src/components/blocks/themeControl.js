@@ -16,6 +16,7 @@ const Button = styled.button`
   cursor: pointer;
   padding: 5px;
   border: none;
+  border-radius: 50%;
   background-color: ${props => props.theme.background.default};
   outline: 0;
   -webkit-tap-highlight-color: transparent;

@@ -23,8 +23,6 @@ export const HeaderRow = styled.div`
 export const ContentRow = styled.div`
   position: relative;
   display: flex;
-  margin-top: ${(props) => props.mt || "50px"};
-  padding-bottom: 20px;
 
   ${(props) => props.theme.mediaQueries.md} {
     margin-top: 0;
