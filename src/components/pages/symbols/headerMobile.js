@@ -6,9 +6,15 @@ import SymbolsMenuMobile from "components/menu/symbolsMenu/symbolsMenuMobile";
 import ThemeControl from "components/blocks/themeControl";
 import BackButton from "components/buttons/backButton";
 
+const Container = styled.div`
+  z-index: 1;
+  position: sticky;
+  top: 60px;
+`;
+
 const ThemeAnchor = styled.div`
   position: absolute;
-  top: 120px;
+  top: 50px;
   right: 0;
   z-index: 1;
 `;
@@ -16,9 +22,9 @@ const ThemeAnchor = styled.div`
 const BackButtonAnchor = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.background.default}80;
-  `;
+`;
 
-function SymbolPage(props) {
+function SymbolsHeaderMobile(props) {
   const {
     symbolId,
     symbolsMenuOptions,
@@ -54,7 +60,7 @@ function SymbolPage(props) {
   const showBackButton = subOptionsConfig[symbolId];
 
   return (
-    <>
+    <Container>
       <SymbolsMenuMobile
         value={symbolId}
         options={menuOptions}
@@ -74,8 +80,8 @@ function SymbolPage(props) {
       <ThemeAnchor>
         <ThemeControl />
       </ThemeAnchor>
-    </>
+    </Container>
   );
 }
 
-export default SymbolPage;
+export default SymbolsHeaderMobile;

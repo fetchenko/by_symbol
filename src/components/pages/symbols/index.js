@@ -1,8 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useIntl } from "react-intl";
-import { Container, HeaderRow, ContentRow } from "styled/layout";
-import Header from "components/navigation/header";
+import { ContentRow } from "styled/layout";
 import { breakpoints } from "theme/theme";
 import { useTheme } from "theme/themeContext";
 import { getSymbolId } from "helpers/navigation";
@@ -76,24 +75,21 @@ export default function SymbolPage(props) {
   }
 
   return (
-    <Container>
-      <HeaderRow>
-        <Header />
-        {isMobile && (
-          <HeaderMobile
-            symbolId={symbolId}
-            symbolsMenuOptions={symbolsMenuOptions}
-            symbolsMenuConfig={symbolsMenuConfig}
-            subOptionsConfig={subOptionsConfig}
-          />
-        )}
-      </HeaderRow>
+    <>
+      {isMobile && (
+        <HeaderMobile
+          symbolId={symbolId}
+          symbolsMenuOptions={symbolsMenuOptions}
+          symbolsMenuConfig={symbolsMenuConfig}
+          subOptionsConfig={subOptionsConfig}
+        />
+      )}
       <ContentRow
         mt={isMobile && showBackButton && "80px"}
         onClick={handleClosePicker}
       >
         {renderContent()}
       </ContentRow>
-    </Container>
+    </>
   );
 }
