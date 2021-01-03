@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "components/navigation/header";
-import { Container, HeaderRow } from "styled/layout";
 import Sources from "./sources";
 
 const ContentRow = styled.div`
@@ -14,17 +12,12 @@ const ContentRow = styled.div`
   }
 `;
 
-function SymbolPage() {
+function SourcesPage() {
   return (
-    <Container>
-      <HeaderRow>
-        <Header />
-      </HeaderRow>
-      <ContentRow>
-        <Sources />
-      </ContentRow>
-    </Container>
+    <ContentRow>
+      <Sources />
+    </ContentRow>
   );
 }
 
-export default SymbolPage;
+export default SourcesPage;
