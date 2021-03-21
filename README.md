@@ -1,7 +1,10 @@
-[Version 1](https://belorussiansymbols.web.app/)
-Main menu is a list of images
+#### First try: unordered and uncontrolled list of symbols
+https://belorussiansymbols.web.app
 
-[Version 2](https://symbols-75118.web.app/)
-Main menu is a list of symbols names
 
-[Production](https://www.symbols.by/)
+### Second try: symbols are in groups now
+https://symbols-75118.web.app
+
+
+### Current state
+https://www.symbols.by
