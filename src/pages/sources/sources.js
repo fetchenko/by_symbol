@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BookInfo from "components/blocks/bookInfo";
+import { Text } from "components/typography/index";
 
 const Root = styled.div`
   ${(props) => props.theme.mediaQueries.md} {
@@ -10,13 +11,6 @@ const Root = styled.div`
 
 const SectionTitle = styled.h3`
   font-family: ${(props) => props.theme.fonts.merriweather};
-`;
-
-const Text = styled.p`
-  font-family: ${(props) => props.theme.fonts.asap};
-  font-size: 1.1rem;
-  line-height: 20px;
-  margin: 20px 0;
 `;
 
 const Container = styled.div`

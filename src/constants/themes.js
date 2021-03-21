@@ -1,4 +1,4 @@
-export const bgColor = "#fffff0";
+export const bgColor = "#E9EBEC";
 
 export const Red = {
   primary: {
@@ -83,6 +83,30 @@ export const Lime = {
     onWhite: "",
   },
 };
+
+export const OldNotebook = {
+  primary: {
+    main: '#27a78f',
+    light: '#96d5b4'
+  },
+  text: {
+    onPrimary: '#013300',
+    onPrimaryLight: '#013300',
+    onWhite: '#013300'
+  }
+}
+
+export const Metal = {
+  primary: {
+    main: '#555E62',
+    light: '#B3BABD'
+  },
+  text: {
+    onPrimary: '#546363',
+    onPrimaryLight: '#384242',
+    onWhite: '#546363'
+  }
+}
 
 export const MAIN_COLORS = [
   Red.primary.main,

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { Red, bgColor } from "constants/themes";
+import { Metal, bgColor } from "constants/themes";
 
 export const GlobalStyle = createGlobalStyle`
   body, html {
@@ -43,8 +43,8 @@ export const mediaQueries = mediaBreakpoints.reduce((acc, item) => {
 
 const theme = {
   unit: 4,
-  primary: Red.primary,
-  text: Red.text,
+  primary: Metal.primary,
+  text: Metal.text,
   background: {
     paper: "#fff",
     default: bgColor,
@@ -59,7 +59,7 @@ const theme = {
 export const createTheme = (palette) => {
   return {
     ...theme,
-    ...palette,
+    smbl: palette,
   };
 };
 

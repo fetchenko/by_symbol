@@ -73,7 +73,7 @@ export default function SymbolsMenuMobile(props) {
 
     scrollIntoView();
   }, [value]);
-
+  
   return (
     <Root>
       <IconButton onClick={onPrev}>

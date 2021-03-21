@@ -1,9 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import SymbolPage from "components/pages/symbols";
-import SourcesPages from "components/pages/sources";
-import AboutPage from "components/pages/about";
+import SymbolPage from "pages/symbols";
+import SourcesPages from "pages/sources";
+import AboutPage from "pages/about";
+import HomePage from "pages/home";
+import TestPage from "pages/test";
 import { useWindowSize } from "hooks/useWindowSize";
 import Header from "components/navigation/header";
 import { Container, HeaderRow } from "styled/layout";
@@ -20,14 +22,30 @@ const PAGES = [
     exact: true,
   },
   {
+    Component: HomePage,
+    path: "/home",
+    exact: true,
+  },
+  {
+    Component: TestPage,
+    path: "/test",
+    exact: true,
+  },
+  {
     Component: SymbolPage,
     path: "/:symbolId?",
     exact: false,
   },
+  
 ];
 
-const Navigation = () => {
+const Pages = () => {
   const windowSize = useWindowSize();
+  const { width, height } = windowSize;
+
+  // if (!(width || height)) {
+  //   return <div>Loading</div>;
+  // }
 
   return (
     <Container>
@@ -45,4 +63,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Pages;

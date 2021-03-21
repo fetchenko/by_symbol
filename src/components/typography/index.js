@@ -47,6 +47,6 @@ export const Description = styled.h4`
 export const Text = styled.p`
   font-family: ${(props) => props.theme.fonts.asap};
   font-size: 1.1rem;
-  line-height: 20px;
+  line-height: 26px;
   margin: 20px 0;
 `;
