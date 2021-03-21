@@ -1,4 +1,4 @@
-#### First try: unordered and uncontrolled list of symbols
+### First try: unordered and uncontrolled list of symbols
 https://belorussiansymbols.web.app
 
 
