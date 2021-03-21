@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useIntl } from "react-intl";
 import BurgerBox from "components/blocks/burgerBox";
 import { Link } from "styled/links";
+import { useHistory } from "react-router";
 
 const BurgerMenuPoints = styled.div`
   position: absolute;
@@ -38,6 +39,7 @@ const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 
   a {
     color: ${(props) => props.theme.text.onPrimaryLight};
@@ -66,6 +68,7 @@ const Button = styled.button`
 
 export default function BurgerMenu({ options }) {
   const intl = useIntl();
+  const history = useHistory();
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -76,8 +79,16 @@ export default function BurgerMenu({ options }) {
       <BurgerMenuPoints>
         <List open={open}>
           {options.map((option) => (
-            <ListItem key={option.path}>
-              <Link to={option.path}>
+            <ListItem
+              key={option.path}
+              onClick={() => {
+                history.push(option.path);
+                setOpen(false)
+              }}
+            >
+              <Link
+              // to={option.path}
+              >
                 {intl.formatMessage({ id: option.label })}
               </Link>
             </ListItem>

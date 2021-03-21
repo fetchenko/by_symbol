@@ -33,6 +33,8 @@ export function calcHorizontalRatio(width, height) {
   return Number(Number(width / (height + 1)).toFixed(1));
 }
 
-export function calcScaledSize(ratio, size) {
-  return ratio ? calcRatioSize(ratio, SYMBOL_SIZE[size]) : SYMBOL_SIZE[size];
+export function calcScaledSize(ratio, size, predefinedSize = 0) {
+  const gridSize = predefinedSize || SYMBOL_SIZE[size];
+
+  return ratio ? calcRatioSize(ratio, gridSize) : gridSize;
 }
