@@ -15,7 +15,6 @@ export function calcGridSize(data, svgSize) {
   return { width: Math.max(...axis.x), height: Math.max(...axis.y) };
 }
 
-
 export default function SvgSymbol({
   data,
   svgSize = { width: 300, height: 300 },
