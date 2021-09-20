@@ -92,4 +92,7 @@ export default {
   test: "#",
   [SOURCES]: "Источники",
   [ABOUT]: "О проекте",
+  "title.rain": "Дождь",
+  "short-title.rain": "Дождь",
+  "meaning.rain": "#",
 };
