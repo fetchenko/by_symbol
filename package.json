@@ -11,7 +11,7 @@
     "react-color": "^2.18.0",
     "react-cookie": "^4.0.3",
     "react-dom": "16.13.1",
-    "react-intl": "4.6.10",
+    "react-intl": "5.20.10",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.1",
     "react-swipeable": "5.5.1",

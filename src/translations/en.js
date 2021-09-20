@@ -124,4 +124,8 @@ export default {
   [ABOUT]: "About",
   [HOME]: "Home",
   [SYMBOLS]: "Symbols",
+  "title.rain": "Symbol of Rain",
+  "short-title.rain": "Rain",
+  "meaning.rain":
+    "Rain is essential for nature and crops. Symbols of rain (raindrops) are composed of similar elements; each of the elements has its own purpose. Peasants believed that waved symbols could improve harvest or hay, increase water levels of rivers or tree growth.",
 };

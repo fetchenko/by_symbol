@@ -63,4 +63,7 @@ export default {
   test: "#",
   [SOURCES]: "Крыніцы",
   [ABOUT]: "Пра праект",
+  "title.rain": "Дождж",
+  "short-title.rain": "Дождж",
+  "meaning.rain": "#",
 };

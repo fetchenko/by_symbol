@@ -49,6 +49,7 @@ import { grain } from "./grain/grain";
 import { bigSun2 } from "./sun/bigSun2";
 import { bigSun4 } from "./sun/bigSun4";
 import { bigSun6 } from "./sun/bigSun6";
+import { rain } from "./rain/rain";
 
 export const symbols = {
   spring: {
@@ -215,6 +216,12 @@ export const symbols = {
     title: "title.big-sun",
     description: "meaning.big-sun",
     symbols: [bigSun2, bigSun4, bigSun6],
+  },
+  rain: {
+    id: "rain",
+    title: "title.rain",
+    description: "meaning.rain",
+    symbols: [rain],
   },
 };
 

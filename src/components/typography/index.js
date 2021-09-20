@@ -28,11 +28,13 @@ export const Title = styled.h2`
 export const Description = styled.h4`
   width: 100%;
   margin: 8px 0;
+  padding: 0 1rem;
   font-size: 1rem;
   font-weight: normal;
   font-family: ${(props) => props.theme.fonts.asap};
   white-space: break-spaces;
   text-align: center;
+  box-sizing: border-box;
 
   ${(props) => props.theme.mediaQueries.sm} {
     margin: 16px 0;
