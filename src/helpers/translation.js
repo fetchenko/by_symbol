@@ -1,5 +1,5 @@
 import sortBy from "lodash/sortBy";
-import { SYMBOL_OPTIONS, SHORT_TITLE_PREFIX } from "constants/index";
+import { SYMBOL_OPTIONS, SHORT_TITLE_PREFIX } from "~/constants/index";
 
 export function translateMenuOptions(intl) {
   let options = SYMBOL_OPTIONS.map(({items, ...symbol}) => {

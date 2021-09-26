@@ -1,0 +1,89 @@
+:root {
+  --white: #f3f3f3;
+  --black: #000;
+
+  --primary-main: #472e2a;
+  --primary-light: #8d6e63;
+  --primary-dark: #3e2723;
+
+  --secondary-main: #00685b;
+  --secondary-light: #439688;
+  --secondary-dark: #003d32;
+
+  --link-main: var(--background-default);
+  --link-dark: #c2c3c3;
+  --text-color-on-link: var(--primary-main);
+
+  --text-color-main: #546363;
+  --text-color-light: #000;
+  --text-color-dark: #000;
+  --text-color-primary: var(--primary-main);
+  --text-color-secondary: var(--secondary-main);
+  --text-color-on-primary: var(--white);
+  --text-color-on-secondary: var(--white);
+
+  --font-primary: Asap, sans-serif;
+  --font-secondary: Merriweather, serif;
+
+  --background-default: #e9ebec;
+  --background-paper: #fff;
+
+  --symbol-color-red: #d32f2f;
+  --symbol-color-secondary: #000;
+  --symbol-text-color-primary: #000;
+  --symbol-text-color-secondary: #000;
+
+  --symbols-size-xs: 200;
+  --symbols-size-sm: 300;
+  --symbols-size-md: 400;
+  --symbols-size-lg: 400;
+  --symbols-size-xl: 500;
+
+  --header-height-xs: 3.75rem;
+  --header-height-lg: 4.375rem;
+
+  --font-size-xs: 1rem;
+  --font-size-sm: 1.25rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 1.75rem;
+  --font-size-xl: 2rem;
+
+  --line-height-xs: 1.5;
+  --line-height-sm: 1.3;
+  --line-height-md: 1.2;
+  --line-height-lg: 1.2;
+  --line-height-xl: 1.2;
+
+  --symbol-menu-height-sm: 56px;
+
+  --content-space-xs: 1.5rem 1.5rem 0 1.5rem;
+  --content-space-md: 2.5rem 3.75rem 0 3.75rem;
+
+  --page-size-md: 60rem;
+
+  --icon-size-sm: 2rem;
+  --icon-size-md: 3rem;
+
+  --icon-color-primary: var(--primary-main);
+  --icon-color-secondary: var(--secondary-main);
+}
+
+body,
+html {
+  margin: 0;
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--background-default);
+}
+
+button {
+  /* outline: none; */
+}
+
+hr {
+  border: solid;
+  height: 5px;
+}
