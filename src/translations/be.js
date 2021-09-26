@@ -1,5 +1,5 @@
-import { meaningOfSparysh } from "assets/symbols/sparysh/meaningOfSparysh";
-import { SOURCES, ABOUT } from "constants/translations";
+import { meaningOfSparysh } from "~/assets/symbols/sparysh/meaningOfSparysh";
+import { SOURCES, ABOUT } from "~/constants/translations";
 
 export default {
   "belorussian-symbols": "Беларускія сімвалы",

@@ -9,6 +9,9 @@
 # production
 /build
 
+/cypress
+/cypress.json
+
 # misc
 .DS_Store
 .env.local
@@ -25,3 +28,6 @@ yarn-error.log*
 dist
 cypress
 cypress.json
+belarussian-symbols
+dist
+build
