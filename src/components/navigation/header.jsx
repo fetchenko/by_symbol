@@ -16,6 +16,16 @@ const useStyles = createUseStyles((theme) => ({
     padding: "0 0.75rem",
     backgroundColor: "var(--primary-main)",
     boxShadow: "0 0 0.75rem var(--primary-light)",
+
+    "&:after": {
+      content: '""',
+      position: "absolute",
+      top: "0.125rem",
+      left: 0,
+      height: "0.125rem",
+      width: "100%",
+      borderTop: "solid 0.0625rem var(--primary-light)",
+    },
   },
 }));
 

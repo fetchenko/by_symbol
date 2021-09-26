@@ -1,15 +1,11 @@
 import React from "react";
-import { createUseStyles } from "react-jss";
+import { createUseStyles, JssProvider } from "react-jss";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import Align, { JUSTIFY, ALIGN } from "~/components/align";
 import Grid from "~/components/grid";
-import {
-  getSymbolSizes,
-  calcHorizontalRatio,
-  calcVertRatio,
-} from "./helper";
+import { getSymbolSizes, calcHorizontalRatio, calcVertRatio } from "./helper";
 
 const useStyles = createUseStyles((theme) => ({
   symbolContainer: {
@@ -37,17 +33,22 @@ export default function SymbolsContent({
         const horizontalRatio = calcHorizontalRatio(width, height);
 
         return (
-          <div
-            className={classNames(classes.symbolContainer, containerClassName)}
-            key={symbol.id}
-          >
-            <Grid
-              {...symbol}
-              predefinedSize={predefinedSize}
-              vertRatio={vertRatio}
-              horizontalRatio={horizontalRatio}
-            />
-          </div>
+          <JssProvider classNamePrefix={symbol.id}>
+            <div
+              className={classNames(
+                classes.symbolContainer,
+                containerClassName
+              )}
+              key={symbol.id}
+            >
+              <Grid
+                {...symbol}
+                predefinedSize={predefinedSize}
+                vertRatio={vertRatio}
+                horizontalRatio={horizontalRatio}
+              />
+            </div>
+          </JssProvider>
         );
       })}
     </Align>

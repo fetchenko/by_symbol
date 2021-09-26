@@ -10,7 +10,6 @@ import Align, { DIRECTIONS } from "~/components/align";
 import SymbolsSubMenu from "./symbolsSubMenu";
 import { createUseStyles } from "react-jss";
 
-// todo: fix swappable on mobile - make height to fix full height on mobile
 const useStyles = createUseStyles({
   root: {
     width: "100%",

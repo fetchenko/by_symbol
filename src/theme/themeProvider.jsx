@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
+import { ThemeProvider as ThemeProviderJss } from "theming";
+
 import { useWindowSize } from "~/hooks/useWindowSize";
 import { getDevice } from "~/theme/theme";
 import { THEME_COLORS, Red } from "~/theme/themes-colors";
 import { CustomThemeContext } from "./themeContext";
-import { ThemeProvider as ThemeProviderJss } from "theming";
 import { mediaQueries } from "~/theme/theme";
 
 const themeJss = {

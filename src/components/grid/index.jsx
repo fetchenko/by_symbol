@@ -25,7 +25,7 @@ const useStyles = createUseStyles((theme) => ({
       height: predefinedSize || calcScaledSize(vertRatio, "lg"),
     }),
   },
-}), { name: React.Component.displayName });
+}));
 
 export default function Grid({
   id,
